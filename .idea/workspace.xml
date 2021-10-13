@@ -5,34 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="273fadf0-0409-4b8d-89dc-6a47fbc9c24e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gradle/7.1.1/dependencies-accessors/dependencies-accessors.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/7.1.1/fileChanges/last-build.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/7.1.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries-with-intellij-classes.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/webdev/tourapp/Shared/Domain/Aggregate/FloatValueObject.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/webdev/tourapp/Shared/Domain/Aggregate/IntegerValueObject.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/webdev/tourapp/Shared/Domain/Aggregate/StringValueObject.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/webdev/tourapp/Shared/Domain/Exceptions/UUIDNotValid.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/webdev/tourapp/Shared/Domain/Aggregates/CustomUUID.java" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1.1/dependencies-accessors/gc.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/webdev/tourapp/Shared/Domain/Aggregates/FloatValueObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1.1/gc.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/webdev/tourapp/Shared/Domain/Aggregates/IntegerValueObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/vcs-1/gc.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/webdev/tourapp/Shared/Domain/Aggregates/StringValueObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webdev/tourapp/Shared/Domain/Aggregate/CustomUUID.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/webdev/tourapp/Users/Guide/Domain/ValueObjects/GuideID.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webdev/tourapp/Users/Guide/Domain/ValueObjects/GuideID.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/webdev/tourapp/Users/Guide/Domain/ValueObjects/GuideLastName.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webdev/tourapp/Users/Guide/Domain/ValueObjects/GuideLastName.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/webdev/tourapp/Users/User/Domain/ValueObjects/UserFirstName.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webdev/tourapp/Users/User/Domain/ValueObjects/UserFirstName.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/webdev/tourapp/Users/User/Domain/ValueObjects/UserID.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webdev/tourapp/Users/User/Domain/ValueObjects/UserID.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/webdev/tourapp/Users/User/Domain/ValueObjects/UserLastName.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webdev/tourapp/Users/User/Domain/ValueObjects/UserLastName.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/webdev/tourapp/Users/User/Domain/ValueObjects/Username.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webdev/tourapp/Users/User/Domain/ValueObjects/Username.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,6 +49,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -111,7 +87,7 @@
       <option name="presentableId" value="Default" />
       <updated>1633110028885</updated>
       <workItem from="1633110032532" duration="1237000" />
-      <workItem from="1634087023959" duration="734000" />
+      <workItem from="1634087023959" duration="1499000" />
     </task>
     <servers />
   </component>
