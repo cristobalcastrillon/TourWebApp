@@ -1,3 +1,0 @@
-language = "java"
-# TODO: Averiguar cómo editar el 'run' para que corra el proyecto (recordar que es un proyecto de Spring Web y de Java).
-run = "TourappApplication.java"
