@@ -5,6 +5,10 @@ import com.webdev.tourapp.Tours.Tour.Domain.Exceptions.TourNameNotValid;
 
 public class TourName extends StringValueObject {
 
+    private TourName(){
+
+    }
+
     public TourName(String tourName) {
         validate(tourName);
         this.value = tourName;
