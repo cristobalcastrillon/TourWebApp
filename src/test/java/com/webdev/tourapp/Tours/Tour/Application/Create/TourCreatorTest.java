@@ -11,7 +11,6 @@ import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import static org.mockito.Mockito.*;
 
@@ -19,57 +18,40 @@ import static org.mockito.Mockito.*;
 public class TourCreatorTest {
     Tour tour;
     TourRepository repository;
+    ArrayList<Location> locationList = new ArrayList<>();
 
     @BeforeEach
     void setup(){
-
-        ArrayList<Location> locationList = new ArrayList<Location>();
-        locationList.add(new Location("7cce613b-2b79-4a90-90bd-daf02c94f376",
+        this.locationList.add(new Location("7cce613b-2b79-4a90-90bd-daf02c94f376",
                 "Sagrada Familia",
                 "41°24′13″N 2°10′27″E",
                 "El Templo Expiatorio de la Sagrada Familia (en catalán, Temple Expiatori de la Sagrada Família), conocido simplemente como la Sagrada Familia, es una basílica católica de Barcelona (España), diseñada por el arquitecto Antoni Gaudí.",
                 "Templo",
                 "https://sagradafamilia.org/historia-del-temple",
                 26.0));
-        locationList.add(new Location("714af06b-f455-43f9-9a1d-9bef6e20ef02",
+        this.locationList.add(new Location("714af06b-f455-43f9-9a1d-9bef6e20ef02",
                 "Casa Batlló",
                 "41°23'17.99″ N 2°09'32.40″ E",
                 "La Casa Batlló es un edificio obra del arquitecto Antoni Gaudí, máximo representante del modernismo catalán.",
                 "Bien de Interés Cultural",
                 "https://www.casabatllo.es/",
                 35.0));
-
-        this.tour = new Tour(new TourID("d79d401a-d61a-42bc-81ec-0b5e0edb2e52"),
-                new TourName("Tour Gaudí en Barcelona"),
-                new TourPrice(200.0),
-                locationList);
 
         this.repository = mock(TourRepository.class);
     }
 
     @Test
     void should_create_tour(){
+        this.tour = new Tour(new TourID("d79d401a-d61a-42bc-81ec-0b5e0edb2e52"),
+                new TourName("Tour Gaudí en Barcelona"),
+                new TourPrice(200.0),
+                this.locationList);
+
         TourCreator creator = new TourCreator(repository);
 
-        ArrayList<Location> locationList = new ArrayList<Location>();
-        locationList.add(new Location("7cce613b-2b79-4a90-90bd-daf02c94f376",
-                "Sagrada Familia",
-                "41°24′13″N 2°10′27″E",
-                "El Templo Expiatorio de la Sagrada Familia (en catalán, Temple Expiatori de la Sagrada Família), conocido simplemente como la Sagrada Familia, es una basílica católica de Barcelona (España), diseñada por el arquitecto Antoni Gaudí.",
-                "Templo",
-                "https://sagradafamilia.org/historia-del-temple",
-                26.0));
-        locationList.add(new Location("714af06b-f455-43f9-9a1d-9bef6e20ef02",
-                "Casa Batlló",
-                "41°23'17.99″ N 2°09'32.40″ E",
-                "La Casa Batlló es un edificio obra del arquitecto Antoni Gaudí, máximo representante del modernismo catalán.",
-                "Bien de Interés Cultural",
-                "https://www.casabatllo.es/",
-                35.0));
+        creator.execute("d79d401a-d61a-42bc-81ec-0b5e0edb2e52", "Tour Gaudí en Barcelona", 200.0, this.locationList);
 
-        creator.execute("d79d401a-d61a-42bc-81ec-0b5e0edb2e52", "Tour Gaudí en Barcelona", 200.0, locationList);
-
-        verify(repository, atLeastOnce()).save(tour);
+        verify(repository, atLeastOnce()).save(this.tour);
     }
 
 }
