@@ -1,9 +1,7 @@
-package com.webdev.tourapp.Tours.Tour.Application.Create;
+package com.webdev.tourapp.Tours.Tour.Application.FindByID;
 
-import com.webdev.tourapp.Shared.Domain.Exceptions.UUIDNotValid;
 import com.webdev.tourapp.Tours.Tour.Domain.Entities.Location;
-import com.webdev.tourapp.Tours.Tour.Domain.Exceptions.NotValidTourPrice;
-import com.webdev.tourapp.Tours.Tour.Domain.Exceptions.TourNameNotValid;
+import com.webdev.tourapp.Tours.Tour.Domain.Exceptions.TourIDNotFound;
 import com.webdev.tourapp.Tours.Tour.Domain.Ports.TourRepository;
 import com.webdev.tourapp.Tours.Tour.Domain.Tour;
 import com.webdev.tourapp.Tours.Tour.Domain.ValueObjects.TourID;
@@ -12,14 +10,18 @@ import com.webdev.tourapp.Tours.Tour.Domain.ValueObjects.TourPrice;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.ArrayList;
+import java.util.Optional;
 
-import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.mock;
+import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
-public class TourCreatorTest {
+public class TourIDFinderTest {
+
     Tour tour;
     TourRepository repository;
     ArrayList<Location> locationList = new ArrayList<>();
@@ -47,51 +49,25 @@ public class TourCreatorTest {
                 this.locationList);
 
         this.repository = mock(TourRepository.class);
+
+        Mockito.when(repository.findByID(new TourID("d79d401a-d61a-42bc-81ec-0b5e0edb2e52"))).thenReturn(Optional.of(tour));
     }
 
     @Test
-    void should_create_tour(){
+    void should_find_tour(){
 
-        TourCreator creator = new TourCreator(repository);
+        TourIDFinder finder = new TourIDFinder(this.repository);
 
-        creator.execute("d79d401a-d61a-42bc-81ec-0b5e0edb2e52", "Tour Gaudí en Barcelona", 200.0, this.locationList);
-
-        verify(repository, atLeastOnce()).save(this.tour);
+        assertEquals(this.tour, finder.execute("d79d401a-d61a-42bc-81ec-0b5e0edb2e52"));
     }
 
     @Test
-    void should_not_create_tour_not_valid_uuid(){
+    void should_not_find_tour(){
 
-        TourCreator creator = new TourCreator(repository);
+        TourIDFinder finder = new TourIDFinder(this.repository);
 
-        Assertions.assertThrows(UUIDNotValid.class, () -> {
-            creator.execute("d79d401a-d61a-42bc",
-                    "Tour Gaudí en Barcelona",
-                    200.0, this.locationList);
-        });
-    }
-
-    @Test
-    void should_not_create_tour_name_not_valid(){
-
-        TourCreator creator = new TourCreator(repository);
-
-        Assertions.assertThrows(TourNameNotValid.class, () -> {
-            creator.execute("a508985c-dba4-4040-b09b-7a8bdc7235a7",
-                    "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean ma",
-                    200.0, this.locationList);
-        });
-    }
-
-    @Test
-    void should_not_create_tour_negative_price_not_valid(){
-
-        TourCreator creator = new TourCreator(repository);
-
-        Assertions.assertThrows(NotValidTourPrice.class, () -> {
-            creator.execute("a508985c-dba4-4040-b09b-7a8bdc7235a7",
-                    "Tour Gaudí en Barcelona",
-                    -200.0, this.locationList);
+        Assertions.assertThrows(TourIDNotFound.class, () -> {
+            finder.execute("21a5eb2d-7fa4-47f2-a304-ac39770cce56");
         });
     }
 

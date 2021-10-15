@@ -29,7 +29,7 @@ public class TourCreator {
     }
 
     private void validate(String tourID){
-        Optional<Tour> tour = repository.findByID(tourID);
+        Optional<Tour> tour = repository.findByID(new TourID(tourID));
         if(tour.isPresent()){
             throw new TourAlreadyExists("El tour con id " + tourID.toString() + " ya existe.");
         }
