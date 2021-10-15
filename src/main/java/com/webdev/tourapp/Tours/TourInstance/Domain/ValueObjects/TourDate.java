@@ -1,8 +1,11 @@
 package com.webdev.tourapp.Tours.TourInstance.Domain.ValueObjects;
 
-public class TourDate {
+import com.webdev.tourapp.Shared.Domain.Aggregate.DateValueObject;
 
-    // TODO: Define which date format and parent value object is going to be used for the project.
+import java.util.Date;
 
-    TourDate(){}
+public class TourDate extends DateValueObject {
+
+    public TourDate(Date value){ super(value); }
+
 }
