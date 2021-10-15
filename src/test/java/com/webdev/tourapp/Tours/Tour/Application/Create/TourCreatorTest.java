@@ -37,15 +37,16 @@ public class TourCreatorTest {
                 "https://www.casabatllo.es/",
                 35.0));
 
+        this.tour = new Tour(new TourID("d79d401a-d61a-42bc-81ec-0b5e0edb2e52"),
+                new TourName("Tour Gaudí en Barcelona"),
+                new TourPrice(200.0),
+                this.locationList);
+
         this.repository = mock(TourRepository.class);
     }
 
     @Test
     void should_create_tour(){
-        this.tour = new Tour(new TourID("d79d401a-d61a-42bc-81ec-0b5e0edb2e52"),
-                new TourName("Tour Gaudí en Barcelona"),
-                new TourPrice(200.0),
-                this.locationList);
 
         TourCreator creator = new TourCreator(repository);
 
