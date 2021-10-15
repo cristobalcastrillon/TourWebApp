@@ -1,4 +1,4 @@
-package com.webdev.tourapp.Tours.Tour.Application.FindByBasePrice;
+package com.webdev.tourapp.Tours.Tour.Application.FindByBasePriceMaximum;
 
 import com.webdev.tourapp.Tours.Tour.Domain.Ports.TourRepository;
 import com.webdev.tourapp.Tours.Tour.Domain.Services.DomainTourBasePriceMaximumFinder;
@@ -11,6 +11,7 @@ import java.util.ArrayList;
 */
 
 public class TourBasePriceMaximumFinder {
+
     private TourRepository repository;
     private DomainTourBasePriceMaximumFinder finderService;
 
