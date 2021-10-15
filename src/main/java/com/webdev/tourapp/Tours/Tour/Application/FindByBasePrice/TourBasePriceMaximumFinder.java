@@ -11,6 +11,7 @@ import java.util.ArrayList;
 */
 
 public class TourBasePriceMaximumFinder {
+
     private TourRepository repository;
     private DomainTourBasePriceMaximumFinder finderService;
 
