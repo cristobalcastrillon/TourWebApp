@@ -1,11 +1,15 @@
 package com.webdev.tourapp.Tours.Tour.Application.Create;
 
+import com.webdev.tourapp.Shared.Domain.Exceptions.UUIDNotValid;
 import com.webdev.tourapp.Tours.Tour.Domain.Entities.Location;
+import com.webdev.tourapp.Tours.Tour.Domain.Exceptions.NotValidTourPrice;
+import com.webdev.tourapp.Tours.Tour.Domain.Exceptions.TourNameNotValid;
 import com.webdev.tourapp.Tours.Tour.Domain.Ports.TourRepository;
 import com.webdev.tourapp.Tours.Tour.Domain.Tour;
 import com.webdev.tourapp.Tours.Tour.Domain.ValueObjects.TourID;
 import com.webdev.tourapp.Tours.Tour.Domain.ValueObjects.TourName;
 import com.webdev.tourapp.Tours.Tour.Domain.ValueObjects.TourPrice;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -13,6 +17,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import java.util.ArrayList;
 
 import static org.mockito.Mockito.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
 public class TourCreatorTest {
@@ -53,6 +58,42 @@ public class TourCreatorTest {
         creator.execute("d79d401a-d61a-42bc-81ec-0b5e0edb2e52", "Tour Gaudí en Barcelona", 200.0, this.locationList);
 
         verify(repository, atLeastOnce()).save(this.tour);
+    }
+
+    @Test
+    void should_not_create_tour_not_valid_uuid(){
+
+        TourCreator creator = new TourCreator(repository);
+
+        Assertions.assertThrows(UUIDNotValid.class, () -> {
+            creator.execute("d79d401a-d61a-42bc",
+                    "Tour Gaudí en Barcelona",
+                    200.0, this.locationList);
+        });
+    }
+
+    @Test
+    void should_not_create_tour_name_not_valid(){
+
+        TourCreator creator = new TourCreator(repository);
+
+        Assertions.assertThrows(TourNameNotValid.class, () -> {
+            creator.execute("a508985c-dba4-4040-b09b-7a8bdc7235a7",
+                    "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean ma",
+                    200.0, this.locationList);
+        });
+    }
+
+    @Test
+    void should_not_create_tour_negative_price_not_valid(){
+
+        TourCreator creator = new TourCreator(repository);
+
+        Assertions.assertThrows(NotValidTourPrice.class, () -> {
+            creator.execute("a508985c-dba4-4040-b09b-7a8bdc7235a7",
+                    "Tour Gaudí en Barcelona",
+                    -200.0, this.locationList);
+        });
     }
 
 }
