@@ -12,7 +12,7 @@ public interface TourRepository {
     void update(Tour tour);
     void delete();
     Optional<List<Tour>> all();
-    Optional<Tour> findByID(TourID tourID);
+    Optional<Tour> findByID(String tourID);
     //TODO: Implement the Use Cases that use the following
     Optional<List<Tour>> findByTourName(String nameQuery);
     Optional<List<Tour>> findByListOfLocations(List<Location> locationList);

@@ -9,16 +9,17 @@ public class Location {
     String locationCoordinates;
     String locationDescription;
     String locationCategory;
-    Optional<String> locationWebsiteURL;
-    Optional<Double> locationPrice;
+    String locationWebsiteURL;
+    Double locationPrice;
 
-    private Location(String id,
+    //TODO: ¿El acceso debería ser público? (Lo puse así para poder crear Locations desde los tests).
+    public Location(String id,
             String name,
             String coordinates,
             String description,
             String category,
-            Optional<String> websiteURL,
-            Optional<Double> price){
+            String websiteURL,
+            Double price){
         this.locationID = id;
         this.locationName = name;
         this.locationCoordinates = coordinates;
@@ -28,5 +29,5 @@ public class Location {
         this.locationPrice = price;
     }
 
-    public Location(){}
+    private Location(){}
 }

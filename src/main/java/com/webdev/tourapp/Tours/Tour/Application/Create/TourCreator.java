@@ -19,16 +19,16 @@ public class TourCreator {
         this.repository = repository;
     }
 
-    public void execute(TourID id,
-                        TourName name,
-                        TourPrice price,
-                        List<Location> locationsInTour{
+    public void execute(String id,
+                        String name,
+                        Double price,
+                        List<Location> locationsInTour){
         this.validate(id);
-        Tour tour = Tour.Create(id, name, price, locationsInTour);
+        Tour tour = Tour.Create(new TourID(id), new TourName(name), new TourPrice(price), locationsInTour);
         repository.save(tour);
     }
 
-    private void validate(TourID tourID){
+    private void validate(String tourID){
         Optional<Tour> tour = repository.findByID(tourID);
         if(tour.isPresent()){
             throw new TourAlreadyExists("El tour con id " + tourID.toString() + " ya existe.");
