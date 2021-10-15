@@ -19,7 +19,6 @@ public interface TourRepository {
     //TODO: El siguiente método encuentra todos los tours cuyo precio base (TourPrice) es menor o igual al maxBasePrice (tope de precio)
     Optional<ArrayList<Tour>> findByBasePriceMaximum(TourPrice priceQuery);
 
-    //TODO: Implement the Use Cases that use the following
     Optional<ArrayList<Tour>> findByTourName(TourName nameQuery);
     Optional<ArrayList<Tour>> findByListOfLocations(ArrayList<Location> locationList);
 }

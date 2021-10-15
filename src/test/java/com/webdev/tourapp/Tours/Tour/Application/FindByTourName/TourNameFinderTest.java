@@ -1,11 +1,15 @@
-package com.webdev.tourapp.Tours.Tour.Application.FindByBasePrice;
+package com.webdev.tourapp.Tours.Tour.Application.FindByTourName;
 
+import com.webdev.tourapp.Tours.Tour.Application.FindByID.TourIDFinder;
 import com.webdev.tourapp.Tours.Tour.Domain.Entities.Location;
+import com.webdev.tourapp.Tours.Tour.Domain.Exceptions.NoToursFoundForSpecifiedTourName;
+import com.webdev.tourapp.Tours.Tour.Domain.Exceptions.TourIDNotFound;
 import com.webdev.tourapp.Tours.Tour.Domain.Ports.TourRepository;
 import com.webdev.tourapp.Tours.Tour.Domain.Tour;
 import com.webdev.tourapp.Tours.Tour.Domain.ValueObjects.TourID;
 import com.webdev.tourapp.Tours.Tour.Domain.ValueObjects.TourName;
 import com.webdev.tourapp.Tours.Tour.Domain.ValueObjects.TourPrice;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
@@ -14,12 +18,11 @@ import org.springframework.boot.test.context.SpringBootTest;
 import java.util.ArrayList;
 import java.util.Optional;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.mock;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 @SpringBootTest
-public class TourBasePriceMaximumFinderTest {
+public class TourNameFinderTest {
 
     ArrayList<Tour> tourList = new ArrayList<>();
     TourRepository repository;
@@ -57,15 +60,17 @@ public class TourBasePriceMaximumFinderTest {
 
         this.repository = mock(TourRepository.class);
 
-        Mockito.when(repository.findByBasePriceMaximum(new TourPrice(200.0))).thenReturn(Optional.of(tourList));
+        Mockito.when(repository.findByTourName(new TourName("Tour Gaudí en Barcelona"))).thenReturn(Optional.of(this.tourList));
     }
 
     @Test
-    void should_find_tours_for_specified_base_price_maximum(){
+    void should_not_find_tour(){
 
-        TourBasePriceMaximumFinder finder = new TourBasePriceMaximumFinder(repository);
+        TourNameFinder finder = new TourNameFinder(this.repository);
 
-        assertEquals(this.tourList, finder.execute(200.0));
+        Assertions.assertThrows(NoToursFoundForSpecifiedTourName.class, () -> {
+            //TODO: ¡Regex en findByTourName!
+            finder.execute("Tour en Barcelona");
+        });
     }
-
 }

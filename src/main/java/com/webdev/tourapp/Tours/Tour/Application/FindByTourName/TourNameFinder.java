@@ -3,10 +3,12 @@ package com.webdev.tourapp.Tours.Tour.Application.FindByTourName;
 import com.webdev.tourapp.Tours.Tour.Domain.Ports.TourRepository;
 import com.webdev.tourapp.Tours.Tour.Domain.Services.DomainTourNameFinder;
 import com.webdev.tourapp.Tours.Tour.Domain.Tour;
-import com.webdev.tourapp.Tours.Tour.Domain.ValueObjects.TourName;
-import org.apache.el.stream.Optional;
 
 import java.util.ArrayList;
+
+/*
+ * Este caso de uso debe retornar una lista de Tours que contengan la expresión (normalizada) pasada por parámetro
+ */
 
 public class TourNameFinder {
     private TourRepository repository;

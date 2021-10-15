@@ -16,6 +16,7 @@ public class DomainTourNameFinder {
     }
 
     public ArrayList<Tour> execute(String name){
+        //TODO: ¿Debería findByTourName permitir regex (e.g. query: "Gaudí", response: "Tour Gaudí en Barcelona", "Tour Gaudí"...)?
         Optional<ArrayList<Tour>> tourListOptional = repository.findByTourName(new TourName(name));
 
         if(tourListOptional.isEmpty()){
