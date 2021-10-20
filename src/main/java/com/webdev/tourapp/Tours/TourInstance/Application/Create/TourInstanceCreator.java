@@ -40,6 +40,7 @@ public class TourInstanceCreator{
                 startingLocation,
                 usersInTour,
                 companyHired);
+        repository.save(tourInstance);
     }
 
     private void validate(String tourID){
