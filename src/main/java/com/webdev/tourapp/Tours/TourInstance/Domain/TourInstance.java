@@ -43,15 +43,15 @@ public class TourInstance {
         this.transportCompanyHired = companyHired;
     }
 
-    public TourInstance Create(TourDate date,
-                               TourInstanceID instanceID,
-                               TourNumberOfPersons numberOfPersons,
-                               TourTotalPrice totalPrice,
-                               TourInstanceStatus status,
-                               TourGuide guide,
-                               StartingLocation sLocation,
-                               Optional<List<TourUser>> users,
-                               Optional<TransportCompanyHired> companyHired){
+    public static TourInstance Create(TourDate date,
+                                      TourInstanceID instanceID,
+                                      TourNumberOfPersons numberOfPersons,
+                                      TourTotalPrice totalPrice,
+                                      TourInstanceStatus status,
+                                      TourGuide guide,
+                                      StartingLocation sLocation,
+                                      Optional<List<TourUser>> users,
+                                      Optional<TransportCompanyHired> companyHired){
 
         TourInstance tourInstance = new TourInstance(date, instanceID, numberOfPersons, totalPrice, status, guide, sLocation, users, companyHired);
         //EVENTS
