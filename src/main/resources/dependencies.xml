@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="TourCreator" class="com.webdev.tourapp.Tours.Tour.Application.Create.TourCreator">
+        <!-->TourRepository es un bean de clase HibernateTourRepository aún no desarrollado<!-->
+        <!-->TODO: Desarrollar HibernateTourRepository <!-->
+        <constructor-arg ref="TourRepository"/>
+    </bean>
+
+    <bean id="TourAll" class="com.webdev.tourapp.Tours.Tour.Application.All.TourAll">
+        <constructor-arg ref="TourRepository"/>
+    </bean>
+
+</beans>
