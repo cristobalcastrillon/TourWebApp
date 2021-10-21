@@ -1,10 +1,10 @@
 package com.webdev.tourapp.Cities.Application.Create;
 
+import com.webdev.tourapp.Cities.Domain.City;
 import com.webdev.tourapp.Cities.Domain.Ports.CityRepository;
 
 import javax.swing.text.html.Option;
 import java.util.ArrayList;
-
 
 public class CityCreator{
 
@@ -16,11 +16,11 @@ public class CityCreator{
 
     public void execute(String id,
                         String name,
-                        String defaultAta,
+                        String defaultIATA,
                         ArrayList<Location> locationsInCity,
                         ArrayList<Tour> tours){
         this.validate(id);
-        City city = City.Create(new CityID(id), new CityName(name), new CityDefaulAta(defaultAta), locationsInCity, tours);
+        City city = City.Create(new CityID(id), new CityName(name), new CityDefaulIATA(defaultIATA), locationsInCity, tours);
         repository.save(city);
     }
 
@@ -31,3 +31,6 @@ public class CityCreator{
         }
     }
 }
+
+// Completado
+// Pendiente para revisar
