@@ -9,8 +9,8 @@ import java.util.stream.Collectors;
 public class CityAllResponse {
     private ArrayList<City> cities;
 
-    public CityAllResponse(ArrayList<City> citys){
-        this.cities = citys;
+    public CityAllResponse(ArrayList<City> cities){
+        this.cities = cities;
     }
 
     //TODO: Pendiente para chequear

@@ -17,7 +17,7 @@ public class CityAll{
         Optional<ArrayList<City>> cityListOptional = repository.all();
 
         if(cityListOptional.isEmpty()){
-            throw new NoCitysFound("No se ha encontrado ninguna ciudad.")
+            throw new NoCitiesFound("No se ha encontrado ninguna ciudad.")
         }
 
         ArrayList<City> cityList = cityListOptional.get();
