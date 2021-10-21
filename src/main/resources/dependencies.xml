@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-->TODO: Desarrollar HibernateTourRepository <!-->
+    <!-->TODO: Desarrollar HibernateTourInstanceRepository <!-->
+
+    <bean id="TourCreator" class="com.webdev.tourapp.Tours.Tour.Application.Create.TourCreator">
+        <!-->TourRepository es un bean de clase HibernateTourRepository aún no desarrollado<!-->
+        <constructor-arg ref="TourRepository"/>
+    </bean>
+
+    <bean id="TourAll" class="com.webdev.tourapp.Tours.Tour.Application.All.TourAll">
+        <constructor-arg ref="TourRepository"/>
+    </bean>
+
+    <bean id="TourBasePriceMaximumFinder" class="com.webdev.tourapp.Tours.Tour.Application.FindByBasePriceMaximum.TourBasePriceMaximumFinder">
+        <constructor-arg ref="TourRepository"/>
+    </bean>
+
+    <bean id="TourIDFinder" class="com.webdev.tourapp.Tours.Tour.Application.FindByID.TourIDFinder">
+        <constructor-arg ref="TourRepository"/>
+    </bean>
+
+    <bean id="TourLocationListFinder" class="com.webdev.tourapp.Tours.Tour.Application.FindByListOfLocations.TourLocationListFinder">
+        <constructor-arg ref="TourRepository"/>
+    </bean>
+
+    <bean id="TourNameFinder" class="com.webdev.tourapp.Tours.Tour.Application.FindByTourName.TourNameFinder">
+        <constructor-arg ref="TourRepository"/>
+    </bean>
+
+    <bean id="TourInstanceAll" class="com.webdev.tourapp.Tours.TourInstance.Application.All.TourInstanceAll">
+        <constructor-arg ref="TourInstanceRepository"/>
+    </bean>
+
+    <bean id="TourInstanceCreator" class="com.webdev.tourapp.Tours.TourInstance.Application.Create.TourInstanceCreator">
+        <constructor-arg ref="TourInstanceRepository"/>
+    </bean>
+
+    <bean id="TourInstanceDateFinder" class="com.webdev.tourapp.Tours.TourInstance.Application.FindByDate.TourInstanceDateFinder">
+        <constructor-arg ref="TourInstanceRepository"/>
+    </bean>
+
+    <bean id="TourInstanceIDFinder" class="com.webdev.tourapp.Tours.TourInstance.Application.FindByID.TourInstanceIDFinder">
+        <constructor-arg ref="TourInstanceRepository"/>
+    </bean>
+
+    <bean id="TourInstanceNumberOfPersonsFinder" class="com.webdev.tourapp.Tours.TourInstance.Application.FindByNumberOfPersons.TourInstanceNumberOfPersonsFinder">
+        <constructor-arg ref="TourInstanceRepository"/>
+    </bean>
+
+    <bean id="TourInstanceStatusFinder" class="com.webdev.tourapp.Tours.TourInstance.Application.FindByStatus.TourInstanceStatusFinder">
+        <constructor-arg ref="TourInstanceRepository"/>
+    </bean>
+
+    <bean id="TourInstanceTotalPriceFinder" class="com.webdev.tourapp.Tours.TourInstance.Application.FindByTotalPrice.TourInstanceTotalPriceFinder">
+        <constructor-arg ref="TourInstanceRepository"/>
+    </bean>
+
+</beans>
