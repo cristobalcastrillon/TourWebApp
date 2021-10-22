@@ -2,6 +2,8 @@ package com.webdev.tourapp.Cities.Application.FindByCityName;
 
 import com.webdev.tourapp.Cities.Domain.City;
 
+import java.util.HashMap;
+
 public class CityNameFinderResponse {
     private City city;
 
@@ -9,12 +11,12 @@ public class CityNameFinderResponse {
         this.city = city;
     }
 
-
-    //Pendiente metodo response()
-
-//    public HashMap response() {
-//        HashMap response = city.stream().map(t -> t.data()).collect(Collectors.toList());
-//        response.stream().forEach(h -> h.remove("cityName"));
-//        return response;
-//    }
+    public HashMap response(){
+        HashMap data = city.data();
+        data.remove(/*Aqui no se xd*/"nameCity");
+        return data;
+    }
 }
+
+//Completado
+//Pendiente revision
