@@ -9,5 +9,12 @@
       <jdbc-url>tourwebapp-database-1.cjd3ggukjl5a.us-east-2.rds.amazonaws.com</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
+    <data-source source="LOCAL" name="TourWebAppDB" uuid="cf3a6165-fa06-4426-9806-2b713afc5c12">
+      <driver-ref>mariadb</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.mariadb.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mariadb://tourwebapp-database.cx4xztbmhj7u.us-east-1.rds.amazonaws.com:3306</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
   </component>
 </project>
