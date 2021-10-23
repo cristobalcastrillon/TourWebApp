@@ -1,6 +1,7 @@
 package com.webdev.tourapp.Cities.Domain.Ports;
 
 import com.webdev.tourapp.Cities.Domain.City;
+import com.webdev.tourapp.Cities.Domain.ValueObjects.CityID;
 
 public interface CityRepository{
     void save(City city);
