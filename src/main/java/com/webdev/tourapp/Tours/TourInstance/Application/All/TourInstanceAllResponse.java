@@ -3,12 +3,12 @@ package com.webdev.tourapp.Tours.TourInstance.Application.All;
 
 import com.webdev.tourapp.Tours.TourInstance.Domain.TourInstance;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class TourInstanceAllResponse {
-    private ArrayList<TourInstance> tourInstances;
+    private List<TourInstance> tourInstances;
 
-    public TourInstanceAllResponse(ArrayList<TourInstance> tourInstances){
+    public TourInstanceAllResponse(List<TourInstance> tourInstances){
         this.tourInstances = tourInstances;
     }
 

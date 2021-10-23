@@ -4,6 +4,7 @@ import com.webdev.tourapp.Shared.Domain.Aggregate.CustomUUID;
 import org.hibernate.SessionFactory;
 
 import javax.persistence.criteria.CriteriaQuery;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 

@@ -5,8 +5,8 @@ import com.webdev.tourapp.Tours.TourInstance.Domain.Ports.TourInstanceRepository
 import com.webdev.tourapp.Tours.TourInstance.Domain.TourInstance;
 import com.webdev.tourapp.Tours.TourInstance.Domain.ValueObjects.TourDate;
 
-import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.Optional;
 
 public class DomainTourInstanceDateFinder {
@@ -16,8 +16,8 @@ public class DomainTourInstanceDateFinder {
         this.repository = repository;
     }
 
-    public ArrayList<TourInstance> execute(Date date){
-        Optional<ArrayList<TourInstance>> tourInstanceListOptional = repository.findByDate(new TourDate(date));
+    public List<TourInstance> execute(Date date){
+        Optional<List<TourInstance>> tourInstanceListOptional = repository.findByDate(new TourDate(date));
 
         if(tourInstanceListOptional.isEmpty()){
             throw new NoToursFoundForSpecifiedDate("No existen tours para la fecha especificada.");

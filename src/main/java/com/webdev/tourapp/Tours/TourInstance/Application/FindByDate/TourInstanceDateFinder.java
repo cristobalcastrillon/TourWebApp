@@ -6,6 +6,7 @@ import com.webdev.tourapp.Tours.TourInstance.Domain.TourInstance;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class TourInstanceDateFinder {
     private TourInstanceRepository repository;
@@ -16,7 +17,7 @@ public class TourInstanceDateFinder {
         finderService = new DomainTourInstanceDateFinder(this.repository);
     }
 
-    public ArrayList<TourInstance> execute(Date date){
+    public List<TourInstance> execute(Date date){
         return finderService.execute(date);
     }
 }

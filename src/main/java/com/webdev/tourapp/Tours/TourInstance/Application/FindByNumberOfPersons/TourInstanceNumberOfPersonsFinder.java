@@ -5,6 +5,7 @@ import com.webdev.tourapp.Tours.TourInstance.Domain.Services.DomainTourInstanceN
 import com.webdev.tourapp.Tours.TourInstance.Domain.TourInstance;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class TourInstanceNumberOfPersonsFinder {
     private TourInstanceRepository repository;
@@ -15,7 +16,7 @@ public class TourInstanceNumberOfPersonsFinder {
         finderService = new DomainTourInstanceNumberOfPersonsFinder(this.repository);
     }
 
-    public ArrayList<TourInstance> execute(Integer numberOfPersons){
+    public List<TourInstance> execute(Integer numberOfPersons){
         return finderService.execute(numberOfPersons);
     }
 }
