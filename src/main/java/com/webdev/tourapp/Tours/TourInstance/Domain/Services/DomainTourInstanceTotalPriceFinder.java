@@ -5,7 +5,7 @@ import com.webdev.tourapp.Tours.TourInstance.Domain.Ports.TourInstanceRepository
 import com.webdev.tourapp.Tours.TourInstance.Domain.TourInstance;
 import com.webdev.tourapp.Tours.TourInstance.Domain.ValueObjects.TourTotalPrice;
 
-import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 public class DomainTourInstanceTotalPriceFinder {
@@ -15,11 +15,11 @@ public class DomainTourInstanceTotalPriceFinder {
         this.repository = repository;
     }
 
-    public ArrayList<TourInstance> execute(Double totalPrice){
-        Optional<ArrayList<TourInstance>> tourInstanceListOptional = repository.findByTotalPrice(new TourTotalPrice(totalPrice));
+    public List<TourInstance> execute(Double totalPrice){
+        Optional<List<TourInstance>> tourInstanceListOptional = repository.findByTotalPrice(new TourTotalPrice(totalPrice));
 
         if(tourInstanceListOptional.isEmpty()){
-            throw new NoToursFoundForSpecifiedTotalPrice("No existen tours para la fecha especificada.");
+            throw new NoToursFoundForSpecifiedTotalPrice("No existen tours para el precio máximo especificado.");
         }
 
         return tourInstanceListOptional.get();

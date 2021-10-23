@@ -6,6 +6,7 @@ import com.webdev.tourapp.Tours.Tour.Domain.Tour;
 import com.webdev.tourapp.Tours.Tour.Domain.ValueObjects.TourName;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 public class DomainTourNameFinder {
@@ -15,9 +16,9 @@ public class DomainTourNameFinder {
         this.repository = repository;
     }
 
-    public ArrayList<Tour> execute(String name){
+    public List<Tour> execute(String name){
         //TODO: ¿Debería findByTourName permitir regex (e.g. query: "Gaudí", response: "Tour Gaudí en Barcelona", "Tour Gaudí"...)?
-        Optional<ArrayList<Tour>> tourListOptional = repository.findByTourName(new TourName(name));
+        Optional<List<Tour>> tourListOptional = repository.findByTourName(new TourName(name));
 
         if(tourListOptional.isEmpty()){
             throw new NoToursFoundForSpecifiedTourName("No se ha encontrado ningún tour con el nombre especificado.");

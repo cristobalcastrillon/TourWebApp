@@ -5,6 +5,7 @@ import com.webdev.tourapp.Tours.TourInstance.Domain.Services.DomainTourInstanceT
 import com.webdev.tourapp.Tours.TourInstance.Domain.TourInstance;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class TourInstanceTotalPriceFinder {
     private TourInstanceRepository repository;
@@ -15,7 +16,7 @@ public class TourInstanceTotalPriceFinder {
         finderService = new DomainTourInstanceTotalPriceFinder(this.repository);
     }
 
-    public ArrayList<TourInstance> execute(Double totalPrice){
+    public List<TourInstance> execute(Double totalPrice){
         return finderService.execute(totalPrice);
     }
 }

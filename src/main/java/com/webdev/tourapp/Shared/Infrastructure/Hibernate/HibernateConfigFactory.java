@@ -4,6 +4,7 @@ import org.apache.tomcat.dbcp.dbcp2.BasicDataSource;
 import org.hibernate.cfg.AvailableSettings;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.Environment;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
@@ -13,6 +14,7 @@ import org.springframework.transaction.PlatformTransactionManager;
 import javax.sql.DataSource;
 import java.util.Properties;
 
+@Configuration
 public class HibernateConfigFactory {
 
     @Autowired
@@ -24,9 +26,11 @@ public class HibernateConfigFactory {
         sessionFactory.setDataSource(this.dataSource());
         sessionFactory.setHibernateProperties(this.hibernateProperties());
 
-        FileSystemResource resource1 = new FileSystemResource("");
+        FileSystemResource tourInstanceResource = new FileSystemResource("./src/main/java/com/webdev/tourapp/Tours/TourInstance/Infrastructure/TourInstance.hbm.xml");
+        FileSystemResource tourResource = new FileSystemResource("./src/main/java/com/webdev/tourapp/Tours/Tour/Infrastructure/Tour.hbm.xml");
 
-        sessionFactory.setMappingLocations(resource1);
+        sessionFactory.setMappingLocations(tourInstanceResource);
+        sessionFactory.setMappingLocations(tourResource);
 
         return sessionFactory;
     }

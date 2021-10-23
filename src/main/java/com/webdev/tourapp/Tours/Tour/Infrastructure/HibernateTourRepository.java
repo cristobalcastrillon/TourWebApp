@@ -7,10 +7,14 @@ import com.webdev.tourapp.Tours.Tour.Domain.Tour;
 import com.webdev.tourapp.Tours.Tour.Domain.ValueObjects.TourID;
 import com.webdev.tourapp.Tours.Tour.Domain.ValueObjects.TourName;
 import com.webdev.tourapp.Tours.Tour.Domain.ValueObjects.TourPrice;
+import com.webdev.tourapp.Tours.TourInstance.Domain.TourInstance;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Qualifier;
 
-import java.util.ArrayList;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
+import java.util.List;
 import java.util.Optional;
 
 public class HibernateTourRepository extends HibernateRepository<Tour> implements TourRepository {
@@ -21,41 +25,52 @@ public class HibernateTourRepository extends HibernateRepository<Tour> implement
 
     @Override
     public void save(Tour tour) {
-
+        persist(tour);
     }
 
     @Override
     public void update(Tour tour) {
-
+        updateEntity(tour);
     }
 
     @Override
-    public void delete() {
-
+    public void delete(Tour tour) {
+        deleteEntity(tour);
     }
 
     @Override
-    public Optional<ArrayList<Tour>> all() {
-        return Optional.empty();
+    public Optional<List<Tour>> all() {
+        return getAll();
     }
 
     @Override
     public Optional<Tour> findByID(TourID tourID) {
-        return Optional.empty();
+        return byId(tourID);
     }
 
     @Override
-    public Optional<ArrayList<Tour>> findByBasePriceMaximum(TourPrice priceQuery) {
-        return Optional.empty();
+    public Optional<List<Tour>> findByBasePriceMaximum(TourPrice priceQuery) {
+        CriteriaBuilder cb = sessionFactory.getCriteriaBuilder();
+        CriteriaQuery<Tour> cq = cb.createQuery(Tour.class);
+        Root<Tour> root = cq.from(Tour.class);
+        cq.select(root).where(cb.lessThanOrEqualTo(root.get("tourPrice"), priceQuery.value()));
+        List<Tour> tours = sessionFactory.getCurrentSession().createQuery(cq).getResultList();
+        return Optional.ofNullable(tours);
     }
 
     @Override
-    public Optional<ArrayList<Tour>> findByTourName(TourName nameQuery) {
-        return Optional.empty();
+    public Optional<List<Tour>> findByTourName(TourName nameQuery) {
+        CriteriaBuilder cb = sessionFactory.getCriteriaBuilder();
+        CriteriaQuery<Tour> cq = cb.createQuery(Tour.class);
+        Root<Tour> root = cq.from(Tour.class);
+        cq.select(root).where(cb.equal(root.get("tourName"), nameQuery.value()));
+        List<Tour> tours = sessionFactory.getCurrentSession().createQuery(cq).getResultList();
+        return Optional.ofNullable(tours);
     }
 
     @Override
-    public Optional<ArrayList<Tour>> findByListOfLocations(ArrayList<Location> locationList) {
+    public Optional<List<Tour>> findByListOfLocations(List<Location> locationList) {
+        //TODO
         return Optional.empty();
     }
 }

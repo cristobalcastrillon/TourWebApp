@@ -5,6 +5,7 @@ import com.webdev.tourapp.Tours.Tour.Domain.Services.DomainTourBasePriceMaximumF
 import com.webdev.tourapp.Tours.Tour.Domain.Tour;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /*
 * Este caso de uso busca los tours cuyo precio base es * menor o igual * al especificado (maxBasePrice)
@@ -20,7 +21,7 @@ public class TourBasePriceMaximumFinder {
         finderService = new DomainTourBasePriceMaximumFinder(this.repository);
     }
 
-    public ArrayList<Tour> execute(Double maxBasePrice){
+    public List<Tour> execute(Double maxBasePrice){
         return finderService.execute(maxBasePrice);
     }
 }
