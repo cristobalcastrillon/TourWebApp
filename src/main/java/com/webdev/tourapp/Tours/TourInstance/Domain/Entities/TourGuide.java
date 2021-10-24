@@ -31,4 +31,44 @@ public class TourGuide {
     public int hashCode() {
         return Objects.hash(guideID, guideFirstName, guideLastName, guideBaseFare, guidePhoneNumber);
     }
+
+    public String getGuideID() {
+        return guideID;
+    }
+
+    public void setGuideID(String guideID) {
+        this.guideID = guideID;
+    }
+
+    public String getGuideFirstName() {
+        return guideFirstName;
+    }
+
+    public void setGuideFirstName(String guideFirstName) {
+        this.guideFirstName = guideFirstName;
+    }
+
+    public String getGuideLastName() {
+        return guideLastName;
+    }
+
+    public void setGuideLastName(String guideLastName) {
+        this.guideLastName = guideLastName;
+    }
+
+    public Double getGuideBaseFare() {
+        return guideBaseFare;
+    }
+
+    public void setGuideBaseFare(Double guideBaseFare) {
+        this.guideBaseFare = guideBaseFare;
+    }
+
+    public String getGuidePhoneNumber() {
+        return guidePhoneNumber;
+    }
+
+    public void setGuidePhoneNumber(String guidePhoneNumber) {
+        this.guidePhoneNumber = guidePhoneNumber;
+    }
 }

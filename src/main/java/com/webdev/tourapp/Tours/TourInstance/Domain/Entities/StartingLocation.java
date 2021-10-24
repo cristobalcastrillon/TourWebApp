@@ -29,4 +29,60 @@ public class StartingLocation {
         this.locationWebsiteURL = websiteURL;
         this.locationPrice = price;
     }
+
+    public String getLocationID() {
+        return locationID;
+    }
+
+    public void setLocationID(String locationID) {
+        this.locationID = locationID;
+    }
+
+    public String getLocationName() {
+        return locationName;
+    }
+
+    public void setLocationName(String locationName) {
+        this.locationName = locationName;
+    }
+
+    public String getLocationCoordinates() {
+        return locationCoordinates;
+    }
+
+    public void setLocationCoordinates(String locationCoordinates) {
+        this.locationCoordinates = locationCoordinates;
+    }
+
+    public String getLocationDescription() {
+        return locationDescription;
+    }
+
+    public void setLocationDescription(String locationDescription) {
+        this.locationDescription = locationDescription;
+    }
+
+    public String getLocationCategory() {
+        return locationCategory;
+    }
+
+    public void setLocationCategory(String locationCategory) {
+        this.locationCategory = locationCategory;
+    }
+
+    public Optional<String> getLocationWebsiteURL() {
+        return locationWebsiteURL;
+    }
+
+    public void setLocationWebsiteURL(Optional<String> locationWebsiteURL) {
+        this.locationWebsiteURL = locationWebsiteURL;
+    }
+
+    public Optional<Double> getLocationPrice() {
+        return locationPrice;
+    }
+
+    public void setLocationPrice(Optional<Double> locationPrice) {
+        this.locationPrice = locationPrice;
+    }
 }
