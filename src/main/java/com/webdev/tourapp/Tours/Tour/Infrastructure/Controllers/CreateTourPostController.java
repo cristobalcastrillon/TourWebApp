@@ -7,7 +7,6 @@ import com.webdev.tourapp.Tours.Tour.Domain.Exceptions.TourAlreadyExists;
 import com.webdev.tourapp.Tours.Tour.Domain.Exceptions.TourNameNotValid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,7 +20,7 @@ public class CreateTourPostController {
     @Autowired
     private TourCreator creator;
 
-    @PostMapping(value = "/", consumes = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(value = "/")
     public ResponseEntity execute(@RequestBody TourRequest request){
         this.creator.execute(request.getTourID(), request.getTourName(), request.getTourPrice(), request.getLocationsIncludedInTour());
         return ResponseEntity.status(HttpStatus.CREATED).body(null);
