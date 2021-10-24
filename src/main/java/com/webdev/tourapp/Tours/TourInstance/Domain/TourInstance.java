@@ -21,6 +21,7 @@ public class TourInstance {
     Optional<List<TourUser>> tourUsers;
     Optional<TransportCompanyHired> transportCompanyHired;
     // TODO: ¿Cómo se relaciona una TourInstance a un Tour ya creado?
+    AssociatedTourID associatedTourID;
 
     private TourInstance(){}
 
@@ -32,7 +33,8 @@ public class TourInstance {
                         TourGuide guide,
                         StartingLocation sLocation,
                         Optional<List<TourUser>> users,
-                        Optional<TransportCompanyHired> companyHired){
+                        Optional<TransportCompanyHired> companyHired,
+                        AssociatedTourID associatedTourID){
         this.tourDate = date;
         this.tourInstanceID = instanceID;
         this.tourNumberOfPersons = numberOfPersons;
@@ -42,6 +44,7 @@ public class TourInstance {
         this.startingLocation = sLocation;
         this.tourUsers = users;
         this.transportCompanyHired = companyHired;
+        this.associatedTourID = associatedTourID;
     }
 
     public static TourInstance Create(TourDate date,
@@ -52,9 +55,10 @@ public class TourInstance {
                                       TourGuide guide,
                                       StartingLocation sLocation,
                                       Optional<List<TourUser>> users,
-                                      Optional<TransportCompanyHired> companyHired){
+                                      Optional<TransportCompanyHired> companyHired,
+                                      AssociatedTourID associatedTourID){
 
-        TourInstance tourInstance = new TourInstance(date, instanceID, numberOfPersons, totalPrice, status, guide, sLocation, users, companyHired);
+        TourInstance tourInstance = new TourInstance(date, instanceID, numberOfPersons, totalPrice, status, guide, sLocation, users, companyHired, associatedTourID);
         //EVENTS
         return tourInstance;
     }

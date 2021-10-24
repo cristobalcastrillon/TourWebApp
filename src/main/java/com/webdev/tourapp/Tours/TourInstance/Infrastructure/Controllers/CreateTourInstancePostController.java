@@ -36,7 +36,8 @@ public class CreateTourInstancePostController {
                 request.getGuide(),
                 request.getsLocation(),
                 request.getUsers(),
-                request.getCompanyHired());
+                request.getCompanyHired(),
+                request.getAssociatedTourID());
 
         // DEBUG
         System.out.println(request.getStatus());
@@ -72,6 +73,7 @@ public class CreateTourInstancePostController {
         private StartingLocation sLocation;
         private Optional<List<TourUser>> users;
         private Optional<TransportCompanyHired> companyHired;
+        private String associatedTourID;
 
         TourInstanceRequest(){}
 
@@ -145,6 +147,14 @@ public class CreateTourInstancePostController {
 
         public void setCompanyHired(Optional<TransportCompanyHired> companyHired) {
             this.companyHired = companyHired;
+        }
+
+        public String getAssociatedTourID() {
+            return associatedTourID;
+        }
+
+        public void setAssociatedTourID(String associatedTourID) {
+            this.associatedTourID = associatedTourID;
         }
     }
 }
