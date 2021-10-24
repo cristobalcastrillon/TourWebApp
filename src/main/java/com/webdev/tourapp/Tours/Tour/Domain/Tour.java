@@ -5,6 +5,7 @@ import com.webdev.tourapp.Tours.Tour.Domain.ValueObjects.TourID;
 import com.webdev.tourapp.Tours.Tour.Domain.ValueObjects.TourName;
 import com.webdev.tourapp.Tours.Tour.Domain.ValueObjects.TourPrice;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Objects;
 
@@ -34,6 +35,16 @@ public class Tour {
         Tour tour = new Tour(id, name, price, locationsInTour);
         // EVENTS
         return tour;
+    }
+
+    public HashMap<String, Object> data() {
+        HashMap<String, Object> data = new HashMap<>(){{
+            put("id", tourID.value());
+            put("name", tourName.value());
+            put("price", tourPrice.value());
+            put("locationsIncludedInTour", locationsIncludedInTour);
+        }};
+        return data;
     }
 
     @Override
