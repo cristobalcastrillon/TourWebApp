@@ -27,7 +27,7 @@ public class CreateTourInstancePostController {
     @Autowired
     private TourInstanceCreator creator;
 
-    @PostMapping(value = "/", consumes = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(value = "/")
     public ResponseEntity execute(@RequestBody TourInstanceRequest request) {
         this.creator.execute(request.getDate(),
                 request.getInstanceID(),
@@ -38,6 +38,10 @@ public class CreateTourInstancePostController {
                 request.getsLocation(),
                 request.getUsers(),
                 request.getCompanyHired());
+
+        // DEBUG
+        System.out.println(request.getStatus());
+
         return ResponseEntity.status(HttpStatus.CREATED).body(null);
     }
 

@@ -12,6 +12,7 @@ public class TourInstanceStatus extends StringValueObject {
 
     public TourInstanceStatus(String status){
         validate(status);
+        this.value = status;
     }
 
     private void validate(String status){
