@@ -1,7 +1,5 @@
 package com.webdev.tourapp.Tours.Tour.Domain.Entities;
 
-import java.util.Optional;
-
 public class Location {
 
     String locationID;

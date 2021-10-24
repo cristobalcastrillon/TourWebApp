@@ -8,4 +8,5 @@ public class TourDate extends DateValueObject {
 
     public TourDate(Date value){ super(value); }
 
+    public TourDate(){}
 }

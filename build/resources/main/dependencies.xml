@@ -3,12 +3,11 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="TourRepository" class="com.webdev.tourapp.Tours.Tour.Infrastructure.HibernateTourRepository"/>
+    <bean id="TourRepository" class="com.webdev.tourapp.Tours.Tour.Infrastructure.Hibernate.HibernateTourRepository"/>
 
-    <bean id="TourInstanceRepository" class="com.webdev.tourapp.Tours.TourInstance.Infrastructure.HibernateTourInstanceRepository"/>
+    <bean id="TourInstanceRepository" class="com.webdev.tourapp.Tours.TourInstance.Infrastructure.Hibernate.HibernateTourInstanceRepository"/>
 
     <bean id="TourCreator" class="com.webdev.tourapp.Tours.Tour.Application.Create.TourCreator">
-        <!-->TourRepository es un bean de clase HibernateTourRepository aún no desarrollado<!-->
         <constructor-arg ref="TourRepository"/>
     </bean>
 

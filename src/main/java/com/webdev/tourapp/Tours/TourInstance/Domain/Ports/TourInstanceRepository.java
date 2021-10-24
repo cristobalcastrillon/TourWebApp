@@ -3,7 +3,6 @@ package com.webdev.tourapp.Tours.TourInstance.Domain.Ports;
 import com.webdev.tourapp.Tours.TourInstance.Domain.TourInstance;
 import com.webdev.tourapp.Tours.TourInstance.Domain.ValueObjects.*;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 

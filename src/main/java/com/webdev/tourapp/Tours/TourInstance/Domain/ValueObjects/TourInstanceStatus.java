@@ -7,6 +7,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class TourInstanceStatus extends StringValueObject {
+
     private TourInstanceStatus(){}
 
     public TourInstanceStatus(String status){
