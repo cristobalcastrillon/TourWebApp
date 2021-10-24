@@ -17,10 +17,10 @@ public class CityAll{
         Optional<ArrayList<City>> cityListOptional = repository.all();
 
         if(cityListOptional.isEmpty()){
-            throw new NoCitiesFound("No se ha encontrado ninguna ciudad.")
+            throw new NoCitiesFound("No se ha encontrado ninguna ciudad.");
         }
 
-        ArrayList<City> cityList = cityListOptional.get();
+        ArrayList<City> cityList = (ArrayList<City>) cityListOptional.get();
 
         return new CityAllResponse(cityList);
 
