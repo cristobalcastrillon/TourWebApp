@@ -4,5 +4,6 @@
 # Datasource local storage ignored files
 /dataSources/
 /dataSources.local.xml
+.gitignore
 # Editor-based HTTP Client requests
 /httpRequests/
