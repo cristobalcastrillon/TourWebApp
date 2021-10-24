@@ -10,7 +10,6 @@ public class Location {
     String locationWebsiteURL;
     Double locationPrice;
 
-    //TODO: ¿El acceso debería ser público? (Lo puse así para poder crear Locations desde los tests).
     public Location(String id,
             String name,
             String coordinates,
