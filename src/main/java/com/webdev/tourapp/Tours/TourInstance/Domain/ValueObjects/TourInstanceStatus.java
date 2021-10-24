@@ -7,10 +7,12 @@ import java.util.Arrays;
 import java.util.List;
 
 public class TourInstanceStatus extends StringValueObject {
-    private TourInstanceStatus(){}
+
+    public TourInstanceStatus(){}
 
     public TourInstanceStatus(String status){
         validate(status);
+        this.value = status;
     }
 
     private void validate(String status){

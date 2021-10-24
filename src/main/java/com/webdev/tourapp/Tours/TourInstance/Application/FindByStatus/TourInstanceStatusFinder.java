@@ -4,7 +4,7 @@ import com.webdev.tourapp.Tours.TourInstance.Domain.Ports.TourInstanceRepository
 import com.webdev.tourapp.Tours.TourInstance.Domain.Services.DomainTourInstanceStatusFinder;
 import com.webdev.tourapp.Tours.TourInstance.Domain.TourInstance;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class TourInstanceStatusFinder {
     private TourInstanceRepository repository;
@@ -15,7 +15,7 @@ public class TourInstanceStatusFinder {
         finderService = new DomainTourInstanceStatusFinder(this.repository);
     }
 
-    public ArrayList<TourInstance> execute(String status){
+    public List<TourInstance> execute(String status){
         return finderService.execute(status);
     }
 

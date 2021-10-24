@@ -5,7 +5,7 @@ import com.webdev.tourapp.Tours.TourInstance.Domain.Ports.TourInstanceRepository
 import com.webdev.tourapp.Tours.TourInstance.Domain.TourInstance;
 import com.webdev.tourapp.Tours.TourInstance.Domain.ValueObjects.TourNumberOfPersons;
 
-import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 public class DomainTourInstanceNumberOfPersonsFinder {
@@ -15,8 +15,8 @@ public class DomainTourInstanceNumberOfPersonsFinder {
         this.repository = repository;
     }
 
-    public ArrayList<TourInstance> execute(Integer numberOfPersons){
-        Optional<ArrayList<TourInstance>> tourInstanceListOptional = repository.findByNumberOfPersons(new TourNumberOfPersons(numberOfPersons));
+    public List<TourInstance> execute(Integer numberOfPersons){
+        Optional<List<TourInstance>> tourInstanceListOptional = repository.findByNumberOfPersons(new TourNumberOfPersons(numberOfPersons));
 
         if(tourInstanceListOptional.isEmpty()){
             throw new NoToursFoundForSpecifiedNumberOfPersons("No existen tours para la fecha especificada.");

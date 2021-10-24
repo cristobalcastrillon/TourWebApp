@@ -6,6 +6,7 @@ import com.webdev.tourapp.Tours.Tour.Domain.Ports.TourRepository;
 import com.webdev.tourapp.Tours.Tour.Domain.Tour;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 public class DomainTourLocationListFinder {
@@ -16,9 +17,9 @@ public class DomainTourLocationListFinder {
         this.repository = repository;
     }
 
-    public ArrayList<Tour> execute(ArrayList<Location> minLocationList){
+    public List<Tour> execute(List<Location> minLocationList){
 
-        Optional<ArrayList<Tour>> tourList = repository.findByListOfLocations(minLocationList);
+        Optional<List<Tour>> tourList = repository.findByListOfLocations(minLocationList);
 
         if(tourList.isEmpty()){
             throw new NoToursFoundForSpecifiedLocationList("No se ha encontrado ningún tour que contenga las ubicaciones especificadas.");

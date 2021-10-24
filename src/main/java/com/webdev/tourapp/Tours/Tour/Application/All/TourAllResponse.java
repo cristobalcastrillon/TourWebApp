@@ -2,13 +2,13 @@ package com.webdev.tourapp.Tours.Tour.Application.All;
 
 import com.webdev.tourapp.Tours.Tour.Domain.Tour;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class TourAllResponse {
 
-    private ArrayList<Tour> tours;
+    private List<Tour> tours;
 
-    public TourAllResponse(ArrayList<Tour> tours){
+    public TourAllResponse(List<Tour> tours){
         this.tours = tours;
     }
 

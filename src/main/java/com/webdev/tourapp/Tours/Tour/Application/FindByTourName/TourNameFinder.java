@@ -5,6 +5,7 @@ import com.webdev.tourapp.Tours.Tour.Domain.Services.DomainTourNameFinder;
 import com.webdev.tourapp.Tours.Tour.Domain.Tour;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /*
  * Este caso de uso debe retornar una lista de Tours que contengan la expresión (normalizada) pasada por parámetro
@@ -19,7 +20,7 @@ public class TourNameFinder {
         this.finderService = new DomainTourNameFinder(this.repository);
     }
 
-    public ArrayList<Tour> execute(String name){
+    public List<Tour> execute(String name){
         return finderService.execute(name);
     }
 
