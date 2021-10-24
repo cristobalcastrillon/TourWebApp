@@ -4,9 +4,9 @@
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-    <class name="com.webdev.tourapp.Tours.TourInstance.Domain.TourInstance">
+    <class name="com.webdev.tourapp.Tours.TourInstance.Domain.TourInstance" table="tour_instances">
 
-        <composite-id name="tourInstanceID" class="com.webdev.tourapp.Tours.Tour.Domain.ValueObjects.TourID" access="field">
+        <composite-id name="tourInstanceID" class="com.webdev.tourapp.Tours.TourInstance.Domain.ValueObjects.TourInstanceID" access="field">
             <key-property name="value" column="id" access="field" length="36" />
         </composite-id>
 
@@ -19,7 +19,7 @@
         </component>
 
         <component name="tourNumberOfPersons" class="com.webdev.tourapp.Tours.TourInstance.Domain.ValueObjects.TourNumberOfPersons" access="field">
-            <property name="value" column="number_of_persons" access="field" type="string"/>
+            <property name="value" column="number_of_persons" access="field" type="integer"/>
         </component>
 
         <component name="tourTotalPrice" class="com.webdev.tourapp.Tours.TourInstance.Domain.ValueObjects.TourTotalPrice" access="field">

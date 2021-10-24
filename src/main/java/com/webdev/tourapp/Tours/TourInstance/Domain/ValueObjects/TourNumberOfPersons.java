@@ -5,7 +5,7 @@ import com.webdev.tourapp.Tours.TourInstance.Domain.Exceptions.NotValidNumberOfP
 
 public class TourNumberOfPersons extends IntegerValueObject {
 
-    private TourNumberOfPersons(){
+    public TourNumberOfPersons(){
 
     }
 

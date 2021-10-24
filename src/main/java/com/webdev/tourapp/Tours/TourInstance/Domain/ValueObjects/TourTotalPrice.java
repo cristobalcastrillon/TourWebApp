@@ -6,7 +6,7 @@ import com.webdev.tourapp.Tours.Tour.Domain.Exceptions.NotValidTourPrice;
 public class TourTotalPrice extends DoubleValueObject {
     // This Value Object represents the total price a customer will pay through the platform
     // taxes and other fares not included in the (TourPrice) subtotal considered
-    private TourTotalPrice(){
+    public TourTotalPrice(){
 
     }
 

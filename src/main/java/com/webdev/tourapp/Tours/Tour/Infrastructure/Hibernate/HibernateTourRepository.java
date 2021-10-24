@@ -1,4 +1,4 @@
-package com.webdev.tourapp.Tours.Tour.Infrastructure;
+package com.webdev.tourapp.Tours.Tour.Infrastructure.Hibernate;
 
 import com.webdev.tourapp.Shared.Infrastructure.Hibernate.HibernateRepository;
 import com.webdev.tourapp.Tours.Tour.Domain.Entities.Location;
@@ -7,9 +7,9 @@ import com.webdev.tourapp.Tours.Tour.Domain.Tour;
 import com.webdev.tourapp.Tours.Tour.Domain.ValueObjects.TourID;
 import com.webdev.tourapp.Tours.Tour.Domain.ValueObjects.TourName;
 import com.webdev.tourapp.Tours.Tour.Domain.ValueObjects.TourPrice;
-import com.webdev.tourapp.Tours.TourInstance.Domain.TourInstance;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
@@ -17,6 +17,7 @@ import javax.persistence.criteria.Root;
 import java.util.List;
 import java.util.Optional;
 
+@Transactional("transactional-manager")
 public class HibernateTourRepository extends HibernateRepository<Tour> implements TourRepository {
 
     public HibernateTourRepository(@Qualifier("session-factory") SessionFactory sessionFactory) {

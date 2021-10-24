@@ -20,6 +20,7 @@ public class TourInstance {
     StartingLocation startingLocation;
     Optional<List<TourUser>> tourUsers;
     Optional<TransportCompanyHired> transportCompanyHired;
+    // TODO: ¿Cómo se relaciona una TourInstance a un Tour ya creado?
 
     private TourInstance(){}
 

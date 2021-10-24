@@ -5,7 +5,7 @@ import com.webdev.tourapp.Tours.Tour.Domain.Exceptions.NotValidTourPrice;
 
 public class TourPrice extends DoubleValueObject {
 
-    private TourPrice(){
+    public TourPrice(){
 
     }
 
