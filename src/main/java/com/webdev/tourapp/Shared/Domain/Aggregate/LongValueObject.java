@@ -1,23 +1,21 @@
 package com.webdev.tourapp.Shared.Domain.Aggregate;
 
-import java.util.Date;
 import java.util.Objects;
 
-public class DateValueObject {
+public class LongValueObject {
 
-    protected Date value;
-    public DateValueObject(Date value) {
-        this.value = value;
+    protected Long value;
+
+    public Long value() {
+        return value;
     }
-
-    public Date value() { return value; }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        DateValueObject that = (DateValueObject) o;
-        return value.equals(that.value);
+        LongValueObject that = (LongValueObject) o;
+        return Objects.equals(value, that.value);
     }
 
     @Override
