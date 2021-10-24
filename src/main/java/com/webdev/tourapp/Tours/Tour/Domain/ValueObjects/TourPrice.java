@@ -5,7 +5,7 @@ import com.webdev.tourapp.Tours.Tour.Domain.Exceptions.NotValidTourPrice;
 
 public class TourPrice extends DoubleValueObject {
 
-    private TourPrice(){
+    public TourPrice(){
 
     }
 
@@ -15,8 +15,11 @@ public class TourPrice extends DoubleValueObject {
     }
 
     private void validate(Double price){
-        if(price < 0.0){
+        isNotNegativeValue(price);
+    }
+
+    private void isNotNegativeValue(Double price){
+        if(price < 0.0)
             throw new NotValidTourPrice("¡El precio del tour no puede ser negativo!");
-        }
     }
 }

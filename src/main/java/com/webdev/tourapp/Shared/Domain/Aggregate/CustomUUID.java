@@ -41,7 +41,7 @@ public class CustomUUID implements Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         CustomUUID that = (CustomUUID) o;
-        return Objects.equals(value, that.value);
+        return value.equals(that.value);
     }
 
     @Override

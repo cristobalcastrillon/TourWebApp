@@ -8,4 +8,6 @@ public class TourID extends CustomUUID {
         super(value);
     }
 
+    public TourID(){}
+
 }
