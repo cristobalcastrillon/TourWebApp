@@ -8,4 +8,6 @@ public class TourInstanceID extends CustomUUID {
         super(value);
     }
 
+    public TourInstanceID(){}
+
 }
