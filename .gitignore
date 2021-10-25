@@ -2,3 +2,5 @@
 /.gradle/checksums
 *.class
 *.DS_Store
+*.lock
+*.bin
