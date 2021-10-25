@@ -11,6 +11,10 @@
         <constructor-arg ref="TourRepository"/>
     </bean>
 
+    <bean id="TourUpdater" class="com.webdev.tourapp.Tours.Tour.Application.Update.TourUpdater">
+        <constructor-arg ref="TourRepository"/>
+    </bean>
+
     <bean id="TourAll" class="com.webdev.tourapp.Tours.Tour.Application.All.TourAll">
         <constructor-arg ref="TourRepository"/>
     </bean>

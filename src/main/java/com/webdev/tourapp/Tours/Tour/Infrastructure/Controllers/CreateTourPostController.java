@@ -17,7 +17,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-//TODO: Document REST APIs
+//TODO: Document REST API
 //@Tag(name = "Tour", description = "This is the Tour API. A Tour is a collection of locations in a city, arranged (but not necessarily) following a theme criteria: say, for example, a tour including Roman imperial monuments in Rome.")
 @RequestMapping(value = "/Tour")
 public class CreateTourPostController {
