@@ -2,7 +2,9 @@ package com.webdev.tourapp.Tours.Tour.Application.All;
 
 import com.webdev.tourapp.Tours.Tour.Domain.Tour;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class TourAllResponse {
 
@@ -12,5 +14,8 @@ public class TourAllResponse {
         this.tours = tours;
     }
 
-    //TODO: Develop reponse() method
+    public List<HashMap<String, Object>> response() {
+        List<HashMap<String, Object>> response = tours.stream().map(element -> element.data()).collect(Collectors.toList());
+        return response;
+    }
 }
