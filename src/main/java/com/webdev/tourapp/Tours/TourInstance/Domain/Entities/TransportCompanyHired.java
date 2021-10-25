@@ -1,5 +1,6 @@
 package com.webdev.tourapp.Tours.TourInstance.Domain.Entities;
 
+import java.util.HashMap;
 import java.util.Optional;
 
 public class TransportCompanyHired {
@@ -22,6 +23,16 @@ public class TransportCompanyHired {
         this.companyPhoneNumber = phoneNumber;
         this.companyURL = url;
         this.companyBaseFare = baseFare;
+    }
+
+    public HashMap<String, Object> dataDB(){
+        return new HashMap<>(){{
+            put("companyID", companyID);
+            put("companyName", companyName);
+            put("companyPhoneNumber", companyPhoneNumber);
+            put("companyURL", companyURL);
+            put("companyBaseFare", companyBaseFare);
+        }};
     }
 
     public String getCompanyID() {

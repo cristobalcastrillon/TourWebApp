@@ -1,7 +1,7 @@
-package com.webdev.tourapp.Tours.Tour.Infrastructure.Hibernate;
+package com.webdev.tourapp.Tours.TourInstance.Infrastructure.Hibernate;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.webdev.tourapp.Tours.Tour.Domain.Entities.Location;
+import com.webdev.tourapp.Tours.TourInstance.Domain.Entities.TourGuide;
 import org.hibernate.HibernateException;
 import org.hibernate.engine.spi.SharedSessionContractImplementor;
 import org.hibernate.usertype.UserType;
@@ -11,21 +11,19 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Types;
-import java.util.*;
-import java.util.stream.Collectors;
+import java.util.HashMap;
+import java.util.Objects;
+import java.util.Optional;
 
-public class LocationCustomType implements UserType {
-
+public class TourGuideCustomType implements UserType {
     @Override
     public int[] sqlTypes() {
-        return new int[] {
-                Types.LONGNVARCHAR
-        };
+        return new int[] {Types.LONGNVARCHAR};
     }
 
     @Override
     public Class returnedClass() {
-        return List.class;
+        return TourGuide.class;
     }
 
     @Override
@@ -40,38 +38,36 @@ public class LocationCustomType implements UserType {
 
     @Override
     public Object nullSafeGet(ResultSet rs, String[] names, SharedSessionContractImplementor session, Object owner) throws HibernateException, SQLException {
-        List<Location> response = null;
+        TourGuide response = null;
         try {
             Optional<String> value = Optional.ofNullable(rs.getString(names[0]));
             if(value.isPresent()) {
-                List<HashMap<String, Object>> objects = new ObjectMapper().readValue(value.get(), List.class);
-                response = objects.stream().map(element -> new Location((String) element.get("locationID"),
-                        (String) element.get("locationName"), (String) element.get("locationCoordinates"), (String) element.get("locationDescription"),
-                        (String) element.get("locationCategory"), (String) element.get("locationWebsiteURL"), (Double) element.get("locationPrice"))).collect(Collectors.toList());
+                HashMap<String, Object> mapper = new ObjectMapper().readValue(value.get(), HashMap.class);
+                response = new TourGuide((String) mapper.get("guideID"), (String) mapper.get("guideFirstName"),
+                        (String) mapper.get("guideLastName"), (Double) mapper.get("guideBaseFare"), (String) mapper.get("guidePhoneNumber"));
             }
         }
         catch (Exception e) {
-            throw new HibernateException("Error leyendo la lista de ubicaciones " + e.toString());
+            throw new HibernateException("Error leyendo mapa de TourGuide " + e.toString());
         }
         return Optional.ofNullable(response);
     }
 
     @Override
     public void nullSafeSet(PreparedStatement st, Object value, int index, SharedSessionContractImplementor session) throws HibernateException, SQLException {
-        Optional<List<Location>> object = (value == null) ? Optional.empty() : Optional.of((List<Location>) value);
+        Optional<TourGuide> object = (value == null) ? Optional.empty() : Optional.of((TourGuide) value);
         try {
             if(object.isEmpty()) {
                 st.setNull(index, Types.VARCHAR);
             }
             else {
                 ObjectMapper mapper = new ObjectMapper();
-                List<HashMap<String, Object>> objects = object.get().stream().map(Location::dataDB).collect(Collectors.toList());
-                String serializedObject = mapper.writeValueAsString(objects).replace("\\", "");
+                String serializedObject = mapper.writeValueAsString(object.get().dataDB());
                 st.setString(index, serializedObject);
             }
         }
         catch (Exception e) {
-            throw new HibernateException("Error serializando la lista de ubicaciones " + e.toString());
+            throw new HibernateException("Error serializando el valor de TourGuide " + e.toString());
         }
     }
 

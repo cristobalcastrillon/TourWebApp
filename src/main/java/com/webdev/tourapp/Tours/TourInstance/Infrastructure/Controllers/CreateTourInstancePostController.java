@@ -28,20 +28,16 @@ public class CreateTourInstancePostController {
 
     @PostMapping(value = "/")
     public ResponseEntity execute(@RequestBody TourInstanceRequest request) {
-        this.creator.execute(request.getDate(),
-                request.getInstanceID(),
-                request.getNumberOfPersons(),
-                request.getTotalPrice(),
-                request.getStatus(),
-                request.getGuide(),
-                request.getsLocation(),
-                request.getUsers(),
-                request.getCompanyHired(),
+        this.creator.execute(request.getTourDate(),
+                request.getTourInstanceID(),
+                request.getTourNumberOfPersons(),
+                request.getTourTotalPrice(),
+                request.getTourInstanceStatus(),
+                request.getTourGuide(),
+                request.getStartingLocation(),
+                request.getTourUsers(),
+                request.getTransportCompanyHired(),
                 request.getAssociatedTourID());
-
-        // DEBUG
-        System.out.println(request.getStatus());
-
         return ResponseEntity.status(HttpStatus.CREATED).body(null);
     }
 
@@ -64,89 +60,89 @@ public class CreateTourInstancePostController {
     }
 
     static class TourInstanceRequest {
-        private Date date;
-        private String instanceID;
-        private Integer numberOfPersons;
-        private Double totalPrice;
-        private String status;
-        private TourGuide guide;
-        private StartingLocation sLocation;
-        private Optional<List<TourUser>> users;
-        private Optional<TransportCompanyHired> companyHired;
+        private Date tourDate;
+        private String tourInstanceID;
+        private Integer tourNumberOfPersons;
+        private Double tourTotalPrice;
+        private String tourInstanceStatus;
+        private TourGuide tourGuide;
+        private StartingLocation startingLocation;
+        private Optional<List<TourUser>> tourUsers;
+        private Optional<TransportCompanyHired> transportCompanyHired;
         private String associatedTourID;
 
-        TourInstanceRequest(){}
+        public TourInstanceRequest(){}
 
-        public Date getDate() {
-            return date;
+        public Date getTourDate() {
+            return tourDate;
         }
 
-        public void setDate(Date date) {
-            this.date = date;
+        public void setTourDate(Date tourDate) {
+            this.tourDate = tourDate;
         }
 
-        public String getInstanceID() {
-            return instanceID;
+        public String getTourInstanceID() {
+            return tourInstanceID;
         }
 
-        public void setInstanceID(String instanceID) {
-            this.instanceID = instanceID;
+        public void setTourInstanceID(String tourInstanceID) {
+            this.tourInstanceID = tourInstanceID;
         }
 
-        public Integer getNumberOfPersons() {
-            return numberOfPersons;
+        public Integer getTourNumberOfPersons() {
+            return tourNumberOfPersons;
         }
 
-        public void setNumberOfPersons(Integer numberOfPersons) {
-            this.numberOfPersons = numberOfPersons;
+        public void setTourNumberOfPersons(Integer tourNumberOfPersons) {
+            this.tourNumberOfPersons = tourNumberOfPersons;
         }
 
-        public Double getTotalPrice() {
-            return totalPrice;
+        public Double getTourTotalPrice() {
+            return tourTotalPrice;
         }
 
-        public void setTotalPrice(Double totalPrice) {
-            this.totalPrice = totalPrice;
+        public void setTourTotalPrice(Double tourTotalPrice) {
+            this.tourTotalPrice = tourTotalPrice;
         }
 
-        public String getStatus() {
-            return status;
+        public String getTourInstanceStatus() {
+            return tourInstanceStatus;
         }
 
-        public void setStatus(String status) {
-            this.status = status;
+        public void setTourInstanceStatus(String tourInstanceStatus) {
+            this.tourInstanceStatus = tourInstanceStatus;
         }
 
-        public TourGuide getGuide() {
-            return guide;
+        public TourGuide getTourGuide() {
+            return tourGuide;
         }
 
-        public void setGuide(TourGuide guide) {
-            this.guide = guide;
+        public void setTourGuide(TourGuide tourGuide) {
+            this.tourGuide = tourGuide;
         }
 
-        public StartingLocation getsLocation() {
-            return sLocation;
+        public StartingLocation getStartingLocation() {
+            return startingLocation;
         }
 
-        public void setsLocation(StartingLocation sLocation) {
-            this.sLocation = sLocation;
+        public void setStartingLocation(StartingLocation startingLocation) {
+            this.startingLocation = startingLocation;
         }
 
-        public Optional<List<TourUser>> getUsers() {
-            return users;
+        public Optional<List<TourUser>> getTourUsers() {
+            return tourUsers;
         }
 
-        public void setUsers(Optional<List<TourUser>> users) {
-            this.users = users;
+        public void setTourUsers(Optional<List<TourUser>> tourUsers) {
+            this.tourUsers = tourUsers;
         }
 
-        public Optional<TransportCompanyHired> getCompanyHired() {
-            return companyHired;
+        public Optional<TransportCompanyHired> getTransportCompanyHired() {
+            return transportCompanyHired;
         }
 
-        public void setCompanyHired(Optional<TransportCompanyHired> companyHired) {
-            this.companyHired = companyHired;
+        public void setTransportCompanyHired(Optional<TransportCompanyHired> transportCompanyHired) {
+            this.transportCompanyHired = transportCompanyHired;
         }
 
         public String getAssociatedTourID() {

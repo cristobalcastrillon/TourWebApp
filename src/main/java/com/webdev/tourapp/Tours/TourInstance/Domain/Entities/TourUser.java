@@ -1,5 +1,7 @@
 package com.webdev.tourapp.Tours.TourInstance.Domain.Entities;
 
+import java.util.HashMap;
+
 public class TourUser {
 
     String userID;
@@ -14,6 +16,15 @@ public class TourUser {
         this.username = username;
         this.userFirstName = firstName;
         this.userLastName = lastName;
+    }
+
+    public HashMap<String, Object> dataDB(){
+        return new HashMap<>(){{
+            put("userID", userID);
+            put("username", username);
+            put("userFirstName", userFirstName);
+            put("userLastName", userLastName);
+        }};
     }
 
     public String getUserID() {

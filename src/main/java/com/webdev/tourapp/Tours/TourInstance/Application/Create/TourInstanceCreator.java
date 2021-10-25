@@ -31,7 +31,9 @@ public class TourInstanceCreator{
                         Optional<List<TourUser>> usersInTour,
                         Optional<TransportCompanyHired> companyHired,
                         String associatedTourID){
+
         this.validate(id);
+
         TourInstance tourInstance = TourInstance.Create(new TourDate(tourDate),
                 new TourInstanceID(id),
                 new TourNumberOfPersons(numberOfPersons),

@@ -32,7 +32,7 @@ public class CustomUUID implements Serializable {
         }
         catch (Exception ex)
         {
-            throw new UUIDNotValid("The UUID has not valid format");
+            throw new UUIDNotValid("The UUID is not formatted correctly.");
         }
     }
 

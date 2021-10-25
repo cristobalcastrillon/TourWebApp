@@ -1,5 +1,6 @@
 package com.webdev.tourapp.Tours.TourInstance.Domain.Entities;
 
+import java.util.HashMap;
 import java.util.Optional;
 
 public class StartingLocation {
@@ -28,6 +29,18 @@ public class StartingLocation {
         this.locationCategory = category;
         this.locationWebsiteURL = websiteURL;
         this.locationPrice = price;
+    }
+
+    public HashMap<String, Object> dataDB(){
+        return new HashMap<>(){{
+            put("locationID", locationID);
+            put("locationName", locationName);
+            put("locationCoordinates", locationCoordinates);
+            put("locationDescription", locationDescription);
+            put("locationCategory", locationCategory);
+            put("locationWebsiteURL", locationWebsiteURL);
+            put("locationPrice", locationPrice.get());
+        }};
     }
 
     public String getLocationID() {

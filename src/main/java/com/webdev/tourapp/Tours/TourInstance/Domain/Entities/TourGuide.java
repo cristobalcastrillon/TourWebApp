@@ -1,5 +1,6 @@
 package com.webdev.tourapp.Tours.TourInstance.Domain.Entities;
 
+import java.util.HashMap;
 import java.util.Objects;
 
 public class TourGuide {
@@ -11,12 +12,23 @@ public class TourGuide {
     String guidePhoneNumber;
 
     private TourGuide(){}
+
     public TourGuide(String id, String firstName, String lastName, Double baseFare, String phoneNumber){
         this.guideID = id;
         this.guideFirstName = firstName;
         this.guideLastName = lastName;
         this.guideBaseFare = baseFare;
         this.guidePhoneNumber = phoneNumber;
+    }
+
+    public HashMap<String, Object> dataDB(){
+        return new HashMap<>(){{
+            put("guideID", guideID);
+            put("guideFirstName", guideFirstName);
+            put("guideLastName", guideLastName);
+            put("guideBaseFare", guideBaseFare);
+            put("guidePhoneNumber", guidePhoneNumber);
+        }};
     }
 
     @Override

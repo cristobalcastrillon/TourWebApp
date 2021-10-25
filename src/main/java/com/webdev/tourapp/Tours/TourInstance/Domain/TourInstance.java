@@ -15,15 +15,13 @@ public class TourInstance {
     TourNumberOfPersons tourNumberOfPersons;
     TourTotalPrice tourTotalPrice;
     TourInstanceStatus tourInstanceStatus;
-    // TODO: Averiguar si se debe utilizar la entity creada en la capa de dominio de *este* módulo, o el Aggregate 'Guide'.
     TourGuide tourGuide;
     StartingLocation startingLocation;
     Optional<List<TourUser>> tourUsers;
     Optional<TransportCompanyHired> transportCompanyHired;
-    // TODO: ¿Cómo se relaciona una TourInstance a un Tour ya creado?
     AssociatedTourID associatedTourID;
 
-    private TourInstance(){}
+    public TourInstance(){}
 
     public TourInstance(TourDate date,
                         TourInstanceID instanceID,
