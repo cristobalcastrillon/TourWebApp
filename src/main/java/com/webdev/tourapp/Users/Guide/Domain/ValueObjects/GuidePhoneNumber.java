@@ -5,6 +5,7 @@ import com.webdev.tourapp.Users.Guide.Domain.Exceptions.GuidePriceFareNotValid;
 
 public class GuidePhoneNumber extends LongValueObject
 {
+    public GuidePhoneNumber(){}
     public GuidePhoneNumber(Long cellNumber)
     {
         validate(cellNumber);

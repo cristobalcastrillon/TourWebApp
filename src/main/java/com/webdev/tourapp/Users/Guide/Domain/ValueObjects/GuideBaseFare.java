@@ -5,6 +5,7 @@ import com.webdev.tourapp.Users.Guide.Domain.Exceptions.GuidePhoneNumberNotValid
 
 public class GuideBaseFare extends DoubleValueObject
 {
+    public GuideBaseFare(){}
     public GuideBaseFare(Double price)
     {
         validate(price);

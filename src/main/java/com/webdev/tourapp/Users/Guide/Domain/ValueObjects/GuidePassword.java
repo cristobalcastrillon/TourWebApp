@@ -6,6 +6,7 @@ import com.webdev.tourapp.Users.Guide.Domain.Exceptions.GuidePasswordNotValid;
 import java.util.regex.Pattern;
 
 public class GuidePassword extends StringValueObject {
+    public GuidePassword(){}
     public GuidePassword(String password) {
         this.value = password;
     }

@@ -17,8 +17,8 @@ import java.util.Optional;
 @RequestMapping(value = "/Users")
 public class CreateUserPostController
 {
-        @Autowired
-        private UserCreator creator;
+    @Autowired
+    private UserCreator creator;
 
     @PostMapping(value = "/")
     public ResponseEntity execute(@RequestBody UserRequest request)

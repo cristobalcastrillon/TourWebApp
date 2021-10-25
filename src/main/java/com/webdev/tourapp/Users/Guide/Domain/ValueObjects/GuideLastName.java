@@ -5,6 +5,8 @@ import com.webdev.tourapp.Users.Guide.Domain.Exceptions.GuideLastNameNotValid;
 
 public class GuideLastName extends StringValueObject
 {
+    public GuideLastName(){}
+
     public GuideLastName(String lastName)
     {
         validate(lastName);

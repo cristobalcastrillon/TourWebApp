@@ -14,6 +14,8 @@ public class Guide
     private GuideBaseFare guideBaseFare;
     private GuidePassword guidePassword;
 
+    public Guide(){}
+
     public Guide(GuideID id, GuideFirstName firstName, GuideLastName lastName,
                  GuidePhoneNumber phoneNumber, GuideBaseFare baseFare, GuidePassword guidePassword) {
         this.guideID = id;
