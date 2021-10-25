@@ -19,7 +19,7 @@ public class UpdatePasswordUserPostController {
     @Autowired
     private UserUpdatePassword updatePassword;
 
-    @GetMapping(value = "/updatePassword")
+    @PostMapping(value = "/updatePassword")
     public ResponseEntity execute(@RequestBody UserRequestPassword request)
     {
         updatePassword.execute(request.getId(), request.getPassword());

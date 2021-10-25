@@ -19,7 +19,7 @@ public class UpdateUsernameUserPostController {
     @Autowired
     private UserUpdateUsername updateUsername;
 
-    @GetMapping(value = "/updateUsername")
+    @PostMapping(value = "/updateUsername")
     public ResponseEntity execute(@RequestBody UserRequestUsername request)
     {
         updateUsername.execute(request.getId(), request.getUsername());

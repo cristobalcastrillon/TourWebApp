@@ -13,13 +13,14 @@ import java.util.HashMap;
 @RestController
 @RequestMapping(value="/Users")
 public class UpdateFirstNameUserPostController {
+
     @Autowired
     private UserUpdateFirstName updateFirstName;
 
-    @GetMapping(value = "/updatefName")
-    public ResponseEntity execute(@RequestBody UserRequestFirstName request)
+    @PostMapping(value = "/updatefName")
+    public ResponseEntity execute(@RequestParam("userID") String userID, @RequestBody UserRequestFirstName request)
     {
-        updateFirstName.execute(request.getId(), request.getFirstName());
+        this.updateFirstName.execute(userID, request.getUserFirstName());
         return ResponseEntity.status(HttpStatus.OK).body(null);
     }
     @ExceptionHandler(NoUsersFound.class)
@@ -38,25 +39,17 @@ public class UpdateFirstNameUserPostController {
         }};
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(response);
     }
+
     static class UserRequestFirstName
     {
-        private String id;
-        private String firstName;
+        private String userFirstName;
 
-        public String getId() {
-            return id;
+        public String getUserFirstName() {
+            return userFirstName;
         }
 
-        public void setId(String id) {
-            this.id = id;
-        }
-
-        public String getFirstName() {
-            return firstName;
-        }
-
-        public void setFirstName(String firstName) {
-            this.firstName = firstName;
+        public void setUserFirstName(String userFirstName) {
+            this.userFirstName = userFirstName;
         }
     }
 

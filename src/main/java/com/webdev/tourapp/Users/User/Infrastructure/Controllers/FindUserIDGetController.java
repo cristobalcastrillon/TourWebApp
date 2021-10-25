@@ -23,7 +23,7 @@ public class FindUserIDGetController
     private FindByID find;
 
     @GetMapping(value = "/id")
-    public ResponseEntity<Object> execute(@PathVariable("id") String id)
+    public ResponseEntity<Object> execute(@RequestParam("id") String id)
     {
         User user = find.execute(id);
         FindByIDResponse response = new FindByIDResponse(user);

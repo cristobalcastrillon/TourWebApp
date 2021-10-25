@@ -19,13 +19,10 @@ public class UserUpdateFirstName {
         Optional<User> userOpt = this.myRep.findByID(new UserID(userID));
         if (userOpt.isEmpty())
         {
-            throw new NoUsersFound("El usuario con id " + userID + " no fue encontrado" +
-                    " para actualizar");
+            throw new NoUsersFound("El usuario con id " + userID + " no fue encontrado para actualizar");
         }
         User user = userOpt.get();
         user.UpdateFirstName(new UserFirstName(newFirstName));
         myRep.update(user);
-        //myRep.save(user); ??
-
     }
 }

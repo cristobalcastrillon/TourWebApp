@@ -22,7 +22,7 @@ public class FindUserByUsernameGetPostController
     private FindByUsername findUsername;
 
     @GetMapping(value = "/username")
-    public ResponseEntity<Object> execute(@PathVariable("username") String uName)
+    public ResponseEntity<Object> execute(@RequestParam("username") String uName)
     {
         User user = findUsername.execute(uName);
         FindByUsernameResponse response = new FindByUsernameResponse(user);

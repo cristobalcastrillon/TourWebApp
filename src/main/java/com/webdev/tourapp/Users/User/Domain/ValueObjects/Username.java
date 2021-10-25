@@ -8,6 +8,8 @@ import java.util.regex.Pattern;
 
 public class Username extends StringValueObject
 {
+    public Username(){}
+
     public Username(String userName)
     {
         validate(userName);
@@ -15,7 +17,8 @@ public class Username extends StringValueObject
     }
     private void validate(String userName)
     {
-        userNamePatternValidation(userName);
+        //TODO: Fix userNamePatterValidation
+        //userNamePatternValidation(userName);
     }
     private void userNamePatternValidation(String userName)
     {

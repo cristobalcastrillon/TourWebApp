@@ -7,6 +7,8 @@ import com.webdev.tourapp.Users.User.Domain.Exceptions.UserLastNameNotValid;
 
 public class UserLastName extends StringValueObject
 {
+    public UserLastName(){}
+
     public UserLastName(String lastName)
     {
         validate(lastName);

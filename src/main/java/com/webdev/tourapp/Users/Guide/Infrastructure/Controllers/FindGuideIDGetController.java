@@ -20,7 +20,7 @@ public class FindGuideIDGetController
     private FindGuideByID find;
 
     @GetMapping(value = "/id")
-    public ResponseEntity<Object> execute(@PathVariable("id") String id)
+    public ResponseEntity<Object> execute(@RequestParam("id") String id)
     {
         Guide guide = find.execute(id);
         FindGuideByIDResponse response = new FindGuideByIDResponse(guide);

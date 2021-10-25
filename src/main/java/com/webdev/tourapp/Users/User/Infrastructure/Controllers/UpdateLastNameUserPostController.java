@@ -17,7 +17,7 @@ public class UpdateLastNameUserPostController {
     @Autowired
     private UserUpdateLastName updateLastName;
 
-    @GetMapping(value = "/updatelName")
+    @PostMapping(value = "/updatelName")
     public ResponseEntity execute(@RequestBody UserRequestLastName request)
     {
         updateLastName.execute(request.getId(), request.getLastName());

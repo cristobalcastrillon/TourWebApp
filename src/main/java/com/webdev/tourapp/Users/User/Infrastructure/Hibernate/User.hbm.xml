@@ -19,7 +19,7 @@
         <component name="userPassword" class="com.webdev.tourapp.Users.User.Domain.ValueObjects.UserPassword" access="field">
             <property name="value" column="password" access="field" type="string"/>
         </component>
-        <property name="userInscribedTours" column="guide" access="field">
+        <property name="userInscribedTours" column="tours" access="field">
             <type name="com.webdev.tourapp.Users.User.Infrastructure.Hibernate.UserTourInstanceCustomType"/>
         </property>
 

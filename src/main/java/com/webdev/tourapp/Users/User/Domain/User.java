@@ -17,6 +17,8 @@ public class User
     private UserPassword userPassword;
     private Optional<List<UserTourInstance>> userInscribedTours;
     //Constructor:
+    public User(){}
+
     public User(UserID userID, Username username,
                 UserFirstName userFirstName, UserLastName userLastName,
                 UserPassword password,
@@ -66,7 +68,5 @@ public class User
     {
         this.userPassword = password;
     }
-
-
 
 }

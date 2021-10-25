@@ -18,8 +18,8 @@ public class DeleteGuidePostController {
     @Autowired
     private GuideDelete delete;
 
-    @GetMapping(value = "/delete")
-    public ResponseEntity execute(@PathVariable("id") String id)
+    @DeleteMapping(value = "/delete")
+    public ResponseEntity execute(@RequestParam("id") String id)
     {
         delete.execute(id);
         return ResponseEntity.status(HttpStatus.OK).body(null);
