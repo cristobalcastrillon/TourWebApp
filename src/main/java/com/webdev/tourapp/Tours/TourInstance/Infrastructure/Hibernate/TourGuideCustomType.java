@@ -55,7 +55,7 @@ public class TourGuideCustomType implements UserType {
 
     @Override
     public void nullSafeSet(PreparedStatement st, Object value, int index, SharedSessionContractImplementor session) throws HibernateException, SQLException {
-        Optional<TourGuide> object = (value == null) ? Optional.empty() : Optional.of((TourGuide) value);
+        Optional<TourGuide> object = (value == null) ? Optional.empty() : (Optional<TourGuide>) value;
         try {
             if(object.isEmpty()) {
                 st.setNull(index, Types.VARCHAR);

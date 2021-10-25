@@ -38,7 +38,7 @@ public class StartingLocation {
             put("locationCoordinates", locationCoordinates);
             put("locationDescription", locationDescription);
             put("locationCategory", locationCategory);
-            put("locationWebsiteURL", locationWebsiteURL);
+            put("locationWebsiteURL", locationWebsiteURL.get());
             put("locationPrice", locationPrice.get());
         }};
     }

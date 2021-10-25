@@ -17,8 +17,8 @@ public class TourInstance {
     TourNumberOfPersons tourNumberOfPersons;
     TourTotalPrice tourTotalPrice;
     TourInstanceStatus tourInstanceStatus;
-    TourGuide tourGuide;
-    StartingLocation startingLocation;
+    Optional<TourGuide> tourGuide;
+    Optional<StartingLocation> startingLocation;
     Optional<List<TourUser>> tourUsers;
     Optional<TransportCompanyHired> transportCompanyHired;
     AssociatedTourID associatedTourID;
@@ -30,8 +30,8 @@ public class TourInstance {
                         TourNumberOfPersons numberOfPersons,
                         TourTotalPrice totalPrice,
                         TourInstanceStatus status,
-                        TourGuide guide,
-                        StartingLocation sLocation,
+                        Optional<TourGuide> guide,
+                        Optional<StartingLocation> sLocation,
                         Optional<List<TourUser>> users,
                         Optional<TransportCompanyHired> companyHired,
                         AssociatedTourID associatedTourID){
@@ -52,8 +52,8 @@ public class TourInstance {
                                       TourNumberOfPersons numberOfPersons,
                                       TourTotalPrice totalPrice,
                                       TourInstanceStatus status,
-                                      TourGuide guide,
-                                      StartingLocation sLocation,
+                                      Optional<TourGuide> guide,
+                                      Optional<StartingLocation> sLocation,
                                       Optional<List<TourUser>> users,
                                       Optional<TransportCompanyHired> companyHired,
                                       AssociatedTourID associatedTourID){
@@ -81,29 +81,49 @@ public class TourInstance {
 
     public List<HashMap<String, Object>> dataUsers(){
         List<HashMap<String, Object>> data = new ArrayList<>();
-        for (TourUser user : tourUsers.get()) {
-            HashMap<String, Object> userJSON = new HashMap<>();
-            userJSON.put("location", user.dataDB());
-            data.add(userJSON);
+        if(tourUsers.isPresent()){
+            for (TourUser user : tourUsers.get()) {
+                HashMap<String, Object> userJSON = new HashMap<>();
+                userJSON.put("location", user.dataDB());
+                data.add(userJSON);
+            }
+        }
+        else{
+            data = null;
         }
         return data;
     }
 
     public HashMap<String, Object> dataGuide() {
         HashMap<String, Object> data = new HashMap<>();
-        data.put("tourGuide", this.tourGuide.dataDB());
+        if(this.tourGuide.isPresent()){
+            data.put("tourGuide", this.tourGuide.get().dataDB());
+        }
+        else{
+            data.put("tourGuide", null);
+        }
         return data;
     }
 
     public HashMap<String, Object> dataStartingLocation() {
         HashMap<String, Object> data = new HashMap<>();
-        data.put("startingLocation", this.startingLocation.dataDB());
+        if(this.startingLocation.isPresent()){
+            data.put("startingLocation", this.startingLocation.get().dataDB());
+        }
+        else{
+            data.put("startingLocation", null);
+        }
         return data;
     }
 
     public HashMap<String, Object> dataTransportCompanyHired() {
         HashMap<String, Object> data = new HashMap<>();
-        data.put("transportCompanyHired", this.transportCompanyHired.get().dataDB());
+        if(this.transportCompanyHired.isPresent()){
+            data.put("transportCompanyHired", this.transportCompanyHired.get().dataDB());
+        }
+        else{
+            data.put("transportCompanyHired", null);
+        }
         return data;
     }
 
