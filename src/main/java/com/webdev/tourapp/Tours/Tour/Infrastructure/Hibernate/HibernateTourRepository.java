@@ -67,6 +67,7 @@ public class HibernateTourRepository extends HibernateRepository<Tour> implement
         cq.select(root).where(cb.equal(root.get("tourName"), nameQuery.value()));
 
         // TODO: DEBUG
+        // TODO .like()
         // Can not set java.lang.String field com.webdev.tourapp.Shared.Domain.Aggregate.StringValueObject.value to java.lang.String
         // System.out.println();
 
