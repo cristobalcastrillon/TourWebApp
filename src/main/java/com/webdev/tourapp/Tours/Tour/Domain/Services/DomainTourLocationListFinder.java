@@ -17,7 +17,7 @@ public class DomainTourLocationListFinder {
         this.repository = repository;
     }
 
-    public List<Tour> execute(List<Location> minLocationList){
+    public List<Tour> execute(Optional<List<Location>> minLocationList){
 
         Optional<List<Tour>> tourList = repository.findByListOfLocations(minLocationList);
 

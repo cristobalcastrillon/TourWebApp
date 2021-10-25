@@ -45,8 +45,8 @@ public class StartingLocationCustomType implements UserType {
                 HashMap<String, Object> mapper = new ObjectMapper().readValue(value.get(), HashMap.class);
                 response = new StartingLocation((String) mapper.get("locationID"), (String) mapper.get("locationName"),
                         (String) mapper.get("locationCoordinates"), (String) mapper.get("locationDescription"),
-                        (String) mapper.get("locationCategory"), (Optional<String>) mapper.get("locationWebsiteURL"),
-                        (Optional<Double>) mapper.get("locationPrice"));
+                        (String) mapper.get("locationCategory"), Optional.of((String)mapper.get("locationWebsiteURL")),
+                        Optional.of((Double) mapper.get("locationPrice")));
             }
         }
         catch (Exception e) {
@@ -57,7 +57,7 @@ public class StartingLocationCustomType implements UserType {
 
     @Override
     public void nullSafeSet(PreparedStatement st, Object value, int index, SharedSessionContractImplementor session) throws HibernateException, SQLException {
-        Optional<StartingLocation> object = (value == null) ? Optional.empty() : Optional.of((StartingLocation) value);
+        Optional<StartingLocation> object = (value == null) ? Optional.empty() : (Optional<StartingLocation>) value;
         try {
             if(object.isEmpty()) {
                 st.setNull(index, Types.VARCHAR);

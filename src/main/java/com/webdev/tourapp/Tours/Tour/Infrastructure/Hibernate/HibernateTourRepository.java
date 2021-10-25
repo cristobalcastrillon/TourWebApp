@@ -70,7 +70,7 @@ public class HibernateTourRepository extends HibernateRepository<Tour> implement
     }
 
     @Override
-    public Optional<List<Tour>> findByListOfLocations(List<Location> locationList) {
+    public Optional<List<Tour>> findByListOfLocations(Optional<List<Location>> locationList) {
         //TODO
         return Optional.empty();
     }

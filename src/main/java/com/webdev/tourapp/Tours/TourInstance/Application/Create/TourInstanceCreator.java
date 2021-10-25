@@ -26,8 +26,8 @@ public class TourInstanceCreator{
                         Integer numberOfPersons,
                         Double totalPrice,
                         String status,
-                        TourGuide guide,
-                        StartingLocation startingLocation,
+                        Optional<TourGuide> guide,
+                        Optional<StartingLocation> startingLocation,
                         Optional<List<TourUser>> usersInTour,
                         Optional<TransportCompanyHired> companyHired,
                         String associatedTourID){

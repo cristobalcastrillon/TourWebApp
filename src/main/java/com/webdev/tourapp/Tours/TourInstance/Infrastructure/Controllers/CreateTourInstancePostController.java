@@ -65,8 +65,8 @@ public class CreateTourInstancePostController {
         private Integer tourNumberOfPersons;
         private Double tourTotalPrice;
         private String tourInstanceStatus;
-        private TourGuide tourGuide;
-        private StartingLocation startingLocation;
+        private Optional<TourGuide> tourGuide;
+        private Optional<StartingLocation> startingLocation;
         private Optional<List<TourUser>> tourUsers;
         private Optional<TransportCompanyHired> transportCompanyHired;
         private String associatedTourID;
@@ -113,19 +113,19 @@ public class CreateTourInstancePostController {
             this.tourInstanceStatus = tourInstanceStatus;
         }
 
-        public TourGuide getTourGuide() {
+        public Optional<TourGuide> getTourGuide() {
             return tourGuide;
         }
 
-        public void setTourGuide(TourGuide tourGuide) {
+        public void setTourGuide(Optional<TourGuide> tourGuide) {
             this.tourGuide = tourGuide;
         }
 
-        public StartingLocation getStartingLocation() {
+        public Optional<StartingLocation> getStartingLocation() {
             return startingLocation;
         }
 
-        public void setStartingLocation(StartingLocation startingLocation) {
+        public void setStartingLocation(Optional<StartingLocation> startingLocation) {
             this.startingLocation = startingLocation;
         }
 

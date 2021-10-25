@@ -7,6 +7,7 @@ import com.webdev.tourapp.Tours.Tour.Domain.Tour;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 /*
  * Este caso de uso busca los tours cuyo listado de ubicaciones contiene * al menos * las ubicaciones especificadas
@@ -22,6 +23,6 @@ public class TourLocationListFinder {
         finderService = new DomainTourLocationListFinder(this.repository);
     }
 
-    public List<Tour> execute(ArrayList<Location> minLocationList){ return finderService.execute(minLocationList); }
+    public List<Tour> execute(Optional<List<Location>> minLocationList){ return finderService.execute(minLocationList); }
 
 }

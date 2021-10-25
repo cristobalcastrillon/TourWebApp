@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 //TODO: Document REST APIs
@@ -53,7 +54,7 @@ public class CreateTourPostController {
         private String tourID;
         private String tourName;
         private Double tourPrice;
-        private List<Location> locationsIncludedInTour;
+        private Optional<List<Location>> locationsIncludedInTour;
 
         public String getTourID() {
             return tourID;
@@ -79,11 +80,11 @@ public class CreateTourPostController {
             this.tourPrice = tourPrice;
         }
 
-        public List<Location> getLocationsIncludedInTour() {
+        public Optional<List<Location>> getLocationsIncludedInTour() {
             return locationsIncludedInTour;
         }
 
-        public void setLocationsIncludedInTour(List<Location> locationsIncludedInTour) {
+        public void setLocationsIncludedInTour(Optional<List<Location>> locationsIncludedInTour) {
             this.locationsIncludedInTour = locationsIncludedInTour;
         }
 
