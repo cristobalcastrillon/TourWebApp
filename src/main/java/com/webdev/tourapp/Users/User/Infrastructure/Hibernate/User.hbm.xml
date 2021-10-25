@@ -1,0 +1,27 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.webdev.tourapp.Users.User.Domain.User" table="users">
+        <composite-id name="userID" class="com.webdev.tourapp.Shared.Domain.Ids.UserID" access="field">
+            <key-property name="value" column="id" access="field" length="36" />
+        </composite-id>
+        <component name="username" class="com.webdev.tourapp.Users.User.Domain.ValueObjects.Username" access="field">
+            <property name="value" column="username" access="field" type="string"/>
+        </component>
+        <component name="userFirstName" class="com.webdev.tourapp.Users.User.Domain.ValueObjects.UserFirstName" access="field">
+            <property name="value" column="firstName" access="field" type="string"/>
+        </component>
+        <component name="userLastName" class="com.webdev.tourapp.Users.User.Domain.ValueObjects.UserLastName" access="field">
+            <property name="value" column="lastName" access="field" type="string"/>
+        </component>
+        <component name="userPassword" class="com.webdev.tourapp.Users.User.Domain.ValueObjects.UserPassword" access="field">
+            <property name="value" column="password" access="field" type="string"/>
+        </component>
+        <property name="userInscribedTours" column="guide" access="field">
+            <type name="com.webdev.tourapp.Users.User.Infrastructure.Hibernate.UserTourInstanceCustomType"/>
+        </property>
+
+    </class>
+</hibernate-mapping>
