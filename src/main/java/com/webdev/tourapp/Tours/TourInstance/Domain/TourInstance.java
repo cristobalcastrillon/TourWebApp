@@ -1,5 +1,6 @@
 package com.webdev.tourapp.Tours.TourInstance.Domain;
 
+import com.webdev.tourapp.Shared.Domain.Aggregate.AggregateRoot;
 import com.webdev.tourapp.Tours.TourInstance.Domain.Entities.StartingLocation;
 import com.webdev.tourapp.Tours.TourInstance.Domain.Entities.TourGuide;
 import com.webdev.tourapp.Tours.TourInstance.Domain.Entities.TourUser;
@@ -11,7 +12,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Optional;
 
-public class TourInstance {
+public class TourInstance extends AggregateRoot {
     TourDate tourDate;
     TourInstanceID tourInstanceID;
     TourNumberOfPersons tourNumberOfPersons;
