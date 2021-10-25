@@ -15,10 +15,7 @@ public interface TourRepository {
     void delete(Tour tour);
     Optional<List<Tour>> all();
     Optional<Tour> findByID(TourID tourID);
-
-    //TODO: El siguiente método encuentra todos los tours cuyo precio base (TourPrice) es menor o igual al maxBasePrice (tope de precio)
     Optional<List<Tour>> findByBasePriceMaximum(TourPrice priceQuery);
-
     Optional<List<Tour>> findByTourName(TourName nameQuery);
-    Optional<List<Tour>> findByListOfLocations(List<Location> locationList);
+    Optional<List<Tour>> findByListOfLocations(Optional<List<Location>> locationList);
 }

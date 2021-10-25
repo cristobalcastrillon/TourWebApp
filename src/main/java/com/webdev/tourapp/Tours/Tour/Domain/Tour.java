@@ -5,21 +5,21 @@ import com.webdev.tourapp.Tours.Tour.Domain.ValueObjects.TourID;
 import com.webdev.tourapp.Tours.Tour.Domain.ValueObjects.TourName;
 import com.webdev.tourapp.Tours.Tour.Domain.ValueObjects.TourPrice;
 
-import java.util.List;
-import java.util.Objects;
+import java.sql.Array;
+import java.util.*;
 
 public class Tour {
     private TourID tourID;
     private TourName tourName;
     private TourPrice tourPrice;
-    private List<Location> locationsIncludedInTour;
+    private Optional<List<Location>> locationsIncludedInTour;
 
     private Tour(){}
 
     public Tour(TourID id,
                 TourName name,
                 TourPrice price,
-                List<Location> locationsInTour){
+                Optional<List<Location>> locationsInTour){
         this.tourID = id;
         this.tourName = name;
         this.tourPrice = price;
@@ -29,11 +29,31 @@ public class Tour {
     public static Tour Create(TourID id,
                               TourName name,
                               TourPrice price,
-                              List<Location> locationsInTour){
+                              Optional<List<Location>> locationsInTour){
 
         Tour tour = new Tour(id, name, price, locationsInTour);
         // EVENTS
         return tour;
+    }
+
+    public HashMap<String, Object> data() {
+        HashMap<String, Object> data = new HashMap<>(){{
+            put("id", tourID.value());
+            put("name", tourName.value());
+            put("price", tourPrice.value());
+        }};
+        data.put("locationsIncludedInTour", this.dataLocationsIncluded());
+        return data;
+    }
+
+    public List<HashMap<String, Object>> dataLocationsIncluded(){
+        List<HashMap<String, Object>> data = new ArrayList<>();
+        for (Location location : locationsIncludedInTour.get()) {
+            HashMap<String, Object> locationJSON = new HashMap<>();
+            locationJSON.put("location", location.dataDB());
+            data.add(locationJSON);
+        }
+        return data;
     }
 
     @Override

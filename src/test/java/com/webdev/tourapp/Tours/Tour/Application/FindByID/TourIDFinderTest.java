@@ -14,6 +14,7 @@ import org.mockito.Mockito;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 import static org.mockito.Mockito.mock;
@@ -24,7 +25,7 @@ public class TourIDFinderTest {
 
     Tour tour;
     TourRepository repository;
-    ArrayList<Location> locationList = new ArrayList<>();
+    Optional<List<Location>> locationList = new ArrayList<>();
 
     @BeforeEach
     void setup(){

@@ -6,9 +6,6 @@ import java.util.Objects;
 public class DateValueObject {
 
     protected Date value;
-
-    public DateValueObject(){}
-
     public DateValueObject(Date value) {
         this.value = value;
     }

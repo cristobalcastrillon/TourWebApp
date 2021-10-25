@@ -1,5 +1,6 @@
 package com.webdev.tourapp.Tours.TourInstance.Domain.Entities;
 
+import java.util.HashMap;
 import java.util.Objects;
 
 public class TourGuide {
@@ -11,12 +12,23 @@ public class TourGuide {
     String guidePhoneNumber;
 
     private TourGuide(){}
+
     public TourGuide(String id, String firstName, String lastName, Double baseFare, String phoneNumber){
         this.guideID = id;
         this.guideFirstName = firstName;
         this.guideLastName = lastName;
         this.guideBaseFare = baseFare;
         this.guidePhoneNumber = phoneNumber;
+    }
+
+    public HashMap<String, Object> dataDB(){
+        return new HashMap<>(){{
+            put("guideID", guideID);
+            put("guideFirstName", guideFirstName);
+            put("guideLastName", guideLastName);
+            put("guideBaseFare", guideBaseFare);
+            put("guidePhoneNumber", guidePhoneNumber);
+        }};
     }
 
     @Override
@@ -30,5 +42,45 @@ public class TourGuide {
     @Override
     public int hashCode() {
         return Objects.hash(guideID, guideFirstName, guideLastName, guideBaseFare, guidePhoneNumber);
+    }
+
+    public String getGuideID() {
+        return guideID;
+    }
+
+    public void setGuideID(String guideID) {
+        this.guideID = guideID;
+    }
+
+    public String getGuideFirstName() {
+        return guideFirstName;
+    }
+
+    public void setGuideFirstName(String guideFirstName) {
+        this.guideFirstName = guideFirstName;
+    }
+
+    public String getGuideLastName() {
+        return guideLastName;
+    }
+
+    public void setGuideLastName(String guideLastName) {
+        this.guideLastName = guideLastName;
+    }
+
+    public Double getGuideBaseFare() {
+        return guideBaseFare;
+    }
+
+    public void setGuideBaseFare(Double guideBaseFare) {
+        this.guideBaseFare = guideBaseFare;
+    }
+
+    public String getGuidePhoneNumber() {
+        return guidePhoneNumber;
+    }
+
+    public void setGuidePhoneNumber(String guidePhoneNumber) {
+        this.guidePhoneNumber = guidePhoneNumber;
     }
 }

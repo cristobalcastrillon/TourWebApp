@@ -16,6 +16,7 @@ import org.mockito.Mockito;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -26,7 +27,7 @@ public class TourNameFinderTest {
 
     ArrayList<Tour> tourList = new ArrayList<>();
     TourRepository repository;
-    ArrayList<Location> locationList = new ArrayList<>();
+    Optional<List<Location>> locationList = new ArrayList<>();
 
     @BeforeEach
     void setup(){

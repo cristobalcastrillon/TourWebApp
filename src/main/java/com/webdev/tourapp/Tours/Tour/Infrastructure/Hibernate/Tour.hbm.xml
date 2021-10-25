@@ -18,5 +18,9 @@
             <property name="value" column="tour_price" access="field" type="double"/>
         </component>
 
+        <property name="locationsIncludedInTour" column="locations" access = "field">
+            <type name="com.webdev.tourapp.Tours.Tour.Infrastructure.Hibernate.LocationCustomType"/>
+        </property>
+
     </class>
 </hibernate-mapping>

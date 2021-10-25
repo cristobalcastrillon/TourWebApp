@@ -15,6 +15,8 @@ import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
 
 import static org.mockito.Mockito.*;
 
@@ -22,7 +24,7 @@ import static org.mockito.Mockito.*;
 public class TourCreatorTest {
     Tour tour;
     TourRepository repository;
-    ArrayList<Location> locationList = new ArrayList<>();
+    Optional<List<Location>> locationList = new ArrayList<>();
 
     @BeforeEach
     void setup(){

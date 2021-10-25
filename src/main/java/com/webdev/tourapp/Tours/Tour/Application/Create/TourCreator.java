@@ -22,7 +22,7 @@ public class TourCreator {
     public void execute(String id,
                         String name,
                         Double price,
-                        List<Location> locationsInTour){
+                        Optional<List<Location>> locationsInTour){
         this.validate(id);
         Tour tour = Tour.Create(new TourID(id), new TourName(name), new TourPrice(price), locationsInTour);
         repository.save(tour);
