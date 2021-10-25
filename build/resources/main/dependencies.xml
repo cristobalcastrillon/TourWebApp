@@ -15,6 +15,10 @@
         <constructor-arg ref="TourRepository"/>
     </bean>
 
+    <bean id="TourDeleter" class="com.webdev.tourapp.Tours.Tour.Application.Delete.TourDeleter">
+        <constructor-arg ref="TourRepository"/>
+    </bean>
+
     <bean id="TourAll" class="com.webdev.tourapp.Tours.Tour.Application.All.TourAll">
         <constructor-arg ref="TourRepository"/>
     </bean>
