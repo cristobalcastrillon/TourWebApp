@@ -7,6 +7,10 @@
 
     <bean id="TourInstanceRepository" class="com.webdev.tourapp.Tours.TourInstance.Infrastructure.Hibernate.HibernateTourInstanceRepository"/>
 
+    <bean id="UserRepository" class ="com.webdev.tourapp.Users.User.Infrastructure.Hibernate.HibernateUserRepository"/>
+
+    <bean id="GuideRepository" class="com.webdev.tourapp.Users.Guide.Infrastructure.Hibernate.HibernateGuideRepository"/>
+
     <bean id="TourCreator" class="com.webdev.tourapp.Tours.Tour.Application.Create.TourCreator">
         <constructor-arg ref="TourRepository"/>
     </bean>
@@ -73,6 +77,58 @@
 
     <bean id="TourInstanceTotalPriceFinder" class="com.webdev.tourapp.Tours.TourInstance.Application.FindByTotalPrice.TourInstanceTotalPriceFinder">
         <constructor-arg ref="TourInstanceRepository"/>
+    </bean>
+
+    <bean id="UserCreator" class="com.webdev.tourapp.Users.User.Application.Create.UserCreator">
+        <constructor-arg ref="UserRepository"/>
+    </bean>
+
+    <bean id="UserAll" class="com.webdev.tourapp.Users.User.Application.All.UserAll">
+        <constructor-arg ref="UserRepository"/>
+    </bean>
+
+    <bean id="UserDelete" class="com.webdev.tourapp.Users.User.Application.DeleteUser.UserDelete">
+        <constructor-arg ref="UserRepository"/>
+    </bean>
+
+    <bean id="FindUserByID" class="com.webdev.tourapp.Users.User.Application.FindUserByID.FindByID">
+        <constructor-arg ref="UserRepository"/>
+    </bean>
+
+    <bean id="FindUserByUsername" class="com.webdev.tourapp.Users.User.Application.FindUserByUsername.FindByUsername">
+        <constructor-arg ref="UserRepository"/>
+    </bean>
+
+    <bean id="UpdateUserFirstName" class="com.webdev.tourapp.Users.User.Application.UpdateFirstName.UserUpdateFirstName">
+        <constructor-arg ref="UserRepository"/>
+    </bean>
+
+    <bean id="UpdateUserLastName" class="com.webdev.tourapp.Users.User.Application.UpdateLastName.UserUpdateLastName">
+        <constructor-arg ref="UserRepository"/>
+    </bean>
+
+    <bean id="UpdateUserUsername" class="com.webdev.tourapp.Users.User.Application.UpdateUsername.UserUpdateUsername">
+        <constructor-arg ref="UserRepository"/>
+    </bean>
+
+    <bean id="UpdateUserPassword" class="com.webdev.tourapp.Users.User.Application.UpdatePassword.UserUpdatePassword">
+        <constructor-arg ref="UserRepository"/>
+    </bean>
+
+    <bean id="GuideAll" class="com.webdev.tourapp.Users.Guide.Application.All.GuideAll">
+        <constructor-arg ref="GuideRepository"/>
+    </bean>
+
+    <bean id="GuideCreate" class="com.webdev.tourapp.Users.Guide.Application.Create.GuideCreator">
+        <constructor-arg ref="GuideRepository"/>
+    </bean>
+
+    <bean id="GuideDelete" class="com.webdev.tourapp.Users.Guide.Application.DeleteGuide.GuideDelete">
+        <constructor-arg ref="GuideRepository"/>
+    </bean>
+
+    <bean id="FindGuideByID" class="com.webdev.tourapp.Users.Guide.Application.FindGuideByID.FindGuideByID">
+        <constructor-arg ref="GuideRepository"/>
     </bean>
 
 </beans>
