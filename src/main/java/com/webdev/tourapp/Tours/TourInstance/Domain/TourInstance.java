@@ -6,6 +6,8 @@ import com.webdev.tourapp.Tours.TourInstance.Domain.Entities.TourUser;
 import com.webdev.tourapp.Tours.TourInstance.Domain.Entities.TransportCompanyHired;
 import com.webdev.tourapp.Tours.TourInstance.Domain.ValueObjects.*;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Optional;
 
@@ -60,4 +62,49 @@ public class TourInstance {
         //EVENTS
         return tourInstance;
     }
+
+    public HashMap<String, Object> data() {
+        HashMap<String, Object> data = new HashMap<>(){{
+            put("tourDate", tourDate.value());
+            put("tourInstanceID", tourInstanceID.value());
+            put("tourNumberOfPersons", tourNumberOfPersons.value());
+            put("tourTotalPrice", tourTotalPrice.value());
+            put("tourInstanceStatus", tourInstanceStatus.value());
+            put("associatedTourID", associatedTourID.value());
+        }};
+        data.put("tourUsers", this.dataUsers());
+        data.put("tourGuide", this.dataGuide());
+        data.put("startingLocation", this.dataStartingLocation());
+        data.put("transportCompanyHired", this.dataTransportCompanyHired());
+        return data;
+    }
+
+    public List<HashMap<String, Object>> dataUsers(){
+        List<HashMap<String, Object>> data = new ArrayList<>();
+        for (TourUser user : tourUsers.get()) {
+            HashMap<String, Object> userJSON = new HashMap<>();
+            userJSON.put("location", user.dataDB());
+            data.add(userJSON);
+        }
+        return data;
+    }
+
+    public HashMap<String, Object> dataGuide() {
+        HashMap<String, Object> data = new HashMap<>();
+        data.put("tourGuide", this.tourGuide.dataDB());
+        return data;
+    }
+
+    public HashMap<String, Object> dataStartingLocation() {
+        HashMap<String, Object> data = new HashMap<>();
+        data.put("startingLocation", this.startingLocation.dataDB());
+        return data;
+    }
+
+    public HashMap<String, Object> dataTransportCompanyHired() {
+        HashMap<String, Object> data = new HashMap<>();
+        data.put("transportCompanyHired", this.transportCompanyHired.get().dataDB());
+        return data;
+    }
+
 }
