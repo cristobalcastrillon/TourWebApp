@@ -8,7 +8,6 @@ import com.webdev.tourapp.Tours.Tour.Domain.ValueObjects.TourID;
 import com.webdev.tourapp.Tours.Tour.Domain.ValueObjects.TourName;
 import com.webdev.tourapp.Tours.Tour.Domain.ValueObjects.TourPrice;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -23,9 +22,9 @@ public class TourCreator {
     public void execute(String id,
                         String name,
                         Double price,
-                        List<Location> locationsInTour){
+                        Optional<List<Location>> locationsInTour){
         this.validate(id);
-        Tour tour = Tour.Create(new TourID(id), new TourName(name), new TourPrice(price), new ArrayList<Location>(locationsInTour));
+        Tour tour = Tour.Create(new TourID(id), new TourName(name), new TourPrice(price), locationsInTour);
         repository.save(tour);
     }
 
