@@ -1,0 +1,4 @@
+/build/
+/.gradle/checksums
+*.class
+*.DS_Store
