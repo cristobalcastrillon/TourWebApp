@@ -15,14 +15,13 @@ public class TourInstance {
     TourNumberOfPersons tourNumberOfPersons;
     TourTotalPrice tourTotalPrice;
     TourInstanceStatus tourInstanceStatus;
-    // TODO: Averiguar si se debe utilizar la entity creada en la capa de dominio de *este* módulo, o el Aggregate 'Guide'.
     TourGuide tourGuide;
     StartingLocation startingLocation;
     Optional<List<TourUser>> tourUsers;
     Optional<TransportCompanyHired> transportCompanyHired;
-    // TODO: ¿Cómo se relaciona una TourInstance a un Tour ya creado?
+    AssociatedTourID associatedTourID;
 
-    private TourInstance(){}
+    public TourInstance(){}
 
     public TourInstance(TourDate date,
                         TourInstanceID instanceID,
@@ -32,7 +31,8 @@ public class TourInstance {
                         TourGuide guide,
                         StartingLocation sLocation,
                         Optional<List<TourUser>> users,
-                        Optional<TransportCompanyHired> companyHired){
+                        Optional<TransportCompanyHired> companyHired,
+                        AssociatedTourID associatedTourID){
         this.tourDate = date;
         this.tourInstanceID = instanceID;
         this.tourNumberOfPersons = numberOfPersons;
@@ -42,6 +42,7 @@ public class TourInstance {
         this.startingLocation = sLocation;
         this.tourUsers = users;
         this.transportCompanyHired = companyHired;
+        this.associatedTourID = associatedTourID;
     }
 
     public static TourInstance Create(TourDate date,
@@ -52,9 +53,10 @@ public class TourInstance {
                                       TourGuide guide,
                                       StartingLocation sLocation,
                                       Optional<List<TourUser>> users,
-                                      Optional<TransportCompanyHired> companyHired){
+                                      Optional<TransportCompanyHired> companyHired,
+                                      AssociatedTourID associatedTourID){
 
-        TourInstance tourInstance = new TourInstance(date, instanceID, numberOfPersons, totalPrice, status, guide, sLocation, users, companyHired);
+        TourInstance tourInstance = new TourInstance(date, instanceID, numberOfPersons, totalPrice, status, guide, sLocation, users, companyHired, associatedTourID);
         //EVENTS
         return tourInstance;
     }

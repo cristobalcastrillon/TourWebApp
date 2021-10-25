@@ -29,8 +29,11 @@ public class TourInstanceCreator{
                         TourGuide guide,
                         StartingLocation startingLocation,
                         Optional<List<TourUser>> usersInTour,
-                        Optional<TransportCompanyHired> companyHired){
+                        Optional<TransportCompanyHired> companyHired,
+                        String associatedTourID){
+
         this.validate(id);
+
         TourInstance tourInstance = TourInstance.Create(new TourDate(tourDate),
                 new TourInstanceID(id),
                 new TourNumberOfPersons(numberOfPersons),
@@ -39,7 +42,8 @@ public class TourInstanceCreator{
                 guide,
                 startingLocation,
                 usersInTour,
-                companyHired);
+                companyHired,
+                new AssociatedTourID(associatedTourID));
         repository.save(tourInstance);
     }
 
