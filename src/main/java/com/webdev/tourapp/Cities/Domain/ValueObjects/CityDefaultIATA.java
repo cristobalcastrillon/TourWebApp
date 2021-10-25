@@ -1,6 +1,6 @@
 package com.webdev.tourapp.Cities.Domain.ValueObjects;
 
-import com.webdev.tourapp.Cities.Domain.Exeptions.IataLenghtNotValid;
+import com.webdev.tourapp.Cities.Domain.Exceptions.IataLenghtNotValid;
 import com.webdev.tourapp.Shared.Domain.Aggregate.StringValueObject;
 
 public class CityDefaultIATA extends StringValueObject {

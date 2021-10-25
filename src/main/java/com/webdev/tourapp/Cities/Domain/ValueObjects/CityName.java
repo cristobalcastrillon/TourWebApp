@@ -1,6 +1,6 @@
 package com.webdev.tourapp.Cities.Domain.ValueObjects;
 
-import com.webdev.tourapp.Cities.Domain.Exeptions.NumberInNameNoValid;
+import com.webdev.tourapp.Cities.Domain.Exceptions.NumberInNameNoValid;
 import com.webdev.tourapp.Shared.Domain.Aggregate.StringValueObject;
 
 public class CityName extends StringValueObject {
