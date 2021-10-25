@@ -47,6 +47,14 @@
         <constructor-arg ref="TourInstanceRepository"/>
     </bean>
 
+    <bean id="TourInstanceUpdater" class="com.webdev.tourapp.Tours.TourInstance.Application.Update.TourInstanceUpdater">
+        <constructor-arg ref="TourInstanceRepository"/>
+    </bean>
+
+    <bean id="TourInstanceDeleter" class="com.webdev.tourapp.Tours.TourInstance.Application.Delete.TourInstanceDeleter">
+        <constructor-arg ref="TourInstanceRepository"/>
+    </bean>
+
     <bean id="TourInstanceDateFinder" class="com.webdev.tourapp.Tours.TourInstance.Application.FindByDate.TourInstanceDateFinder">
         <constructor-arg ref="TourInstanceRepository"/>
     </bean>
