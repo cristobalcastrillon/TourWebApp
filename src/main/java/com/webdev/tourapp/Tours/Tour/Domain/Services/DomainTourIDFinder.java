@@ -1,5 +1,6 @@
 package com.webdev.tourapp.Tours.Tour.Domain.Services;
 
+import com.webdev.tourapp.Tours.Tour.Application.FindByID.TourIDFinderResponse;
 import com.webdev.tourapp.Tours.Tour.Domain.Exceptions.TourIDNotFound;
 import com.webdev.tourapp.Tours.Tour.Domain.Ports.TourRepository;
 import com.webdev.tourapp.Tours.Tour.Domain.Tour;
