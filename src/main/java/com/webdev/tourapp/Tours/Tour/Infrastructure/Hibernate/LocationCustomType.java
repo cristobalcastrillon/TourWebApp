@@ -58,7 +58,7 @@ public class LocationCustomType implements UserType {
 
     @Override
     public void nullSafeSet(PreparedStatement st, Object value, int index, SharedSessionContractImplementor session) throws HibernateException, SQLException {
-        Optional<List<Location>> object = (value == null) ? Optional.empty() : Optional.of((List<Location>)value);
+        Optional<List<Location>> object = (value == null) ? Optional.empty() : (Optional<List<Location>>) value;
         try {
             if(object.isEmpty()) {
                 st.setNull(index, Types.VARCHAR);

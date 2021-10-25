@@ -26,5 +26,25 @@
             <property name="value" column="total_price" access="field" type="double"/>
         </component>
 
+        <component name="associatedTourID" class="com.webdev.tourapp.Tours.TourInstance.Domain.ValueObjects.AssociatedTourID" access="field">
+            <property name="value" column="associated_tour_id" access="field" type="string"/>
+        </component>
+
+        <property name="tourGuide" column="guide" access="field">
+            <type name="com.webdev.tourapp.Tours.TourInstance.Infrastructure.Hibernate.TourGuideCustomType"/>
+        </property>
+
+        <property name="tourUsers" column="tour_users" access="field">
+            <type name="com.webdev.tourapp.Tours.TourInstance.Infrastructure.Hibernate.TourUserCustomType"/>
+        </property>
+
+        <property name="startingLocation" column="starting_location" access="field">
+            <type name="com.webdev.tourapp.Tours.TourInstance.Infrastructure.Hibernate.StartingLocationCustomType"/>
+        </property>
+
+        <property name="transportCompanyHired" column="transport_company_hired" access="field">
+            <type name="com.webdev.tourapp.Tours.TourInstance.Infrastructure.Hibernate.TransportCompanyHiredCustomType"/>
+        </property>
+
     </class>
 </hibernate-mapping>

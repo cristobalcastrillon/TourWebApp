@@ -19,8 +19,7 @@
         </component>
 
         <property name="locationsIncludedInTour" column="locations" access = "field">
-            <type name="com.webdev.tourapp.Tours.Tour.Infrastructure.Hibernate.LocationCustomType">
-            </type>
+            <type name="com.webdev.tourapp.Tours.Tour.Infrastructure.Hibernate.LocationCustomType"/>
         </property>
 
     </class>

@@ -11,6 +11,14 @@
         <constructor-arg ref="TourRepository"/>
     </bean>
 
+    <bean id="TourUpdater" class="com.webdev.tourapp.Tours.Tour.Application.Update.TourUpdater">
+        <constructor-arg ref="TourRepository"/>
+    </bean>
+
+    <bean id="TourDeleter" class="com.webdev.tourapp.Tours.Tour.Application.Delete.TourDeleter">
+        <constructor-arg ref="TourRepository"/>
+    </bean>
+
     <bean id="TourAll" class="com.webdev.tourapp.Tours.Tour.Application.All.TourAll">
         <constructor-arg ref="TourRepository"/>
     </bean>
@@ -36,6 +44,14 @@
     </bean>
 
     <bean id="TourInstanceCreator" class="com.webdev.tourapp.Tours.TourInstance.Application.Create.TourInstanceCreator">
+        <constructor-arg ref="TourInstanceRepository"/>
+    </bean>
+
+    <bean id="TourInstanceUpdater" class="com.webdev.tourapp.Tours.TourInstance.Application.Update.TourInstanceUpdater">
+        <constructor-arg ref="TourInstanceRepository"/>
+    </bean>
+
+    <bean id="TourInstanceDeleter" class="com.webdev.tourapp.Tours.TourInstance.Application.Delete.TourInstanceDeleter">
         <constructor-arg ref="TourInstanceRepository"/>
     </bean>
 

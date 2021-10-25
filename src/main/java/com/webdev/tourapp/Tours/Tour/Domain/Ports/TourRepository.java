@@ -17,5 +17,5 @@ public interface TourRepository {
     Optional<Tour> findByID(TourID tourID);
     Optional<List<Tour>> findByBasePriceMaximum(TourPrice priceQuery);
     Optional<List<Tour>> findByTourName(TourName nameQuery);
-    Optional<List<Tour>> findByListOfLocations(List<Location> locationList);
+    Optional<List<Tour>> findByListOfLocations(Optional<List<Location>> locationList);
 }

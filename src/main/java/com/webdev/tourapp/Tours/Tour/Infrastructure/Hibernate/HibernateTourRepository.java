@@ -65,12 +65,17 @@ public class HibernateTourRepository extends HibernateRepository<Tour> implement
         CriteriaQuery<Tour> cq = cb.createQuery(Tour.class);
         Root<Tour> root = cq.from(Tour.class);
         cq.select(root).where(cb.equal(root.get("tourName"), nameQuery.value()));
+
+        // TODO: DEBUG
+        // Can not set java.lang.String field com.webdev.tourapp.Shared.Domain.Aggregate.StringValueObject.value to java.lang.String
+        // System.out.println();
+
         List<Tour> tours = sessionFactory.getCurrentSession().createQuery(cq).getResultList();
         return Optional.ofNullable(tours);
     }
 
     @Override
-    public Optional<List<Tour>> findByListOfLocations(List<Location> locationList) {
+    public Optional<List<Tour>> findByListOfLocations(Optional<List<Location>> locationList) {
         //TODO
         return Optional.empty();
     }

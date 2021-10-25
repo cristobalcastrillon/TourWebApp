@@ -1,0 +1,28 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.webdev.tourapp.Users.Guide.Domain.Guide" table="guides">
+        <composite-id name="guideID" class="com.webdev.tourapp.Shared.Domain.Ids.GuideID" access="field">
+            <key-property name="value" column="id" access="field" length="36" />
+        </composite-id>
+        <component name="guideFirstName" class="com.webdev.tourapp.Users.Guide.Domain.ValueObjects.GuideFirstName" access="field">
+            <property name="value" column="firstName" access="field" type="string"/>
+        </component>
+        <component name="guideLastName" class="com.webdev.tourapp.Users.Guide.Domain.ValueObjects.GuideLastName" access="field">
+            <property name="value" column="lastName" access="field" type="string"/>
+        </component>
+        <component name="guidePhoneNumber" class="com.webdev.tourapp.Users.Guide.Domain.ValueObjects.GuidePhoneNumber" access="field">
+            <property name="value" column="phoneNumber" access="field" type="long"/>
+        </component>
+        <component name="guideBaseFare" class="com.webdev.tourapp.Users.Guide.Domain.ValueObjects.GuideBaseFare" access="field">
+            <property name="value" column="baseFare" access="field" type="double"/>
+        </component>
+        <component name="guidePassword" class="com.webdev.tourapp.Users.Guide.Domain.ValueObjects.GuidePassword" access="field">
+            <property name="value" column="password" access="field" type="string"/>
+        </component>
+
+
+    </class>
+</hibernate-mapping>
