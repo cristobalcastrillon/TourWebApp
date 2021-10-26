@@ -1,4 +1,4 @@
-package com.webdev.tourapp.TransportCompany.Company.Infrastructure;
+package com.webdev.tourapp.TransportCompany.Company.Infrastructure.Controllers;
 
 import com.webdev.tourapp.TransportCompany.Company.Application.FindByID.CompanyIDFinder;
 import com.webdev.tourapp.TransportCompany.Company.Application.FindByID.CompanyIDFinderResponse;
