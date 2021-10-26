@@ -11,19 +11,19 @@
         </composite-id>
 
         <component name="companyName" class="com.webdev.tourapp.TransportCompany.Company.Domain.ValueObjects.CompanyName" access="field">
-            <property name="value" column="date" access="field" type="string"/>
+            <property name="value" column="companyName" access="field" type="string"/>
         </component>
 
         <component name="companyBasePrice" class="com.webdev.tourapp.TransportCompany.Company.Domain.ValueObjects.CompanyBasePrice" access="field">
-            <property name="value" column="date" access="field" type="string"/>
+            <property name="value" column="companyBasePrice" access="field" type="string"/>
         </component>
 
         <component name="companyCellphone" class="com.webdev.tourapp.TransportCompany.Company.Domain.ValueObjects.CompanyCellphone" access="field">
-            <property name="value" column="date" access="field" type="string"/>
+            <property name="value" column="companyCellphone" access="field" type="string"/>
         </component>
 
         <component name="companyURL" class="com.webdev.tourapp.TransportCompany.Company.Domain.ValueObjects.CompanyURL" access="field">
-            <property name="value" column="date" access="field" type="string"/>
+            <property name="value" column="companyURL" access="field" type="string"/>
         </component>
 
     </class>
