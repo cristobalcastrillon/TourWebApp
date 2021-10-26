@@ -1,0 +1,30 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.webdev.tourapp.TransportCompany.Company.Domain.Company" table="transport_companies">
+
+        <composite-id name="companyID" class="com.webdev.tourapp.TransportCompany.Company.Domain.ValueObjects.CompanyID" access="field">
+            <key-property name="value" column="id" access="field" length="36" />
+        </composite-id>
+
+        <component name="companyName" class="com.webdev.tourapp.TransportCompany.Company.Domain.ValueObjects.CompanyName" access="field">
+            <property name="value" column="date" access="field" type="string"/>
+        </component>
+
+        <component name="companyBasePrice" class="com.webdev.tourapp.TransportCompany.Company.Domain.ValueObjects.CompanyBasePrice" access="field">
+            <property name="value" column="date" access="field" type="string"/>
+        </component>
+
+        <component name="companyCellphone" class="com.webdev.tourapp.TransportCompany.Company.Domain.ValueObjects.CompanyCellphone" access="field">
+            <property name="value" column="date" access="field" type="string"/>
+        </component>
+
+        <component name="companyURL" class="com.webdev.tourapp.TransportCompany.Company.Domain.ValueObjects.CompanyURL" access="field">
+            <property name="value" column="date" access="field" type="string"/>
+        </component>
+
+    </class>
+</hibernate-mapping>

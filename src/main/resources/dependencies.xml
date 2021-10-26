@@ -11,6 +11,8 @@
 
     <bean id="GuideRepository" class="com.webdev.tourapp.Users.Guide.Infrastructure.Hibernate.HibernateGuideRepository"/>
 
+    <bean id="CompanyRepository" class="com.webdev.tourapp.TransportCompany.Company.Infrastructure.Hibernate.HibernateCompanyRepository"/>
+
     <bean id="TourCreator" class="com.webdev.tourapp.Tours.Tour.Application.Create.TourCreator">
         <constructor-arg ref="TourRepository"/>
     </bean>
@@ -129,6 +131,30 @@
 
     <bean id="FindGuideByID" class="com.webdev.tourapp.Users.Guide.Application.FindGuideByID.FindGuideByID">
         <constructor-arg ref="GuideRepository"/>
+    </bean>
+
+    <bean id="CompanyCreator" class="com.webdev.tourapp.TransportCompany.Company.Application.Create.CompanyCreator">
+        <constructor-arg ref="CompanyRepository"/>
+    </bean>
+
+    <bean id="CompanyUpdater" class="com.webdev.tourapp.TransportCompany.Company.Application.Update.CompanyUpdater">
+        <constructor-arg ref="CompanyRepository"/>
+    </bean>
+
+    <bean id="CompanyDeleter" class="com.webdev.tourapp.TransportCompany.Company.Application.Delete.CompanyDeleter">
+        <constructor-arg ref="CompanyRepository"/>
+    </bean>
+
+    <bean id="CompanyAll" class="com.webdev.tourapp.TransportCompany.Company.Application.All.CompanyAll">
+        <constructor-arg ref="CompanyRepository"/>
+    </bean>
+
+    <bean id="CompanyIDFinder" class="com.webdev.tourapp.TransportCompany.Company.Application.FindByID.CompanyIDFinder">
+        <constructor-arg ref="CompanyRepository"/>
+    </bean>
+
+    <bean id="CompanyNameFinder" class="com.webdev.tourapp.TransportCompany.Company.Application.FindByCompanyName.CompanyNameFinder">
+        <constructor-arg ref="CompanyRepository"/>
     </bean>
 
 </beans>

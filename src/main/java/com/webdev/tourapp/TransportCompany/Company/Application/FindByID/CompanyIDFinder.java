@@ -3,6 +3,7 @@ package com.webdev.tourapp.TransportCompany.Company.Application.FindByID;
 import com.webdev.tourapp.TransportCompany.Company.Domain.Exceptions.CompanyIDNotFound;
 import com.webdev.tourapp.TransportCompany.Company.Domain.Ports.CompanyRepository;
 import com.webdev.tourapp.TransportCompany.Company.Domain.Company;
+import com.webdev.tourapp.TransportCompany.Company.Domain.Services.DomainCompanyIDFinder;
 import com.webdev.tourapp.TransportCompany.Company.Domain.ValueObjects.CompanyID;
 
 import java.util.Optional;
@@ -10,11 +11,11 @@ import java.util.Optional;
 public class CompanyIDFinder {
 
     private CompanyRepository repository;
-    private CompanyIDFinder finderService;
+    private DomainCompanyIDFinder finderService;
 
     public CompanyIDFinder(CompanyRepository repository){
         this.repository = repository;
-        finderService = new CompanyIDFinder(this.repository);
+        finderService = new DomainCompanyIDFinder(this.repository);
     }
 
     public CompanyIDFinderResponse execute(String id){
