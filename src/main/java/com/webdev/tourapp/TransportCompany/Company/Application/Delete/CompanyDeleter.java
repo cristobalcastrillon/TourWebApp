@@ -1,5 +1,6 @@
 package com.webdev.tourapp.TransportCompany.Company.Application.Delete;
 
+import com.webdev.tourapp.TransportCompany.Company.Domain.Exceptions.CompanyIDNotFound;
 import com.webdev.tourapp.TransportCompany.Company.Domain.Ports.CompanyRepository;
 import com.webdev.tourapp.TransportCompany.Company.Domain.Company;
 import com.webdev.tourapp.TransportCompany.Company.Domain.ValueObjects.CompanyID;
@@ -15,14 +16,14 @@ public class CompanyDeleter {
     }
 
     public void execute(String id){
-        Optional<Company> company = this.validate(id);
-        repository.delete(company.get());
+        Optional<Company> companyOptional = this.validate(id);
+        repository.delete(companyOptional.get());
     }
 
-    private Optional<Company> validate(String tourID){
-        Optional<Company> company = repository.findByID(new CompanyID());
+    private Optional<Company> validate(String id){
+        Optional<Company> company = repository.findByID(new CompanyID(id));
         if(company.isEmpty()){
-            // throw new CompanyIDNotFound("La compañia de transporte con id " + CompanyID + ", que desea eliminar, no ha sido encontrado.");
+            throw new CompanyIDNotFound("No se ha encontrado ninguna compañía de transporte con ID " + id);
         }
         return company;
     }

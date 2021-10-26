@@ -19,8 +19,8 @@ public class FindCompanyByCompanyNameGetController {
 
     @GetMapping(value = "/companyName")
     @ResponseBody
-    public ResponseEntity<List<HashMap<String, Object>>> execute(@RequestParam("name") String tourName) {
-        CompanyNameFinderResponse response = nameFinder.execute(tourName);
+    public ResponseEntity<List<HashMap<String, Object>>> execute(@RequestParam("companyName") String companyName) {
+        CompanyNameFinderResponse response = nameFinder.execute(companyName);
         return ResponseEntity.status(HttpStatus.OK).body(response.response());
     }
 }

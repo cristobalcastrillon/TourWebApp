@@ -15,7 +15,7 @@
         </component>
 
         <component name="companyBasePrice" class="com.webdev.tourapp.TransportCompany.Company.Domain.ValueObjects.CompanyBasePrice" access="field">
-            <property name="value" column="companyBasePrice" access="field" type="string"/>
+            <property name="value" column="companyBasePrice" access="field" type="double"/>
         </component>
 
         <component name="companyCellphone" class="com.webdev.tourapp.TransportCompany.Company.Domain.ValueObjects.CompanyCellphone" access="field">

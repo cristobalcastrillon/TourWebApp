@@ -10,8 +10,6 @@ import com.webdev.tourapp.TransportCompany.Company.Domain.ValueObjects.CompanyUR
 import com.webdev.tourapp.TransportCompany.Company.Domain.ValueObjects.CompanyCellphone;
 import com.webdev.tourapp.TransportCompany.Company.Domain.ValueObjects.CompanyBasePrice;
 
-
-import java.util.List;
 import java.util.Optional;
 
 public class CompanyCreator {
@@ -29,7 +27,6 @@ public class CompanyCreator {
                         Double price) {
         this.validate(id);
         Company company = Company.Create(new CompanyID(id), new CompanyName(name), new CompanyBasePrice(price), new CompanyCellphone(cellphone), new CompanyURL(url));
-        Company transport;
         repository.save(company);
     }
 
