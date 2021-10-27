@@ -1,6 +1,6 @@
 package com.webdev.tourapp.Users.Guide.Application.Create;
 
-import com.webdev.tourapp.Shared.Domain.Ids.GuideID;
+import com.webdev.tourapp.Users.Guide.Domain.ValueObjects.GuideID;
 import com.webdev.tourapp.Users.Guide.Domain.Exceptions.GuideAlreadyExists;
 import com.webdev.tourapp.Users.Guide.Domain.Guide;
 import com.webdev.tourapp.Users.Guide.Domain.Ports.GuideRepository;

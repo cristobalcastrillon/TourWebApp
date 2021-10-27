@@ -1,10 +1,9 @@
 package com.webdev.tourapp.Users.User.Application.UpdatePassword;
 
-import com.webdev.tourapp.Shared.Domain.Ids.UserID;
+import com.webdev.tourapp.Users.User.Domain.ValueObjects.UserID;
 import com.webdev.tourapp.Users.User.Domain.Exceptions.NoUsersFound;
 import com.webdev.tourapp.Users.User.Domain.Ports.UserRepository;
 import com.webdev.tourapp.Users.User.Domain.User;
-import com.webdev.tourapp.Users.User.Domain.ValueObjects.UserLastName;
 import com.webdev.tourapp.Users.User.Domain.ValueObjects.UserPassword;
 
 import java.util.Optional;

@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Optional;
 
-import com.webdev.tourapp.Shared.Domain.Ids.UserID;
+import com.webdev.tourapp.Users.User.Domain.ValueObjects.UserID;
 import com.webdev.tourapp.Users.User.Domain.Entities.UserTourInstance;
 import com.webdev.tourapp.Users.User.Domain.ValueObjects.*;
 

@@ -1,11 +1,10 @@
 package com.webdev.tourapp.Users.User.Application.UpdateUsername;
 
-import com.webdev.tourapp.Shared.Domain.Ids.UserID;
+import com.webdev.tourapp.Users.User.Domain.ValueObjects.UserID;
 import com.webdev.tourapp.Users.User.Domain.Exceptions.NoUsersFound;
 import com.webdev.tourapp.Users.User.Domain.Exceptions.UserAlreadyExists;
 import com.webdev.tourapp.Users.User.Domain.Ports.UserRepository;
 import com.webdev.tourapp.Users.User.Domain.User;
-import com.webdev.tourapp.Users.User.Domain.ValueObjects.UserPassword;
 import com.webdev.tourapp.Users.User.Domain.ValueObjects.Username;
 
 import java.util.Optional;

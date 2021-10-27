@@ -4,7 +4,7 @@
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
     <class name="com.webdev.tourapp.Users.Guide.Domain.Guide" table="guides">
-        <composite-id name="guideID" class="com.webdev.tourapp.Shared.Domain.Ids.GuideID" access="field">
+        <composite-id name="guideID" class="com.webdev.tourapp.Users.Guide.Domain.ValueObjects.GuideID" access="field">
             <key-property name="value" column="id" access="field" length="36" />
         </composite-id>
         <component name="guideFirstName" class="com.webdev.tourapp.Users.Guide.Domain.ValueObjects.GuideFirstName" access="field">

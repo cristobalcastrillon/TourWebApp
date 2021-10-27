@@ -2,7 +2,7 @@ package com.webdev.tourapp.Users.User.Domain.Entities;
 
 import java.util.HashMap;
 
-import com.webdev.tourapp.Shared.Domain.Ids.UserID;
+import com.webdev.tourapp.Users.User.Domain.ValueObjects.UserID;
 import com.webdev.tourapp.Users.User.Domain.ValueObjects.*;
 
 public class User

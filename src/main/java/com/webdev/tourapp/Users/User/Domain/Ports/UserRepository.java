@@ -1,6 +1,6 @@
 package com.webdev.tourapp.Users.User.Domain.Ports;
 
-import com.webdev.tourapp.Shared.Domain.Ids.UserID;
+import com.webdev.tourapp.Users.User.Domain.ValueObjects.UserID;
 import com.webdev.tourapp.Users.User.Domain.User;
 import com.webdev.tourapp.Users.User.Domain.ValueObjects.Username;
 

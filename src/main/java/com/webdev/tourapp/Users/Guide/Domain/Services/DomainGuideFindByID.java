@@ -1,6 +1,6 @@
 package com.webdev.tourapp.Users.Guide.Domain.Services;
 
-import com.webdev.tourapp.Shared.Domain.Ids.GuideID;
+import com.webdev.tourapp.Users.Guide.Domain.ValueObjects.GuideID;
 import com.webdev.tourapp.Users.Guide.Domain.Guide;
 import com.webdev.tourapp.Users.Guide.Domain.Ports.GuideRepository;
 import com.webdev.tourapp.Users.User.Domain.Exceptions.NoUsersFound;

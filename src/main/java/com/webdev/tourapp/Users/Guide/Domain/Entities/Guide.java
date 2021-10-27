@@ -1,6 +1,6 @@
 package com.webdev.tourapp.Users.Guide.Domain.Entities;
 
-import com.webdev.tourapp.Shared.Domain.Ids.GuideID;
+import com.webdev.tourapp.Users.Guide.Domain.ValueObjects.GuideID;
 import com.webdev.tourapp.Users.Guide.Domain.ValueObjects.*;
 
 import java.util.HashMap;
