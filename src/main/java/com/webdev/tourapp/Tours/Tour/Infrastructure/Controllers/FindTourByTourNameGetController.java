@@ -19,8 +19,22 @@ public class FindTourByTourNameGetController {
 
     @GetMapping(value = "/tourName")
     @ResponseBody
-    public ResponseEntity<List<HashMap<String, Object>>> execute(@RequestParam("name") String tourName) {
-        TourNameFinderResponse response = nameFinder.execute(tourName);
+    public ResponseEntity<List<HashMap<String, Object>>> execute(@RequestBody TourNameRequest request) {
+        TourNameFinderResponse response = nameFinder.execute(request.getTourName());
         return ResponseEntity.status(HttpStatus.OK).body(response.response());
+    }
+
+    static class TourNameRequest {
+        private String tourName;
+
+        public TourNameRequest() {}
+
+        public String getTourName() {
+            return tourName;
+        }
+
+        public void setTourName(String tourName) {
+            this.tourName = tourName;
+        }
     }
 }
