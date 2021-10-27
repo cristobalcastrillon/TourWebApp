@@ -1,5 +1,6 @@
 package com.webdev.tourapp.Users.User.Application.Create;
 
+import com.webdev.tourapp.Users.User.Domain.Exceptions.UserAlreadyExists;
 import com.webdev.tourapp.Users.User.Domain.ValueObjects.UserID;
 import com.webdev.tourapp.Users.User.Domain.User;
 import com.webdev.tourapp.Users.User.Domain.Exceptions.NoUsersFound;
@@ -35,7 +36,7 @@ public class UserCreator
         Optional<User> myUser = myRep.findByID(new UserID (id));
         if (myUser.isPresent())
         {
-            throw new NoUsersFound("Dado el ID; el usuario no se pudo encontrar");
+            throw new UserAlreadyExists("El usuario con id  " + id +" ya existe.");
         }
     }
     private void validateUsername(String uName)
@@ -43,7 +44,7 @@ public class UserCreator
         Optional<User> myUser = myRep.findByUsername(new Username(uName));
         if (myUser.isPresent())
         {
-            throw new NoUsersFound("Dado el userName; el usuario no se pudo encontrar");
+            throw new UserAlreadyExists("El usuario con username " + uName +" ya existe.");
         }
     }
 }

@@ -1,9 +1,9 @@
 package com.webdev.tourapp.Users.Guide.Domain.Services;
 
+import com.webdev.tourapp.Users.Guide.Domain.Exceptions.NoGuideFound;
 import com.webdev.tourapp.Users.Guide.Domain.ValueObjects.GuideID;
 import com.webdev.tourapp.Users.Guide.Domain.Guide;
 import com.webdev.tourapp.Users.Guide.Domain.Ports.GuideRepository;
-import com.webdev.tourapp.Users.User.Domain.Exceptions.NoUsersFound;
 import java.util.Optional;
 
 public class DomainGuideFindByID {
@@ -17,7 +17,7 @@ public class DomainGuideFindByID {
         Optional<Guide> guide = myRep.findByID(new GuideID(myID));
         if (guide.isEmpty())
         {
-            throw new NoUsersFound("No se ha podido encontrar el guia por ID.");
+            throw new NoGuideFound("No se ha podido encontrar el guía con ID " + myID);
         }
         return guide.get();
     }

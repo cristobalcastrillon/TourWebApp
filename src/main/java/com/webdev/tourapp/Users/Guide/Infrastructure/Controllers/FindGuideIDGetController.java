@@ -26,9 +26,10 @@ public class FindGuideIDGetController
         FindGuideByIDResponse response = new FindGuideByIDResponse(guide);
         return ResponseEntity.status(HttpStatus.OK).body(response.response());
     }
+
     @ExceptionHandler(NoGuideFound.class)
     @ResponseStatus(code = HttpStatus.NOT_FOUND)
-    public ResponseEntity<HashMap> handleGuideAlreadyExist(NoGuideFound exception) {
+    public ResponseEntity<HashMap> handleGuideNotFound(NoGuideFound exception) {
         HashMap<String, String> response = new HashMap<>() {{
             put("error", exception.getMessage());
         }};

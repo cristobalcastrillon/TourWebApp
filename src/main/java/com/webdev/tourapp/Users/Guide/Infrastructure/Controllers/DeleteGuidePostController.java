@@ -26,7 +26,7 @@ public class DeleteGuidePostController {
     }
     @ExceptionHandler(NoGuideFound.class)
     @ResponseStatus(code = HttpStatus.NOT_FOUND)
-    public ResponseEntity<HashMap> handleGuideAlreadyExist(NoGuideFound exception) {
+    public ResponseEntity<HashMap> handleNoGuide(NoGuideFound exception) {
         HashMap<String, String> response = new HashMap<>() {{
             put("error", exception.getMessage());
         }};

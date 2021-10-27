@@ -27,6 +27,7 @@ public class CreateUserPostController
                     , request.getUserLastName(), request.getUsername(), request.getUserPassword());
             return ResponseEntity.status(HttpStatus.CREATED).body(null);
     }
+
     @ExceptionHandler(UserAlreadyExists.class)
     @ResponseStatus(code = HttpStatus.CONFLICT)
     public ResponseEntity<HashMap> handleTourAlreadyExists(UserAlreadyExists exception) {
@@ -35,6 +36,7 @@ public class CreateUserPostController
         }};
         return ResponseEntity.status(HttpStatus.CONFLICT).body(response);
     }
+
     @ExceptionHandler({UserFirstNameNotValid.class, UserLastNameNotValid.class,
             UserUsernameNotValid.class, PasswordNotValid.class})
     @ResponseStatus(code = HttpStatus.BAD_REQUEST)
