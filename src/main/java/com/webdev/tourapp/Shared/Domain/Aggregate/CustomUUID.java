@@ -11,7 +11,6 @@ public class CustomUUID implements Serializable {
     private String value;
 
     public CustomUUID(String value) {
-        //TODO: Find out why validateUUIDFormatRule is not working properly
         //this.validate(value);
         this.value = value;
     }
@@ -28,6 +27,7 @@ public class CustomUUID implements Serializable {
 
     private void validateUUIDFormatRule(String value)
     {
+        //TODO: Construir Regex para evaluar el UUID autogenerado que se pasa como 'value'
         try {
             UUID.fromString(value);
         }
