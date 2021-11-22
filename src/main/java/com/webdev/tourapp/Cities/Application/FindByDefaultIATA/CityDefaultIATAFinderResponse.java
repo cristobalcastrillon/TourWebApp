@@ -1,4 +1,4 @@
-ackage com.webdev.tourapp.Cities.Application.FindByDefaultIATA;
+package com.webdev.tourapp.Cities.Application.FindByDefaultIATA;
 
 import com.webdev.tourapp.Cities.Domain.City;
 

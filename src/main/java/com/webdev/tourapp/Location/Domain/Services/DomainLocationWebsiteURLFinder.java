@@ -1,4 +1,4 @@
-ackage com.webdev.tourapp.Location.Domain.Services;
+package com.webdev.tourapp.Location.Domain.Services;
 
 import com.webdev.tourapp.Location.Domain.Exceptions.NoLocationsFoundForLocationWebSiteURL;
 import com.webdev.tourapp.Location.Domain.Location;

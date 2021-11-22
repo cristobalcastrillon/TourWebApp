@@ -1,4 +1,4 @@
-ackage com.webdev.tourapp.Location.Infrastructure.Controllers;
+package com.webdev.tourapp.Location.Infrastructure.Controllers;
 
 import com.webdev.tourapp.Location.Application.All.LocationAll;
 import com.webdev.tourapp.Location.Application.All.LocationAllResponse;

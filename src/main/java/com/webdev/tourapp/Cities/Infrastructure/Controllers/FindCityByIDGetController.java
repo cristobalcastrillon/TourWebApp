@@ -1,4 +1,4 @@
-ackage com.webdev.tourapp.Cities.Infrastructure.Controllers;
+package com.webdev.tourapp.Cities.Infrastructure.Controllers;
 
 import com.webdev.tourapp.Cities.Application.FinderByID.CityIDFinder;
 import com.webdev.tourapp.Cities.Application.FinderByID.CityIDFinderResponse;

@@ -13,6 +13,10 @@
 
     <bean id="CompanyRepository" class="com.webdev.tourapp.TransportCompany.Company.Infrastructure.Hibernate.HibernateCompanyRepository"/>
 
+    <bean id="LocationRepository" class="com.webdev.tourapp.Location.Infrastructure.Hibernate.HibernateLocationRepository"/>
+
+    <bean id="CityRepository" class="com.webdev.tourapp.Cities.Infrastructure.Hibernate.HibernateCityRepository"/>
+
     <bean id="TourCreator" class="com.webdev.tourapp.Tours.Tour.Application.Create.TourCreator">
         <constructor-arg ref="TourRepository"/>
     </bean>
@@ -155,6 +159,58 @@
 
     <bean id="CompanyNameFinder" class="com.webdev.tourapp.TransportCompany.Company.Application.FindByCompanyName.CompanyNameFinder">
         <constructor-arg ref="CompanyRepository"/>
+    </bean>
+
+    <bean id="LocationIDFinder" class="com.webdev.tourapp.Location.Application.FindByID.LocationIDFinder">
+        <constructor-arg ref="LocationRepository"/>
+    </bean>
+
+    <bean id="LocationDescriptionFinder" class="com.webdev.tourapp.Location.Application.FindByDescription.LocationDescriptionFinder">
+        <constructor-arg ref="LocationRepository"/>
+    </bean>
+
+    <bean id="LocationCoordinatesFinder" class="com.webdev.tourapp.Location.Application.FindByCoordinates.LocationCoordinatesFinder">
+        <constructor-arg ref="LocationRepository"/>
+    </bean>
+
+    <bean id="LocationCategoryFinder" class="com.webdev.tourapp.Location.Application.FindByCategory.LocationCategoryFinder">
+        <constructor-arg ref="LocationRepository"/>
+    </bean>
+
+    <bean id="LocationWebSiteFinder" class="com.webdev.tourapp.Location.Application.FindByWebsiteURL.LocationWebSiteFinder">
+        <constructor-arg ref="LocationRepository"/>
+    </bean>
+
+    <bean id="LocationPriceFinder" class="com.webdev.tourapp.Location.Application.FindByPrice.LocationPriceFinder">
+        <constructor-arg ref="LocationRepository"/>
+    </bean>
+
+    <bean id="CityAll" class="com.webdev.tourapp.Cities.Application.All.CityAll">
+        <constructor-arg ref="CityRepository"/>
+    </bean>
+
+    <bean id="CityDefaultIATAFinder" class="com.webdev.tourapp.Cities.Application.FindByDefaultIATA.CityDefaultIATAFinder">
+        <constructor-arg ref="CityRepository"/>
+    </bean>
+
+    <bean id="CityIDFinder" class="com.webdev.tourapp.Cities.Application.FinderByID.CityIDFinder">
+        <constructor-arg ref="CityRepository"/>
+    </bean>
+
+    <bean id="CityNameFinder" class="com.webdev.tourapp.Cities.Application.FindByCityName.CityNameFinder">
+        <constructor-arg ref="CityRepository"/>
+    </bean>
+
+    <bean id="CityUpdater" class="com.webdev.tourapp.Cities.Application.Update.CityUpdater">
+        <constructor-arg ref="CityRepository"/>
+    </bean>
+
+    <bean id="CityDeleter" class="com.webdev.tourapp.Cities.Application.Delete.CityDeleter">
+        <constructor-arg ref="CityRepository"/>
+    </bean>
+
+    <bean id="CityCreator" class="com.webdev.tourapp.Cities.Application.Create.CityCreator">
+        <constructor-arg ref="CityRepository"/>
     </bean>
 
 </beans>
