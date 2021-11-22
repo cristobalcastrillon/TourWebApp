@@ -13,6 +13,8 @@
 
     <bean id="CompanyRepository" class="com.webdev.tourapp.TransportCompany.Company.Infrastructure.Hibernate.HibernateCompanyRepository"/>
 
+    <bean id="LocationRepository" class="com.webdev.tourapp.Location.Infrastructure.Hibernate.HibernateLocationRepository"/>
+
     <bean id="TourCreator" class="com.webdev.tourapp.Tours.Tour.Application.Create.TourCreator">
         <constructor-arg ref="TourRepository"/>
     </bean>
@@ -155,6 +157,30 @@
 
     <bean id="CompanyNameFinder" class="com.webdev.tourapp.TransportCompany.Company.Application.FindByCompanyName.CompanyNameFinder">
         <constructor-arg ref="CompanyRepository"/>
+    </bean>
+
+    <bean id="LocationIDFinder" class="com.webdev.tourapp.Location.Application.FindByID.LocationIDFinder">
+        <constructor-arg ref="LocationRepository"/>
+    </bean>
+
+    <bean id="LocationDescriptionFinder" class="com.webdev.tourapp.Location.Application.FindByDescription.LocationDescriptionFinder">
+        <constructor-arg ref="LocationRepository"/>
+    </bean>
+
+    <bean id="LocationCoordinatesFinder" class="com.webdev.tourapp.Location.Application.FindByCoordinates.LocationCoordinatesFinder">
+        <constructor-arg ref="LocationRepository"/>
+    </bean>
+
+    <bean id="LocationCategoryFinder" class="com.webdev.tourapp.Location.Application.FindByCategory.LocationCategoryFinder">
+        <constructor-arg ref="LocationRepository"/>
+    </bean>
+
+    <bean id="LocationWebSiteFinder" class="com.webdev.tourapp.Location.Application.FindByWebsiteURL.LocationWebSiteFinder">
+        <constructor-arg ref="LocationRepository"/>
+    </bean>
+
+    <bean id="LocationPriceFinder" class="com.webdev.tourapp.Location.Application.FindByPrice.LocationPriceFinder">
+        <constructor-arg ref="LocationRepository"/>
     </bean>
 
 </beans>

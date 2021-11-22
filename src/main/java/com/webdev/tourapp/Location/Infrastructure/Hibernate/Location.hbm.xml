@@ -1,0 +1,30 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.webdev.tourapp.Location.Domain.Location" table="locations">
+
+        <composite-id name="locationid" class="com.webdev.tourapp.Location.Domain.ValueObjects.LocationID" access="field">
+            <key-property name="value" column="id" access="field" length="36" />
+        </composite-id>
+        <component name="locationName" class="com.webdev.tourapp.Location.Domain.ValueObjects.LocationName" access="field">
+            <property name="value" column="location_name" access="field" type="string" />
+        </component>
+        <component name="locationDescription" class="com.webdev.tourapp.Location.Domain.ValueObjects.LocationDescription" access="field">
+            <property name="value" column="location_description" access="field" type="string" />
+        </component>
+        <component name="locationWebsiteURL" class="com.webdev.tourapp.Location.Domain.ValueObjects.LocationWebsiteURL" access="field">
+            <property name="value" column="location_website_url" access="field" type="string" />
+        </component>
+        <component name="locationCategory" class="com.webdev.tourapp.Location.Domain.ValueObjects.LocationCategory" access="field">
+            <property name="value" column="location_category" access="field" type="string" />
+        </component>
+        <component name="locationPrice" class="com.webdev.tourapp.Location.Domain.ValueObjects.LocationPrice" access="field">
+            <property name="value" column="location_price" access="field" type="double" />
+        </component>
+        <component name="locationCoordinates" class="com.webdev.tourapp.Location.Domain.ValueObjects.LocationCoordinates" access="field">
+            <property name="value" column="location_coordinates" access="field" type="string" />
+        </component>
+    </class>
+</hibernate-mapping>
