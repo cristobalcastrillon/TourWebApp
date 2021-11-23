@@ -1,9 +1,9 @@
 package com.webdev.tourapp.Cities.Infrastructure.Hibernate;
 
+import com.webdev.tourapp.Cities.Domain.Entities.LocationInCity;
+import com.webdev.tourapp.Cities.Domain.Entities.TourInCity;
 import com.webdev.tourapp.Cities.Domain.ValueObjects.CityDefaultIATA;
 import com.webdev.tourapp.Shared.Infrastructure.Hibernate.HibernateRepository;
-import com.webdev.tourapp.Cities.Domain.Entities.LocationsInCity;
-import com.webdev.tourapp.Cities.Domain.Entities.ToursInCity;
 import com.webdev.tourapp.Cities.Domain.Ports.CityRepository;
 import com.webdev.tourapp.Cities.Domain.City;
 import com.webdev.tourapp.Cities.Domain.ValueObjects.CityID;
@@ -71,9 +71,9 @@ public class HibernateCityRepository extends HibernateRepository<City> implement
         List<City> cities = sessionFactory.getCurrentSession().createQuery(cq).getResultList();
         return Optional.ofNullable(cities);
     }
-/*
+
     @Override
-    public Optional<List<City>> findByListOfLocations(Optional<List<LocationsInCity>> locationsInCity){
+    public Optional<List<City>> findByListOfLocations(Optional<List<LocationInCity>> locationsInCity){
         CriteriaBuilder cb = sessionFactory.getCriteriaBuilder();
         CriteriaQuery<City> cq = cb.createQuery(City.class);
         Root<City> root = cq.from(City.class);
@@ -82,7 +82,7 @@ public class HibernateCityRepository extends HibernateRepository<City> implement
         return Optional.ofNullable(cities);
     }
     @Override
-    public Optional<List<City>> findByListOfTours(Optional<List<ToursInCity>> toursInCity){
+    public Optional<List<City>> findByListOfTours(Optional<List<TourInCity>> toursInCity){
         CriteriaBuilder cb = sessionFactory.getCriteriaBuilder();
         CriteriaQuery<City> cq = cb.createQuery(City.class);
         Root<City> root = cq.from(City.class);
@@ -90,5 +90,4 @@ public class HibernateCityRepository extends HibernateRepository<City> implement
         List<City> cities = sessionFactory.getCurrentSession().createQuery(cq).getResultList();
         return Optional.ofNullable(cities);
     }
-    */
 }

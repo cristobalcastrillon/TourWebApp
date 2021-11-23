@@ -1,7 +1,8 @@
 package com.webdev.tourapp.Cities.Infrastructure.Hibernate;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.webdev.tourapp.Cities.Domain.Entities.ToursInCity;
+import com.webdev.tourapp.Cities.Domain.Entities.LocationInCity;
+import com.webdev.tourapp.Cities.Domain.Entities.TourInCity;
 import org.hibernate.HibernateException;
 import org.hibernate.engine.spi.SharedSessionContractImplementor;
 import org.hibernate.usertype.UserType;
@@ -40,15 +41,16 @@ public class TourCustomType implements UserType {
     }
     @Override
     public Object nullSafeGet(ResultSet rs, String[] names, SharedSessionContractImplementor session, Object owner) throws HibernateException, SQLException {
-        List<ToursInCity> response = null;
+        List<TourInCity> response = null;
         try {
             Optional<String> value = Optional.ofNullable(rs.getString(names[0]));
             if(value.isPresent()) {
                 List<HashMap<String, Object>> objects = new ObjectMapper().readValue(value.get(), List.class);
-                response = objects.stream().map(element -> new ToursInCity(
-                                (String) element.get("cityID"),
-                                (String) element.get("cityName"),
-                                (String) element.get("cityIata")
+                response = objects.stream().map(element -> new TourInCity(
+                                (String) element.get("tourID"),
+                                (String) element.get("tourName"),
+                                (Double) element.get("tourPrice"),
+                                (Optional<List<LocationInCity>>) element.get("locationsIncludedInTour") //TODO: Collect list of locations and map it
                         )
                 ).collect(Collectors.toList());
             }
@@ -61,14 +63,14 @@ public class TourCustomType implements UserType {
 
     @Override
     public void nullSafeSet(PreparedStatement st, Object value, int index, SharedSessionContractImplementor session) throws HibernateException, SQLException {
-        Optional<List<ToursInCity>> object = (value == null) ? Optional.empty() : (Optional<List<ToursInCity>>) value;
+        Optional<List<TourInCity>> object = (value == null) ? Optional.empty() : (Optional<List<TourInCity>>) value;
         try {
             if(object.isEmpty()) {
                 st.setNull(index, Types.VARCHAR);
             }
             else {
                 ObjectMapper mapper = new ObjectMapper();
-                List<HashMap<String, Object>> objects = object.get().stream().map(ToursInCity::dataDB).collect(Collectors.toList());
+                List<HashMap<String, Object>> objects = object.get().stream().map(TourInCity::dataDB).collect(Collectors.toList());
                 String serializedObject = mapper.writeValueAsString(objects).replace("\\", "");
                 st.setString(index, serializedObject);
             }

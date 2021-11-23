@@ -1,7 +1,7 @@
 package com.webdev.tourapp.Cities.Infrastructure.Hibernate;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.webdev.tourapp.Cities.Domain.Entities.LocationsInCity;
+import com.webdev.tourapp.Cities.Domain.Entities.LocationInCity;
 import org.hibernate.HibernateException;
 import org.hibernate.engine.spi.SharedSessionContractImplementor;
 import org.hibernate.usertype.UserType;
@@ -39,12 +39,12 @@ public class LocationCustomType implements UserType {
     }
     @Override
     public Object nullSafeGet(ResultSet rs, String[] names, SharedSessionContractImplementor session, Object owner) throws HibernateException, SQLException {
-        List<LocationsInCity> response = null;
+        List<LocationInCity> response = null;
         try {
             Optional<String> value = Optional.ofNullable(rs.getString(names[0]));
             if(value.isPresent()) {
                 List<HashMap<String, Object>> objects = new ObjectMapper().readValue(value.get(), List.class);
-                response = objects.stream().map(element -> new LocationsInCity(
+                response = objects.stream().map(element -> new LocationInCity(
                                 (String) element.get("locationID"),
                                 (String) element.get("locationName"),
                                 (String) element.get("locationCoordinates"),
@@ -63,14 +63,14 @@ public class LocationCustomType implements UserType {
     }
     @Override
     public void nullSafeSet(PreparedStatement st, Object value, int index, SharedSessionContractImplementor session) throws HibernateException, SQLException {
-        Optional<List<LocationsInCity>> object = (value == null) ? Optional.empty() : (Optional<List<LocationsInCity>>) value;
+        Optional<List<LocationInCity>> object = (value == null) ? Optional.empty() : (Optional<List<LocationInCity>>) value;
         try {
             if(object.isEmpty()) {
                 st.setNull(index, Types.VARCHAR);
             }
             else {
                 ObjectMapper mapper = new ObjectMapper();
-                List<HashMap<String, Object>> objects = object.get().stream().map(LocationsInCity::dataDB).collect(Collectors.toList());
+                List<HashMap<String, Object>> objects = object.get().stream().map(LocationInCity::dataDB).collect(Collectors.toList());
                 String serializedObject = mapper.writeValueAsString(objects).replace("\\", "");
                 st.setString(index, serializedObject);
             }

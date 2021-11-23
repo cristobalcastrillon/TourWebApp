@@ -28,5 +28,3 @@ public class CityAll{
     }
 
 }
-// Completado
-// Pendiente para revisar

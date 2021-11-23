@@ -27,9 +27,9 @@ public class AllCityGetController {
     }
     @ExceptionHandler(NoCitiesFound.class)
     @ResponseStatus(code = HttpStatus.NO_CONTENT)
-    public ResponseEntity<HashMap> handleNoCityFound(NoCitiesFound exeption){
+    public ResponseEntity<HashMap> handleNoCityFound(NoCitiesFound exception){
         HashMap<String,String> response = new HashMap<>(){{
-            put("error",exeption.getMessage());
+            put("error",exception.getMessage());
         }};
         return ResponseEntity.status(HttpStatus.NO_CONTENT).body(response);
     }

@@ -1,7 +1,7 @@
 package com.webdev.tourapp.Cities.Domain;
 
-import com.webdev.tourapp.Cities.Domain.Entities.LocationsInCity;
-import com.webdev.tourapp.Cities.Domain.Entities.ToursInCity;
+import com.webdev.tourapp.Cities.Domain.Entities.LocationInCity;
+import com.webdev.tourapp.Cities.Domain.Entities.TourInCity;
 import com.webdev.tourapp.Cities.Domain.ValueObjects.CityDefaultIATA;
 import com.webdev.tourapp.Cities.Domain.ValueObjects.CityID;
 import com.webdev.tourapp.Cities.Domain.ValueObjects.CityName;
@@ -13,15 +13,15 @@ public class City
     private CityID cityID;
     private CityName cityName;
     private CityDefaultIATA cityDefaultIATA;
-    private Optional<List<LocationsInCity>> locationsInCity;
-    private Optional<List<ToursInCity>> toursInCity;
+    private Optional<List<LocationInCity>> locationsInCity;
+    private Optional<List<TourInCity>> toursInCity;
 
     public City(
             CityID id,
             CityName name,
             CityDefaultIATA iata,
-            Optional<List<LocationsInCity>> locationsInCity,
-            Optional<List<ToursInCity>> toursInCity) {
+            Optional<List<LocationInCity>> locationsInCity,
+            Optional<List<TourInCity>> toursInCity) {
         this.cityID = id;
         this.cityName = name;
         this.cityDefaultIATA = iata;
@@ -33,8 +33,8 @@ public class City
             CityID id,
             CityName name,
             CityDefaultIATA iata,
-            Optional<List<LocationsInCity>> locationsInCity,
-            Optional<List<ToursInCity>> toursInCity){
+            Optional<List<LocationInCity>> locationsInCity,
+            Optional<List<TourInCity>> toursInCity){
         City city = new City(
                 id,
                 name,
@@ -84,7 +84,7 @@ public class City
     private List<HashMap<String,Object>> dataLocationsInCity() {
 
         List<HashMap<String,Object>> data = new ArrayList<>();
-        for (LocationsInCity location :
+        for (LocationInCity location :
                 locationsInCity.get()) {
             HashMap<String, Object> locationJSON = new HashMap<>();
             locationJSON.put("location",location.dataDB());
@@ -96,7 +96,7 @@ public class City
     private List<HashMap<String,Object>> dataToursInCity() {
 
         List<HashMap<String,Object>> data = new ArrayList<>();
-        for (ToursInCity tour :
+        for (TourInCity tour :
                 toursInCity.get()) {
             HashMap<String, Object> tourJSON = new HashMap<>();
             tourJSON.put("tour",tour.dataDB());

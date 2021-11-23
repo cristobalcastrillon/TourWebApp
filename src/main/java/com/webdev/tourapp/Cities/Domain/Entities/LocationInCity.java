@@ -2,7 +2,7 @@ package com.webdev.tourapp.Cities.Domain.Entities;
 
 import java.util.HashMap;
 
-public class LocationsInCity {
+public class LocationInCity {
     private String locationID;
     private String locationName;
     private String locationCoordinates;
@@ -11,9 +11,9 @@ public class LocationsInCity {
     private String locationCategory;
     private Double locationPrice;
 
-    private LocationsInCity() {  }
+    private LocationInCity() {  }
 
-    public LocationsInCity(String locationID,String locationName, String locationCoordinates, String locationDescription, String locationWebsiteURL, String locationCategory, Double locationPrice) {
+    public LocationInCity(String locationID, String locationName, String locationCoordinates, String locationDescription, String locationWebsiteURL, String locationCategory, Double locationPrice) {
         this.locationID = locationID;
         this.locationName = locationName;
         this.locationCoordinates = locationCoordinates;

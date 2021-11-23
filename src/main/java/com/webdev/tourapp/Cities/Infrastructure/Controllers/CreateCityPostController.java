@@ -1,20 +1,18 @@
 package com.webdev.tourapp.Cities.Infrastructure.Controllers;
 
 import com.webdev.tourapp.Cities.Application.Create.CityCreator;
-import com.webdev.tourapp.Cities.Domain.Entities.LocationsInCity;
-import com.webdev.tourapp.Cities.Domain.Entities.ToursInCity;
+import com.webdev.tourapp.Cities.Domain.Entities.LocationInCity;
+import com.webdev.tourapp.Cities.Domain.Entities.TourInCity;
 import com.webdev.tourapp.Cities.Domain.Exceptions.CityAlreadyExists;
 import com.webdev.tourapp.Cities.Domain.Exceptions.CityNameNotValid;
 import com.webdev.tourapp.Cities.Domain.Exceptions.IataLenghtNotValid;
 import com.webdev.tourapp.Cities.Domain.Exceptions.NumberInNameNoValid;
 import com.webdev.tourapp.Tours.Tour.Domain.Exceptions.TourAlreadyExists;
-import com.webdev.tourapp.Tours.Tour.Domain.Tour;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Optional;
@@ -58,8 +56,8 @@ public class CreateCityPostController {
         private String id;
         private String name;
         private String defaultIATA;
-        private Optional<List<LocationsInCity>> locationsInCity;
-        private Optional<List<ToursInCity>> tours;
+        private Optional<List<LocationInCity>> locationsInCity;
+        private Optional<List<TourInCity>> tours;
 
         public String getId() {
             return id;
@@ -85,19 +83,19 @@ public class CreateCityPostController {
             this.defaultIATA = defaultIATA;
         }
 
-        public Optional<List<LocationsInCity>> getLocationsInCity() {
+        public Optional<List<LocationInCity>> getLocationsInCity() {
             return locationsInCity;
         }
 
-        public void setLocationsInCity(Optional<List<LocationsInCity>> locationsInCity) {
+        public void setLocationsInCity(Optional<List<LocationInCity>> locationsInCity) {
             this.locationsInCity = locationsInCity;
         }
 
-        public Optional<List<ToursInCity>> getTours() {
+        public Optional<List<TourInCity>> getTours() {
             return tours;
         }
 
-        public void setTours(Optional<List<ToursInCity>> tours) {
+        public void setTours(Optional<List<TourInCity>> tours) {
             this.tours = tours;
         }
     }

@@ -1,8 +1,8 @@
 package com.webdev.tourapp.Cities.Infrastructure.Controllers;
 
 import com.webdev.tourapp.Cities.Application.Update.CityUpdater;
-import com.webdev.tourapp.Cities.Domain.Entities.LocationsInCity;
-import com.webdev.tourapp.Cities.Domain.Entities.ToursInCity;
+import com.webdev.tourapp.Cities.Domain.Entities.LocationInCity;
+import com.webdev.tourapp.Cities.Domain.Entities.TourInCity;
 import com.webdev.tourapp.Cities.Domain.Exceptions.CityIDNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -38,8 +38,8 @@ public class UpdateCityPostController {
     static class CityRequest{
         private String name;
         private String defaultIATA;
-        private Optional<List<LocationsInCity>> locationsInCity;
-        private Optional<List<ToursInCity>> toursInCity;
+        private Optional<List<LocationInCity>> locationsInCity;
+        private Optional<List<TourInCity>> toursInCity;
 
         public String getName() {
             return name;
@@ -57,19 +57,19 @@ public class UpdateCityPostController {
             this.defaultIATA = defaultIATA;
         }
 
-        public Optional<List<LocationsInCity>> getLocationsInCity() {
+        public Optional<List<LocationInCity>> getLocationsInCity() {
             return locationsInCity;
         }
 
-        public void setLocationsInCity(Optional<List<LocationsInCity>> locationsInCity) {
+        public void setLocationsInCity(Optional<List<LocationInCity>> locationsInCity) {
             this.locationsInCity = locationsInCity;
         }
 
-        public Optional<List<ToursInCity>> getTours() {
+        public Optional<List<TourInCity>> getTours() {
             return toursInCity;
         }
 
-        public void setTours(Optional<List<ToursInCity>> toursInCity) {
+        public void setTours(Optional<List<TourInCity>> toursInCity) {
             this.toursInCity = toursInCity;
         }
 

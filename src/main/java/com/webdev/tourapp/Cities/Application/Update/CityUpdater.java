@@ -1,15 +1,14 @@
 package com.webdev.tourapp.Cities.Application.Update;
 
 import com.webdev.tourapp.Cities.Domain.City;
-import com.webdev.tourapp.Cities.Domain.Entities.LocationsInCity;
-import com.webdev.tourapp.Cities.Domain.Entities.ToursInCity;
+import com.webdev.tourapp.Cities.Domain.Entities.LocationInCity;
+import com.webdev.tourapp.Cities.Domain.Entities.TourInCity;
 import com.webdev.tourapp.Cities.Domain.Exceptions.CityIDNotFoundException;
 import com.webdev.tourapp.Cities.Domain.Ports.CityRepository;
 import com.webdev.tourapp.Cities.Domain.ValueObjects.CityDefaultIATA;
 import com.webdev.tourapp.Cities.Domain.ValueObjects.CityID;
 import com.webdev.tourapp.Cities.Domain.ValueObjects.CityName;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -24,8 +23,8 @@ public class CityUpdater {
     public void execute(String cityID,
                         String name,
                         String defaultIATA,
-                        Optional<List<LocationsInCity>> locationsInCity,
-                        Optional<List<ToursInCity>> toursInCity) {
+                        Optional<List<LocationInCity>> locationsInCity,
+                        Optional<List<TourInCity>> toursInCity) {
         this.validate(cityID);
         City city = City.Create(new CityID(cityID)
                 , new CityName(name)

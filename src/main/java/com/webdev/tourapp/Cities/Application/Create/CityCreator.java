@@ -1,18 +1,15 @@
 package com.webdev.tourapp.Cities.Application.Create;
 
 import com.webdev.tourapp.Cities.Domain.City;
-import com.webdev.tourapp.Cities.Domain.Entities.LocationsInCity;
-import com.webdev.tourapp.Cities.Domain.Entities.ToursInCity;
+import com.webdev.tourapp.Cities.Domain.Entities.LocationInCity;
+import com.webdev.tourapp.Cities.Domain.Entities.TourInCity;
 import com.webdev.tourapp.Cities.Domain.Exceptions.CityAlreadyExists;
 import com.webdev.tourapp.Cities.Domain.Ports.CityRepository;
 import com.webdev.tourapp.Cities.Domain.ValueObjects.CityDefaultIATA;
 import com.webdev.tourapp.Cities.Domain.ValueObjects.CityID;
 import com.webdev.tourapp.Cities.Domain.ValueObjects.CityName;
-import com.webdev.tourapp.Tours.Tour.Domain.Entities.Location;
-import com.webdev.tourapp.Tours.Tour.Domain.Tour;
 
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -27,8 +24,8 @@ public class CityCreator{
     public void execute(String id,
                         String name,
                         String defaultIATA,
-                        Optional<List<LocationsInCity>> locationsInCity,
-                        Optional<List<ToursInCity>> toursInCity)   {
+                        Optional<List<LocationInCity>> locationsInCity,
+                        Optional<List<TourInCity>> toursInCity)   {
         this.validate(id);
         City city = City.Create(
                 new CityID(id),
