@@ -3,7 +3,7 @@
 "-//Hibernate/Hibernate Mapping DTD//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-    <class name="com.webdev.tourapp.Cities.Domain.City" table="Cities">
+    <class name="com.webdev.tourapp.Cities.Domain.City" table="cities">
         <composite-id name="cityID" class="com.webdev.tourapp.Cities.Domain.ValueObjects.CityID" access="field">
             <key-property name="value" column="id"  access="field"  length="36" />
         </composite-id>
