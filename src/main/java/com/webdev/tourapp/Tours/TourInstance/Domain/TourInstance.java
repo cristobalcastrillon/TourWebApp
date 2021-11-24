@@ -1,6 +1,7 @@
 package com.webdev.tourapp.Tours.TourInstance.Domain;
 
 import com.webdev.tourapp.Shared.Domain.Aggregate.AggregateRoot;
+import com.webdev.tourapp.Shared.Domain.Aggregate.CustomUUID;
 import com.webdev.tourapp.Tours.TourInstance.Domain.Entities.StartingLocation;
 import com.webdev.tourapp.Tours.TourInstance.Domain.Entities.TourGuide;
 import com.webdev.tourapp.Tours.TourInstance.Domain.Entities.TourUser;
@@ -18,7 +19,7 @@ public class TourInstance extends AggregateRoot {
     TourNumberOfPersons tourNumberOfPersons;
     TourTotalPrice tourTotalPrice;
     TourInstanceStatus tourInstanceStatus;
-    Optional<TourGuide> tourGuide;
+    Optional<TourGuideID> tourGuideID;
     Optional<StartingLocation> startingLocation;
     Optional<List<TourUser>> tourUsers;
     Optional<TransportCompanyHired> transportCompanyHired;
@@ -31,7 +32,7 @@ public class TourInstance extends AggregateRoot {
                         TourNumberOfPersons numberOfPersons,
                         TourTotalPrice totalPrice,
                         TourInstanceStatus status,
-                        Optional<TourGuide> guide,
+                        Optional<TourGuideID> guideID,
                         Optional<StartingLocation> sLocation,
                         Optional<List<TourUser>> users,
                         Optional<TransportCompanyHired> companyHired,
@@ -41,7 +42,7 @@ public class TourInstance extends AggregateRoot {
         this.tourNumberOfPersons = numberOfPersons;
         this.tourTotalPrice = totalPrice;
         this.tourInstanceStatus = status;
-        this.tourGuide = guide;
+        this.tourGuideID = guideID;
         this.startingLocation = sLocation;
         this.tourUsers = users;
         this.transportCompanyHired = companyHired;
@@ -53,13 +54,13 @@ public class TourInstance extends AggregateRoot {
                                       TourNumberOfPersons numberOfPersons,
                                       TourTotalPrice totalPrice,
                                       TourInstanceStatus status,
-                                      Optional<TourGuide> guide,
+                                      Optional<TourGuideID> guideID,
                                       Optional<StartingLocation> sLocation,
                                       Optional<List<TourUser>> users,
                                       Optional<TransportCompanyHired> companyHired,
                                       AssociatedTourID associatedTourID){
 
-        TourInstance tourInstance = new TourInstance(date, instanceID, numberOfPersons, totalPrice, status, guide, sLocation, users, companyHired, associatedTourID);
+        TourInstance tourInstance = new TourInstance(date, instanceID, numberOfPersons, totalPrice, status, guideID, sLocation, users, companyHired, associatedTourID);
         //EVENTS
         return tourInstance;
     }
@@ -68,13 +69,13 @@ public class TourInstance extends AggregateRoot {
         HashMap<String, Object> data = new HashMap<>(){{
             put("tourDate", tourDate.value());
             put("tourInstanceID", tourInstanceID.value());
+            put("tourGuideID", tourGuideID.get().value());
             put("tourNumberOfPersons", tourNumberOfPersons.value());
             put("tourTotalPrice", tourTotalPrice.value());
             put("tourInstanceStatus", tourInstanceStatus.value());
             put("associatedTourID", associatedTourID.value());
         }};
         data.put("tourUsers", this.dataUsers());
-        data.put("tourGuide", this.dataGuide());
         data.put("startingLocation", this.dataStartingLocation());
         data.put("transportCompanyHired", this.dataTransportCompanyHired());
         return data;
@@ -97,11 +98,11 @@ public class TourInstance extends AggregateRoot {
 
     public HashMap<String, Object> dataGuide() {
         HashMap<String, Object> data = new HashMap<>();
-        if(this.tourGuide.isPresent()){
-            data.put("tourGuide", this.tourGuide.get().dataDB());
+        if(this.tourGuideID.isPresent()){
+            data.put("tourGuideID", this.tourGuideID.get().value());
         }
         else{
-            data.put("tourGuide", null);
+            data.put("tourGuideID", null);
         }
         return data;
     }
