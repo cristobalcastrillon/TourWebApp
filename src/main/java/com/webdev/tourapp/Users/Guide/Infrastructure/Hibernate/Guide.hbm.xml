@@ -7,6 +7,9 @@
         <composite-id name="guideID" class="com.webdev.tourapp.Users.Guide.Domain.ValueObjects.GuideID" access="field">
             <key-property name="value" column="id" access="field" length="36" />
         </composite-id>
+        <component name="guideStatus" class="com.webdev.tourapp.Users.Guide.Domain.ValueObjects.GuideStatus" access="field">
+            <property name="value" column="status" access="field" type="string"/>
+        </component>
         <component name="guideFirstName" class="com.webdev.tourapp.Users.Guide.Domain.ValueObjects.GuideFirstName" access="field">
             <property name="value" column="firstName" access="field" type="string"/>
         </component>

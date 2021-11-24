@@ -4,8 +4,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Optional;
 
+import com.webdev.tourapp.Shared.Domain.Aggregate.CustomUUID;
 import com.webdev.tourapp.Users.User.Domain.ValueObjects.UserID;
-import com.webdev.tourapp.Users.User.Domain.Entities.UserTourInstance;
 import com.webdev.tourapp.Users.User.Domain.ValueObjects.*;
 
 public class User
@@ -15,21 +15,21 @@ public class User
     private UserFirstName userFirstName;
     private UserLastName userLastName;
     private UserPassword userPassword;
-    private Optional<List<UserTourInstance>> userBookedTours;
+    private Optional<List<CustomUUID>> userBookedTourIDs;
     //Constructor:
     public User(){}
 
     public User(UserID userID, Username username,
                 UserFirstName userFirstName, UserLastName userLastName,
                 UserPassword password,
-                Optional<List<UserTourInstance>> userBookedTours)
+                Optional<List<CustomUUID>> userBookedTours)
     {
         this.userID = userID;
         this.username = username;
         this.userFirstName = userFirstName;
         this.userLastName = userLastName;
         this.userPassword = password;
-        this.userBookedTours = userBookedTours;
+        this.userBookedTourIDs = userBookedTours;
     }
     public static User Create(UserID userID, Username username,
                               UserFirstName userFirstName, UserLastName userLastName,
@@ -69,4 +69,11 @@ public class User
         this.userPassword = password;
     }
 
+    public Optional<List<CustomUUID>> getUserBookedTourIDs(){
+        return this.userBookedTourIDs;
+    }
+
+    public void setUserBookedTourIDs(Optional<List<CustomUUID>> listOptional){
+        this.userBookedTourIDs = listOptional;
+    }
 }

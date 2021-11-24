@@ -16,11 +16,11 @@ public class GuideCreator
     public GuideCreator(GuideRepository myRep) {
         this.myRep = myRep;
     }
-    public void execute(String id, String fName, String lName, Long phoneNumber,
+    public void execute(String id, String status, String fName, String lName, Long phoneNumber,
            Double baseFare , String pword)
     {
         this.validate(id);
-        Guide myGuide = Guide.Create(new GuideID(id), new GuideFirstName(fName)
+        Guide myGuide = Guide.Create(new GuideID(id), new GuideStatus(status), new GuideFirstName(fName)
                 , new GuideLastName(lName), new GuidePhoneNumber(phoneNumber),
                 new GuideBaseFare(baseFare), new GuidePassword(pword));
         myRep.save(myGuide);
