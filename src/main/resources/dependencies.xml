@@ -14,6 +14,8 @@
     <bean id="CompanyRepository" class="com.webdev.tourapp.TransportCompany.Company.Infrastructure.Hibernate.HibernateCompanyRepository"/>
 
     <bean id="LocationRepository" class="com.webdev.tourapp.Location.Infrastructure.Hibernate.HibernateLocationRepository"/>
+       
+    <bean id="TokenGeneration" class="com.webdev.tourapp.Shared.Applicacion.TokenGeneration"/>
 
     <bean id="TourCreator" class="com.webdev.tourapp.Tours.Tour.Application.Create.TourCreator">
         <constructor-arg ref="TourRepository"/>
@@ -97,6 +99,10 @@
 
     <bean id="UserDelete" class="com.webdev.tourapp.Users.User.Application.DeleteUser.UserDelete">
         <constructor-arg ref="UserRepository"/>
+    </bean>
+       
+    <bean id="UserLogin" class="com.webdev.tourapp.Users.User.Application.Login.UserLogin">
+        <constructor-arg ref="TokenGeneration"/>
     </bean>
 
     <bean id="FindUserByID" class="com.webdev.tourapp.Users.User.Application.FindUserByID.FindByID">
