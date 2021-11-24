@@ -52,7 +52,7 @@ public class HibernateTourInstanceRepository extends HibernateRepository<TourIns
         CriteriaBuilder cb = sessionFactory.getCriteriaBuilder();
         CriteriaQuery<TourInstance> cq = cb.createQuery(TourInstance.class);
         Root<TourInstance> root = cq.from(TourInstance.class);
-        cq.select(root).where(cb.equal(root.get("tourGuideID"), null));
+        cq.select(root).where(cb.isNull(root.get("tourGuideID")));
         List<TourInstance> tourInstances = sessionFactory.getCurrentSession().createQuery(cq).getResultList();
         return Optional.ofNullable(tourInstances);
     }
