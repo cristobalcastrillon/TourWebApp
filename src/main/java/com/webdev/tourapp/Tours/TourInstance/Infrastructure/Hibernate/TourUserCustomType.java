@@ -1,7 +1,7 @@
 package com.webdev.tourapp.Tours.TourInstance.Infrastructure.Hibernate;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.webdev.tourapp.Tours.TourInstance.Domain.Entities.TourUser;
+import com.webdev.tourapp.Tours.TourInstance.Domain.Entities.TourUserID;
 import org.hibernate.HibernateException;
 import org.hibernate.engine.spi.SharedSessionContractImplementor;
 import org.hibernate.usertype.UserType;
@@ -40,24 +40,23 @@ public class TourUserCustomType implements UserType {
 
     @Override
     public Object nullSafeGet(ResultSet rs, String[] names, SharedSessionContractImplementor session, Object owner) throws HibernateException, SQLException {
-        List<TourUser> response = null;
+        List<TourUserID> response = null;
         try {
             Optional<String> value = Optional.ofNullable(rs.getString(names[0]));
             if(value.isPresent()) {
                 List<HashMap<String, Object>> objects = new ObjectMapper().readValue(value.get(), List.class);
-                response = objects.stream().map(element -> new TourUser((String) element.get("userID"),
-                        (String) element.get("username"), (String) element.get("userFirstName"), (String) element.get("userLastName"))).collect(Collectors.toList());
+                response = objects.stream().map(element -> new TourUserID((String) element.get("userID"))).collect(Collectors.toList());
             }
         }
         catch (Exception e) {
-            throw new HibernateException("Error leyendo el mapa de TourUser " + e.toString());
+            throw new HibernateException("Error leyendo el mapa de TourUserID " + e.toString());
         }
         return Optional.ofNullable(response);
     }
 
     @Override
     public void nullSafeSet(PreparedStatement st, Object value, int index, SharedSessionContractImplementor session) throws HibernateException, SQLException {
-        Optional<List<TourUser>> object = (value == null) ? Optional.empty() : (Optional<List<TourUser>>) value;
+        Optional<List<TourUserID>> object = (value == null) ? Optional.empty() : (Optional<List<TourUserID>>) value;
         try {
             if(object.isEmpty()) {
                 st.setNull(index, Types.VARCHAR);

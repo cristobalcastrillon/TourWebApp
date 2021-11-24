@@ -2,8 +2,7 @@ package com.webdev.tourapp.Tours.TourInstance.Infrastructure.Controllers;
 
 import com.webdev.tourapp.Tours.TourInstance.Application.Update.TourInstanceUpdater;
 import com.webdev.tourapp.Tours.TourInstance.Domain.Entities.StartingLocation;
-import com.webdev.tourapp.Tours.TourInstance.Domain.Entities.TourGuide;
-import com.webdev.tourapp.Tours.TourInstance.Domain.Entities.TourUser;
+import com.webdev.tourapp.Tours.TourInstance.Domain.Entities.TourUserID;
 import com.webdev.tourapp.Tours.TourInstance.Domain.Entities.TransportCompanyHired;
 import com.webdev.tourapp.Tours.TourInstance.Domain.Exceptions.TourInstanceIDNotFound;
 import com.webdev.tourapp.Tours.TourInstance.Domain.ValueObjects.TourGuideID;
@@ -55,7 +54,7 @@ public class UpdateTourInstancePostController {
         private String tourInstanceStatus;
         private Optional<TourGuideID> tourGuideID;
         private Optional<StartingLocation> startingLocation;
-        private Optional<List<TourUser>> tourUsers;
+        private Optional<List<TourUserID>> tourUsers;
         private Optional<TransportCompanyHired> transportCompanyHired;
         private String associatedTourID;
 
@@ -109,11 +108,11 @@ public class UpdateTourInstancePostController {
             this.startingLocation = startingLocation;
         }
 
-        public Optional<List<TourUser>> getTourUsers() {
+        public Optional<List<TourUserID>> getTourUsers() {
             return tourUsers;
         }
 
-        public void setTourUsers(Optional<List<TourUser>> tourUsers) {
+        public void setTourUsers(Optional<List<TourUserID>> tourUsers) {
             this.tourUsers = tourUsers;
         }
 
