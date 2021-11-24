@@ -8,6 +8,7 @@ import java.util.HashMap;
 public class Guide
 {
     private GuideID guideID;
+    private GuideStatus guideStatus;
     private GuideFirstName guideFirstName;
     private GuideLastName guideLastName;
     private GuidePhoneNumber guidePhoneNumber;
@@ -16,19 +17,20 @@ public class Guide
 
     public Guide(){}
 
-    public Guide(GuideID id, GuideFirstName firstName, GuideLastName lastName,
+    public Guide(GuideID id, GuideStatus guideStatus, GuideFirstName firstName, GuideLastName lastName,
                  GuidePhoneNumber phoneNumber, GuideBaseFare baseFare, GuidePassword guidePassword) {
         this.guideID = id;
+        this.guideStatus = guideStatus;
         this.guideFirstName = firstName;
         this.guideLastName = lastName;
         this.guidePhoneNumber = phoneNumber;
         this.guideBaseFare = baseFare;
         this.guidePassword = guidePassword;
     }
-    public static Guide Create(GuideID id, GuideFirstName firstName, GuideLastName lastName,
+    public static Guide Create(GuideID id, GuideStatus status, GuideFirstName firstName, GuideLastName lastName,
                                GuidePhoneNumber phoneNumber, GuideBaseFare baseFare, GuidePassword guidePassword)
     {
-        Guide myGuide = new Guide(id, firstName, lastName, phoneNumber, baseFare, guidePassword);
+        Guide myGuide = new Guide(id, status, firstName, lastName, phoneNumber, baseFare, guidePassword);
         //TODO Events
         return myGuide;
     }
@@ -36,6 +38,7 @@ public class Guide
     {
         return new HashMap<String, Object>() {{
             put("guideID", guideID.value());
+            put("guideStatus", guideStatus.value());
             put("guideFirstName", guideFirstName.value());
             put("guideLastName", guideLastName.value());
             put("guidePhoneNumber", guidePhoneNumber.value());
@@ -44,4 +47,7 @@ public class Guide
         }};
     }
 
+    public void updateGuideStatus(GuideStatus status) {
+        this.guideStatus = status;
+    }
 }

@@ -15,21 +15,21 @@ public class User
     private UserFirstName userFirstName;
     private UserLastName userLastName;
     private UserPassword userPassword;
-    private Optional<List<UserTourInstance>> userInscribedTours;
+    private Optional<List<UserTourInstance>> userBookedTours;
     //Constructor:
     public User(){}
 
     public User(UserID userID, Username username,
                 UserFirstName userFirstName, UserLastName userLastName,
                 UserPassword password,
-                Optional<List<UserTourInstance>> userInscribedTours)
+                Optional<List<UserTourInstance>> userBookedTours)
     {
         this.userID = userID;
         this.username = username;
         this.userFirstName = userFirstName;
         this.userLastName = userLastName;
         this.userPassword = password;
-        this.userInscribedTours = userInscribedTours;
+        this.userBookedTours = userBookedTours;
     }
     public static User Create(UserID userID, Username username,
                               UserFirstName userFirstName, UserLastName userLastName,
