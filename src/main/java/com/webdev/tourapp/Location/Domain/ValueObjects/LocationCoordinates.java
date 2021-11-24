@@ -12,9 +12,9 @@ public class LocationCoordinates extends StringValueObject {
     }
 
     private void validate(String coordinates) {
-        // Validar unas coordenadas en formato DMS
-        if(!coordinates.matches("^[-+]?([1-8]?\\d(\\.\\d+)?|90(\\.0+)?),\\s*[-+]?(180(\\.0+)?|((1[0-7]\\d)|([1-9]?\\d))(\\.\\d+)?)$")){
+        //TODO: Validar unas coordenadas en formato DMS
+        /*if(!coordinates.matches("^[-+]?([1-8]?\\d(\\.\\d+)?|90(\\.0+)?),\\s*[-+]?(180(\\.0+)?|((1[0-7]\\d)|([1-9]?\\d))(\\.\\d+)?)$")){
             throw new LocationCoordinatesInvalidFormat("Invalid coordinates format");
-        }
+        }*/
     }
 }

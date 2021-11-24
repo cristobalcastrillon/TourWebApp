@@ -12,11 +12,12 @@ public class LocationWebsiteURL extends StringValueObject {
     }
 
     private void validate(String webSiteUrl) {
-        // Validar que el URL sea una URL válida
-        if (!webSiteUrl.startsWith("http://") && !webSiteUrl.startsWith("https://")) {
+        //TODO: Validar que el URL sea una URL válida
+        /*
+        if (!webSiteUrl.startsWith("http") || !webSiteUrl.startsWith("https")) {
             throw new LocationWebSiteIsNotValid("The URL must start with http:// or https://");
         } else if (webSiteUrl.length() > 255) {
             throw new LocationWebSiteIsNotValid("The URL must be less than 255 characters");
-        }
+        }*/
     }
 }

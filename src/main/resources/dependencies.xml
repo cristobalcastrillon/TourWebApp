@@ -15,8 +15,6 @@
 
     <bean id="LocationRepository" class="com.webdev.tourapp.Location.Infrastructure.Hibernate.HibernateLocationRepository"/>
 
-    <!--bean id="CityRepository" class="com.webdev.tourapp.Cities.Infrastructure.Hibernate.HibernateCityRepository"/-->
-
     <bean id="TourCreator" class="com.webdev.tourapp.Tours.Tour.Application.Create.TourCreator">
         <constructor-arg ref="TourRepository"/>
     </bean>
