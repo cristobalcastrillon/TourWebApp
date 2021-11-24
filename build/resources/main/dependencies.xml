@@ -119,6 +119,11 @@
         <constructor-arg ref="UserRepository"/>
     </bean>
 
+    <!--Adds a Tour Instance ID to the current User's TourInstanceIDs List (List of IDs of TourInstances the User has booked)-->
+    <bean id="AddTourInstanceIDToList" class="com.webdev.tourapp.Users.User.Application.AddTourInstanceIDToList.AddTourInstanceIDToList">
+        <constructor-arg ref="UserRepository"/>
+    </bean>
+
     <bean id="GuideAll" class="com.webdev.tourapp.Users.Guide.Application.All.GuideAll">
         <constructor-arg ref="GuideRepository"/>
     </bean>
@@ -132,6 +137,10 @@
     </bean>
 
     <bean id="FindGuideByID" class="com.webdev.tourapp.Users.Guide.Application.FindGuideByID.FindGuideByID">
+        <constructor-arg ref="GuideRepository"/>
+    </bean>
+
+    <bean id="GuideStatusUpdater" class="com.webdev.tourapp.Users.Guide.Application.UpdateGuideStatus.GuideStatusUpdater">
         <constructor-arg ref="GuideRepository"/>
     </bean>
 

@@ -23,7 +23,7 @@ public class CreateGuidePostController
 
     @PostMapping(value = "/")
     public ResponseEntity execute(@RequestBody GuideRequest request) {
-        this.creator.execute(request.getGuideID(), request.getGuideFirstName(),
+        this.creator.execute(request.getGuideID(), request.getGuideStatus(), request.getGuideFirstName(),
                 request.getGuideLastName(), request.getGuidePhoneNumber()
                 , request.getGuideBaseFare(), request.getGuidePassword());
         return ResponseEntity.status(HttpStatus.CREATED).body(null);
@@ -51,6 +51,16 @@ public class CreateGuidePostController
 
     static class GuideRequest {
         private String guideID;
+
+        public String getGuideStatus() {
+            return guideStatus;
+        }
+
+        public void setGuideStatus(String guideStatus) {
+            this.guideStatus = guideStatus;
+        }
+
+        private String guideStatus;
         private String guideFirstName;
         private String guideLastName;
         private Long guidePhoneNumber;

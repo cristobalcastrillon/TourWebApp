@@ -3,6 +3,7 @@ package com.webdev.tourapp.Shared.Domain.Aggregate;
 import com.webdev.tourapp.Shared.Domain.Exceptions.UUIDNotValid;
 
 import java.io.Serializable;
+import java.util.HashMap;
 import java.util.Objects;
 import java.util.UUID;
 
@@ -52,5 +53,12 @@ public class CustomUUID implements Serializable {
 
     public String getValue() {
         return value;
+    }
+
+    public HashMap<String, Object> dataDB(String key)
+    {
+        return new HashMap<>(){{
+            put(key, value);
+        }};
     }
 }
