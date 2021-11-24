@@ -1,11 +1,12 @@
 package com.webdev.tourapp.Users.Guide.Domain;
 
+import com.webdev.tourapp.Shared.Domain.Aggregate.AggregateRoot;
 import com.webdev.tourapp.Users.Guide.Domain.ValueObjects.GuideID;
 import com.webdev.tourapp.Users.Guide.Domain.ValueObjects.*;
 
 import java.util.HashMap;
 
-public class Guide
+public class Guide extends AggregateRoot
 {
     private GuideID guideID;
     private GuideStatus guideStatus;
@@ -47,7 +48,7 @@ public class Guide
         }};
     }
 
-    public void updateGuideStatus(GuideStatus status) {
-        this.guideStatus = status;
+    public void setGuideStatusToTaken() {
+        this.guideStatus = new GuideStatus("taken");
     }
 }

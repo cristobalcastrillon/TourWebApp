@@ -48,6 +48,16 @@ public class HibernateTourInstanceRepository extends HibernateRepository<TourIns
     }
 
     @Override
+    public Optional<List<TourInstance>> findByNullGuideID(){
+        CriteriaBuilder cb = sessionFactory.getCriteriaBuilder();
+        CriteriaQuery<TourInstance> cq = cb.createQuery(TourInstance.class);
+        Root<TourInstance> root = cq.from(TourInstance.class);
+        cq.select(root).where(cb.equal(root.get("tourGuideID"), null));
+        List<TourInstance> tourInstances = sessionFactory.getCurrentSession().createQuery(cq).getResultList();
+        return Optional.ofNullable(tourInstances);
+    }
+
+    @Override
     public Optional<List<TourInstance>> findByDate(TourDate date) {
         /*
         Java.util.Date dt = new Java.util.Date();

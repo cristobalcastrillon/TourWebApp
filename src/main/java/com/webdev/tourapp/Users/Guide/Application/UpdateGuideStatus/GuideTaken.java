@@ -4,14 +4,13 @@ import com.webdev.tourapp.Users.Guide.Domain.Exceptions.GuideDoesNotExist;
 import com.webdev.tourapp.Users.Guide.Domain.Guide;
 import com.webdev.tourapp.Users.Guide.Domain.Ports.GuideRepository;
 import com.webdev.tourapp.Users.Guide.Domain.ValueObjects.GuideID;
-import com.webdev.tourapp.Users.Guide.Domain.ValueObjects.GuideStatus;
 
 import java.util.Optional;
 
-public class GuideStatusUpdater {
+public class GuideTaken {
     GuideRepository repository;
 
-    public GuideStatusUpdater(GuideRepository repository) {
+    public GuideTaken(GuideRepository repository) {
         this.repository = repository;
     }
 
@@ -21,7 +20,7 @@ public class GuideStatusUpdater {
             throw new GuideDoesNotExist("The guide with id " + guideID + " does not exist.");
         }
         Guide guide = guideOptional.get();
-        guide.updateGuideStatus(new GuideStatus(newStatus));
+        guide.setGuideStatusToTaken();
         repository.update(guide);
     }
 }

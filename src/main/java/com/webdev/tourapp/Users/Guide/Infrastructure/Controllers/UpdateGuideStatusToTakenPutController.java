@@ -1,6 +1,6 @@
 package com.webdev.tourapp.Users.Guide.Infrastructure.Controllers;
 
-import com.webdev.tourapp.Users.Guide.Application.UpdateGuideStatus.GuideStatusUpdater;
+import com.webdev.tourapp.Users.Guide.Application.UpdateGuideStatus.GuideTaken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -8,10 +8,10 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping(value = "/Guide")
-public class UpdateGuideStatusPutController {
+public class UpdateGuideStatusToTakenPutController {
 
     @Autowired
-    GuideStatusUpdater updater;
+    GuideTaken updater;
 
     @PutMapping(value = "{id}")
     public ResponseEntity execute(@PathVariable("id") String id, @RequestBody GuideStatusRequest request){
