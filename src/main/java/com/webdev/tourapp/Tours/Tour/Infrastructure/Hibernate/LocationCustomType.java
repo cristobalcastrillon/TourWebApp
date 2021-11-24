@@ -45,9 +45,7 @@ public class LocationCustomType implements UserType {
             Optional<String> value = Optional.ofNullable(rs.getString(names[0]));
             if(value.isPresent()) {
                 List<HashMap<String, Object>> objects = new ObjectMapper().readValue(value.get(), List.class);
-                response = objects.stream().map(element -> new Location((String) element.get("locationID"),
-                        (String) element.get("locationName"), (String) element.get("locationCoordinates"), (String) element.get("locationDescription"),
-                        (String) element.get("locationCategory"), (String) element.get("locationWebsiteURL"), (Double) element.get("locationPrice"))).collect(Collectors.toList());
+                response = objects.stream().map(element -> new Location((String) element.get("locationID"))).collect(Collectors.toList());
             }
         }
         catch (Exception e) {

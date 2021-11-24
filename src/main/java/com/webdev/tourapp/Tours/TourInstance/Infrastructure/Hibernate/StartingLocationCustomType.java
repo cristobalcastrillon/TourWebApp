@@ -43,10 +43,7 @@ public class StartingLocationCustomType implements UserType {
             Optional<String> value = Optional.ofNullable(rs.getString(names[0]));
             if(value.isPresent()) {
                 HashMap<String, Object> mapper = new ObjectMapper().readValue(value.get(), HashMap.class);
-                response = new StartingLocation((String) mapper.get("locationID"), (String) mapper.get("locationName"),
-                        (String) mapper.get("locationCoordinates"), (String) mapper.get("locationDescription"),
-                        (String) mapper.get("locationCategory"), Optional.of((String)mapper.get("locationWebsiteURL")),
-                        Optional.of((Double) mapper.get("locationPrice")));
+                response = new StartingLocation((String) mapper.get("locationID"));
             }
         }
         catch (Exception e) {
