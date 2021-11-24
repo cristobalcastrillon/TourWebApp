@@ -135,6 +135,10 @@
         <constructor-arg ref="GuideRepository"/>
     </bean>
 
+    <bean id="GuideStatusUpdater" class="com.webdev.tourapp.Users.Guide.Application.UpdateGuideStatus.GuideStatusUpdater">
+        <constructor-arg ref="GuideRepository"/>
+    </bean>
+
     <bean id="CompanyCreator" class="com.webdev.tourapp.TransportCompany.Company.Application.Create.CompanyCreator">
         <constructor-arg ref="CompanyRepository"/>
     </bean>

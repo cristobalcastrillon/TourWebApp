@@ -25,7 +25,5 @@ public class UserUpdateLastName {
         User user = userOpt.get();
         user.UpdateLastName(new UserLastName(newLastName));
         myRep.update(user);
-        //myRep.save(user); ??
-
     }
 }
