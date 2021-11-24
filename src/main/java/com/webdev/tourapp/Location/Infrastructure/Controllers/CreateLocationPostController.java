@@ -15,7 +15,7 @@ import java.util.HashMap;
 @RestController
 @RequestMapping(value="/Location")
 public class CreateLocationPostController {
-    //@Autowired
+    @Autowired
     private LocationCreator creator;
 
     @PostMapping(value = "/")

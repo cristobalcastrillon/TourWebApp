@@ -15,7 +15,7 @@
 
     <bean id="LocationRepository" class="com.webdev.tourapp.Location.Infrastructure.Hibernate.HibernateLocationRepository"/>
 
-    <bean id="CityRepository" class="com.webdev.tourapp.Cities.Infrastructure.Hibernate.HibernateCityRepository"/>
+    <!--bean id="CityRepository" class="com.webdev.tourapp.Cities.Infrastructure.Hibernate.HibernateCityRepository"/-->
 
     <bean id="TourCreator" class="com.webdev.tourapp.Tours.Tour.Application.Create.TourCreator">
         <constructor-arg ref="TourRepository"/>
@@ -161,6 +161,10 @@
         <constructor-arg ref="CompanyRepository"/>
     </bean>
 
+    <bean id="LocationCreator" class="com.webdev.tourapp.Location.Application.Create.LocationCreator">
+        <constructor-arg ref="LocationRepository"/>
+    </bean>
+
     <bean id="LocationIDFinder" class="com.webdev.tourapp.Location.Application.FindByID.LocationIDFinder">
         <constructor-arg ref="LocationRepository"/>
     </bean>
@@ -185,7 +189,23 @@
         <constructor-arg ref="LocationRepository"/>
     </bean>
 
-    <bean id="CityAll" class="com.webdev.tourapp.Cities.Application.All.CityAll">
+    <bean id="LocationAll" class="com.webdev.tourapp.Location.Application.All.LocationAll">
+        <constructor-arg ref="LocationRepository"/>
+    </bean>
+
+    <bean id="LocationDeleter" class="com.webdev.tourapp.Location.Application.Delete.LocationDeleter">
+        <constructor-arg ref="LocationRepository"/>
+    </bean>
+
+    <bean id="LocationNameFinder" class="com.webdev.tourapp.Location.Application.FindByLocationName.LocationNameFinder">
+        <constructor-arg ref="LocationRepository"/>
+    </bean>
+
+    <bean id="LocationUpdater" class="com.webdev.tourapp.Location.Application.Update.LocationUpdater">
+        <constructor-arg ref="LocationRepository"/>
+    </bean>
+
+    <!--bean id="CityAll" class="com.webdev.tourapp.Cities.Application.All.CityAll">
         <constructor-arg ref="CityRepository"/>
     </bean>
 
@@ -211,6 +231,6 @@
 
     <bean id="CityCreator" class="com.webdev.tourapp.Cities.Application.Create.CityCreator">
         <constructor-arg ref="CityRepository"/>
-    </bean>
+    </bean-->
 
 </beans>

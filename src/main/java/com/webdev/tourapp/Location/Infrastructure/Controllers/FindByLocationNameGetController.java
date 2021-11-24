@@ -17,7 +17,7 @@ import java.util.List;
 @RequestMapping(value="/Location")
 public class FindByLocationNameGetController {
 
-    //@Autowired
+    @Autowired
     private LocationNameFinder locationNameFinder;
 
     @GetMapping(value ="/locationName")

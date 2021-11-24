@@ -13,7 +13,7 @@ import java.util.HashMap;
 @RequestMapping(value = "/Location")
 public class DeleteLocationDeleteController {
 
-    //@Autowired
+    @Autowired
     private LocationDeleter deleter;
 
     @DeleteMapping(value = "/delete")

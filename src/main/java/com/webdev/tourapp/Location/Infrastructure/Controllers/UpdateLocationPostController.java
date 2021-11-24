@@ -12,7 +12,7 @@ import java.util.HashMap;
 @RestController
 @RequestMapping(value = "/Location")
 public class UpdateLocationPostController {
-    //@Autowired
+    @Autowired
     private LocationUpdater updater;
 
     @PostMapping(value = "/update")

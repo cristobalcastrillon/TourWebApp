@@ -31,10 +31,9 @@ public class HibernateConfigFactory {
         FileSystemResource userResource = new FileSystemResource("./src/main/java/com/webdev/tourapp/Users/User/Infrastructure/Hibernate/User.hbm.xml");
         FileSystemResource guideResource = new FileSystemResource("./src/main/java/com/webdev/tourapp/Users/Guide/Infrastructure/Hibernate/Guide.hbm.xml");
         FileSystemResource transportCompanyResource = new FileSystemResource("./src/main/java/com/webdev/tourapp/TransportCompany/Company/Infrastructure/Hibernate/Company.hbm.xml");
-        FileSystemResource cityResource = new FileSystemResource("./src/main/java/com/webdev/tourapp/Cities/Infrastructure/Hibernate/City.hbm.xml");
         FileSystemResource locationResource = new FileSystemResource("./src/main/java/com/webdev/tourapp/Location/Infrastructure/Hibernate/Location.hbm.xml");
 
-        sessionFactory.setMappingLocations(tourInstanceResource, tourResource, userResource, guideResource, transportCompanyResource, cityResource, locationResource);
+        sessionFactory.setMappingLocations(tourInstanceResource, tourResource, userResource, guideResource, transportCompanyResource, locationResource);
 
         return sessionFactory;
     }

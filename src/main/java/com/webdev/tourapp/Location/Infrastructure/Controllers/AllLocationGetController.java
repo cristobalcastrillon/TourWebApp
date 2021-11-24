@@ -14,7 +14,7 @@ import java.util.List;
 @RestController
 @RequestMapping(value="/Location")
 public class AllLocationGetController {
-    //@Autowired
+    @Autowired
     private LocationAll all;
 
     @GetMapping(value="/")
