@@ -34,5 +34,6 @@ public class AddTourInstanceIDToList {
         tourInstanceList.add(tourInstanceIDForList);
         Optional<List<CustomUUID>> optionalList = Optional.of(tourInstanceList);
         user.setUserBookedTourIDs(optionalList);
+        repository.update(user);
     }
 }
