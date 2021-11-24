@@ -22,4 +22,8 @@ public class DoubleValueObject {
     public int hashCode() {
         return Objects.hash(value);
     }
+
+    public Double getValue() {
+        return value;
+    }
 }

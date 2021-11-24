@@ -20,9 +20,10 @@ public class FindByLocationNameGetController {
     @Autowired
     private LocationNameFinder locationNameFinder;
 
+    //TODO: Fix
     @GetMapping(value ="/locationName")
     @ResponseBody
-    public ResponseEntity<List<HashMap<String,Object>>> execute(@RequestParam("locationName") String locationName) {
+    public ResponseEntity<List<HashMap<String,Object>>> execute(@RequestBody String locationName) {
         LocationNameFinderResponse response = locationNameFinder.execute(locationName);
         return ResponseEntity.status(HttpStatus.OK).body(response.response());
     }

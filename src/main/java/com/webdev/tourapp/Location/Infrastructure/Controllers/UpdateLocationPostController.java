@@ -19,12 +19,12 @@ public class UpdateLocationPostController {
     public ResponseEntity execute(@RequestParam(value = "locationID") String locationID, @RequestBody LocationRequest request) {
         this.updater.execute(
                 locationID,
-                request.getLocationName(),
-                request.getLocationCoordinates(),
-                request.getLocationDescription(),
-                request.getLocationWebsiteURL(),
-                request.getLocationCategory(),
-                request.getLocationPrice());
+                request.getName(),
+                request.getCoordinates(),
+                request.getDescription(),
+                request.getWebsiteUrl(),
+                request.getCategory(),
+                request.getPrice());
         return ResponseEntity.status(HttpStatus.CREATED).body(null);
     }
 
@@ -38,59 +38,59 @@ public class UpdateLocationPostController {
     }
 
     static class LocationRequest {
-        private String locationName;
-        private String locationCoordinates;
-        private String locationDescription;
-        private String locationWebsiteURL;
-        private String locationCategory;
-        private double locationPrice;
+        private String name;
+        private String coordinates;
+        private String description;
+        private String websiteUrl;
+        private String category;
+        private double price;
 
-        public String getLocationName() {
-            return locationName;
+        public String getName() {
+            return name;
         }
 
-        public void setLocationName(String locationName) {
-            this.locationName = locationName;
+        public void setName(String name) {
+            this.name = name;
         }
 
-        public String getLocationCoordinates() {
-            return locationCoordinates;
+        public String getCoordinates() {
+            return coordinates;
         }
 
-        public void setLocationCoordinates(String locationCoordinates) {
-            this.locationCoordinates = locationCoordinates;
+        public void setCoordinates(String coordinates) {
+            this.coordinates = coordinates;
         }
 
-        public String getLocationDescription() {
-            return locationDescription;
+        public String getDescription() {
+            return description;
         }
 
-        public void setLocationDescription(String locationDescription) {
-            this.locationDescription = locationDescription;
+        public void setDescription(String description) {
+            this.description = description;
         }
 
-        public String getLocationWebsiteURL() {
-            return locationWebsiteURL;
+        public String getWebsiteUrl() {
+            return websiteUrl;
         }
 
-        public void setLocationWebsiteURL(String locationWebsiteURL) {
-            this.locationWebsiteURL = locationWebsiteURL;
+        public void setWebsiteUrl(String websiteUrl) {
+            this.websiteUrl = websiteUrl;
         }
 
-        public String getLocationCategory() {
-            return locationCategory;
+        public String getCategory() {
+            return category;
         }
 
-        public void setLocationCategory(String locationCategory) {
-            this.locationCategory = locationCategory;
+        public void setCategory(String category) {
+            this.category = category;
         }
 
-        public double getLocationPrice() {
-            return locationPrice;
+        public double getPrice() {
+            return price;
         }
 
-        public void setLocationPrice(double locationPrice) {
-            this.locationPrice = locationPrice;
+        public void setPrice(double price) {
+            this.price = price;
         }
     }
 }

@@ -19,9 +19,10 @@ public class FindByLocationPriceGetController {
     @Autowired
     private LocationPriceFinder locationPriceFinder;
 
+    //TODO: Fix
     @GetMapping(value ="/locationPrice")
     @ResponseBody
-    public ResponseEntity<List<HashMap<String, Object>>> execute(@RequestParam("locationPrice") double locationPrice){
+    public ResponseEntity<List<HashMap<String, Object>>> execute(@RequestBody double locationPrice){
         LocationPriceFinderResponse response = locationPriceFinder.execute(locationPrice);
         return ResponseEntity.status(HttpStatus.OK).body(response.response());
     }

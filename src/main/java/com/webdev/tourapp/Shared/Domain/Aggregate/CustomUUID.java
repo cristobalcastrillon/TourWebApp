@@ -49,4 +49,8 @@ public class CustomUUID implements Serializable {
     public int hashCode() {
         return Objects.hash(value);
     }
+
+    public String getValue() {
+        return value;
+    }
 }

@@ -50,7 +50,7 @@ public class HibernateLocationRepository extends HibernateRepository<Location> i
         CriteriaBuilder builder = sessionFactory.getCriteriaBuilder();
         CriteriaQuery<Location> criteria = builder.createQuery(Location.class);
         Root<Location> root = criteria.from(Location.class);
-        criteria.select(root).where(builder.equal(root.get("name"), nameQuery.value()));
+        criteria.select(root).where(builder.like(root.get("locationName"), nameQuery.value()));
 
         List<Location> locationList = sessionFactory.getCurrentSession().createQuery(criteria).getResultList();
         return Optional.ofNullable(locationList);

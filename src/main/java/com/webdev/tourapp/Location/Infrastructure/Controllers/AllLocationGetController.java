@@ -19,8 +19,8 @@ public class AllLocationGetController {
 
     @GetMapping(value="/")
     public ResponseEntity<List<HashMap<String,Object>>> execute(){
-        LocationAllResponse respnse = all.execute();
-        return ResponseEntity.status(HttpStatus.OK).body(respnse.response());
+        LocationAllResponse response = all.execute();
+        return ResponseEntity.status(HttpStatus.OK).body(response.response());
     }
     @ExceptionHandler(NoLocationsFoundException.class)
     @ResponseStatus(code = HttpStatus.NO_CONTENT)

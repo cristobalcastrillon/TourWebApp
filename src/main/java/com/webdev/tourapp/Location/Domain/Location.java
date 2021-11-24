@@ -14,6 +14,8 @@ public class Location {
     private LocationCategory locationCategory;
     private LocationPrice locationPrice;
 
+    private Location(){}
+
     public Location(
             LocationID locationid,
             LocationName locationName,

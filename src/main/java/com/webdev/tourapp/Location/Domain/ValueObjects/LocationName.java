@@ -5,7 +5,7 @@ import com.webdev.tourapp.Shared.Domain.Aggregate.StringValueObject;
 
 public class LocationName extends StringValueObject {
 
-    private LocationName(){}
+    public LocationName(){}
 
     public LocationName(String name){
         this.validate(name);
