@@ -12,6 +12,7 @@ public interface TourInstanceRepository {
     void delete(TourInstance tourInstance);
     Optional<List<TourInstance>> all();
     Optional<TourInstance> findByID(TourInstanceID id);
+    Optional<List<TourInstance>> findByNullGuideID();
     Optional<List<TourInstance>> findByDate(TourDate date);
     Optional<List<TourInstance>> findByStatus(TourInstanceStatus status);
     Optional<List<TourInstance>> findByNumberOfPersons(TourNumberOfPersons numberOfPersons);
