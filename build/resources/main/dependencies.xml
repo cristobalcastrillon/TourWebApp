@@ -83,6 +83,10 @@
         <constructor-arg ref="TourInstanceRepository"/>
     </bean>
 
+    <bean id="TourInstanceNullGuideIDFinder" class="com.webdev.tourapp.Tours.TourInstance.Application.FindByNullGuideID.TourInstanceNullGuideIDFinder">
+        <constructor-arg ref="TourInstanceRepository"/>
+    </bean>
+
     <bean id="UserCreator" class="com.webdev.tourapp.Users.User.Application.Create.UserCreator">
         <constructor-arg ref="UserRepository"/>
     </bean>
@@ -140,7 +144,7 @@
         <constructor-arg ref="GuideRepository"/>
     </bean>
 
-    <bean id="GuideStatusUpdater" class="com.webdev.tourapp.Users.Guide.Application.UpdateGuideStatus.GuideStatusUpdater">
+    <bean id="GuideTaken" class="com.webdev.tourapp.Users.Guide.Application.UpdateGuideStatus.GuideTaken">
         <constructor-arg ref="GuideRepository"/>
     </bean>
 

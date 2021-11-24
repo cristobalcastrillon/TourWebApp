@@ -2,6 +2,7 @@ package com.webdev.tourapp.Tours.TourInstance.Domain;
 
 import com.webdev.tourapp.Shared.Domain.Aggregate.AggregateRoot;
 import com.webdev.tourapp.Tours.TourInstance.Domain.Entities.StartingLocation;
+import com.webdev.tourapp.Tours.TourInstance.Domain.Entities.TourGuide;
 import com.webdev.tourapp.Tours.TourInstance.Domain.Entities.TourUserID;
 import com.webdev.tourapp.Tours.TourInstance.Domain.Entities.TransportCompanyHired;
 import com.webdev.tourapp.Tours.TourInstance.Domain.ValueObjects.*;
@@ -17,7 +18,7 @@ public class TourInstance extends AggregateRoot {
     TourNumberOfPersons tourNumberOfPersons;
     TourTotalPrice tourTotalPrice;
     TourInstanceStatus tourInstanceStatus;
-    Optional<TourGuideID> tourGuideID;
+    Optional<TourGuide> tourGuideID;
     Optional<StartingLocation> startingLocation;
     Optional<List<TourUserID>> tourUsers;
     Optional<TransportCompanyHired> transportCompanyHired;
@@ -30,7 +31,7 @@ public class TourInstance extends AggregateRoot {
                         TourNumberOfPersons numberOfPersons,
                         TourTotalPrice totalPrice,
                         TourInstanceStatus status,
-                        Optional<TourGuideID> guideID,
+                        Optional<TourGuide> guideID,
                         Optional<StartingLocation> sLocation,
                         Optional<List<TourUserID>> users,
                         Optional<TransportCompanyHired> companyHired,
@@ -52,7 +53,7 @@ public class TourInstance extends AggregateRoot {
                                       TourNumberOfPersons numberOfPersons,
                                       TourTotalPrice totalPrice,
                                       TourInstanceStatus status,
-                                      Optional<TourGuideID> guideID,
+                                      Optional<TourGuide> guideID,
                                       Optional<StartingLocation> sLocation,
                                       Optional<List<TourUserID>> users,
                                       Optional<TransportCompanyHired> companyHired,
@@ -67,7 +68,10 @@ public class TourInstance extends AggregateRoot {
         HashMap<String, Object> data = new HashMap<>(){{
             put("tourDate", tourDate.value());
             put("tourInstanceID", tourInstanceID.value());
-            put("tourGuideID", tourGuideID.get().value());
+            if(tourGuideID.isEmpty())
+                put("tourGuideID", "null");
+            else
+                put("tourGuideID", tourGuideID.get().getGuideID());
             put("tourNumberOfPersons", tourNumberOfPersons.value());
             put("tourTotalPrice", tourTotalPrice.value());
             put("tourInstanceStatus", tourInstanceStatus.value());
@@ -97,7 +101,7 @@ public class TourInstance extends AggregateRoot {
     public HashMap<String, Object> dataGuide() {
         HashMap<String, Object> data = new HashMap<>();
         if(this.tourGuideID.isPresent()){
-            data.put("tourGuideID", this.tourGuideID.get().value());
+            data.put("tourGuideID", this.tourGuideID.get().getGuideID());
         }
         else{
             data.put("tourGuideID", null);
@@ -127,4 +131,44 @@ public class TourInstance extends AggregateRoot {
         return data;
     }
 
+    //DEBUG
+    public TourInstanceID getTourInstanceID() {
+        return tourInstanceID;
+    }
+
+    public TourDate getTourDate() {
+        return tourDate;
+    }
+
+    public TourNumberOfPersons getTourNumberOfPersons() {
+        return tourNumberOfPersons;
+    }
+
+    public TourTotalPrice getTourTotalPrice() {
+        return tourTotalPrice;
+    }
+
+    public TourInstanceStatus getTourInstanceStatus() {
+        return tourInstanceStatus;
+    }
+
+    public Optional<TourGuide> getTourGuideID() {
+        return tourGuideID;
+    }
+
+    public Optional<StartingLocation> getStartingLocation() {
+        return startingLocation;
+    }
+
+    public Optional<List<TourUserID>> getTourUsers() {
+        return tourUsers;
+    }
+
+    public Optional<TransportCompanyHired> getTransportCompanyHired() {
+        return transportCompanyHired;
+    }
+
+    public AssociatedTourID getAssociatedTourID() {
+        return associatedTourID;
+    }
 }
