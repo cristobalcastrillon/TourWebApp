@@ -1,6 +1,7 @@
 package com.webdev.tourapp.Tours.TourInstance.Application.Create;
 
 import com.webdev.tourapp.Tours.TourInstance.Domain.Entities.StartingLocation;
+import com.webdev.tourapp.Tours.TourInstance.Domain.Entities.TourGuide;
 import com.webdev.tourapp.Tours.TourInstance.Domain.Entities.TourUserID;
 import com.webdev.tourapp.Tours.TourInstance.Domain.Entities.TransportCompanyHired;
 import com.webdev.tourapp.Tours.TourInstance.Domain.Exceptions.TourInstanceAlreadyExists;
@@ -25,7 +26,7 @@ public class TourInstanceCreator{
                         Integer numberOfPersons,
                         Double totalPrice,
                         String status,
-                        Optional<TourGuideID> guideID,
+                        Optional<TourGuide> guideID,
                         Optional<StartingLocation> startingLocation,
                         Optional<List<TourUserID>> usersInTour,
                         Optional<TransportCompanyHired> companyHired,

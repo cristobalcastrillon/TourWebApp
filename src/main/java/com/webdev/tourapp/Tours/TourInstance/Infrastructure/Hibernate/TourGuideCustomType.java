@@ -43,8 +43,7 @@ public class TourGuideCustomType implements UserType {
             Optional<String> value = Optional.ofNullable(rs.getString(names[0]));
             if(value.isPresent()) {
                 HashMap<String, Object> mapper = new ObjectMapper().readValue(value.get(), HashMap.class);
-                response = new TourGuide((String) mapper.get("guideID"), (String) mapper.get("guideFirstName"),
-                        (String) mapper.get("guideLastName"), (Double) mapper.get("guideBaseFare"), (String) mapper.get("guidePhoneNumber"));
+                response = new TourGuide((String) mapper.get("guideID"));
             }
         }
         catch (Exception e) {

@@ -30,9 +30,9 @@
             <property name="value" column="associated_tour_id" access="field" type="string"/>
         </component>
 
-        <component name="tourGuideID" class="com.webdev.tourapp.Tours.TourInstance.Domain.ValueObjects.TourGuideID" access="field">
-            <property name="value" column="tour_guide_id" access="field" type="string"/>
-        </component>
+        <property name="tourGuideID" column="tour_guide_id" access="field">
+            <type name="com.webdev.tourapp.Tours.TourInstance.Infrastructure.Hibernate.TourGuideCustomType"/>
+        </property>
 
         <property name="tourUsers" column="tour_users" access="field">
             <type name="com.webdev.tourapp.Tours.TourInstance.Infrastructure.Hibernate.TourUserCustomType"/>
