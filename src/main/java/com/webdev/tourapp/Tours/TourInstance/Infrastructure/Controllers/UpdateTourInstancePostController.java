@@ -6,6 +6,7 @@ import com.webdev.tourapp.Tours.TourInstance.Domain.Entities.TourGuide;
 import com.webdev.tourapp.Tours.TourInstance.Domain.Entities.TourUser;
 import com.webdev.tourapp.Tours.TourInstance.Domain.Entities.TransportCompanyHired;
 import com.webdev.tourapp.Tours.TourInstance.Domain.Exceptions.TourInstanceIDNotFound;
+import com.webdev.tourapp.Tours.TourInstance.Domain.ValueObjects.TourGuideID;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -30,7 +31,7 @@ public class UpdateTourInstancePostController {
                 request.getTourNumberOfPersons(),
                 request.getTourTotalPrice(),
                 request.getTourInstanceStatus(),
-                request.getTourGuide(),
+                request.getTourGuideID(),
                 request.getStartingLocation(),
                 request.getTourUsers(),
                 request.getTransportCompanyHired(),
@@ -52,7 +53,7 @@ public class UpdateTourInstancePostController {
         private Integer tourNumberOfPersons;
         private Double tourTotalPrice;
         private String tourInstanceStatus;
-        private Optional<TourGuide> tourGuide;
+        private Optional<TourGuideID> tourGuideID;
         private Optional<StartingLocation> startingLocation;
         private Optional<List<TourUser>> tourUsers;
         private Optional<TransportCompanyHired> transportCompanyHired;
@@ -92,12 +93,12 @@ public class UpdateTourInstancePostController {
             this.tourInstanceStatus = tourInstanceStatus;
         }
 
-        public Optional<TourGuide> getTourGuide() {
-            return tourGuide;
+        public Optional<TourGuideID> getTourGuideID() {
+            return tourGuideID;
         }
 
-        public void setTourGuide(Optional<TourGuide> tourGuide) {
-            this.tourGuide = tourGuide;
+        public void setTourGuideID(Optional<TourGuideID> tourGuide) {
+            this.tourGuideID = tourGuide;
         }
 
         public Optional<StartingLocation> getStartingLocation() {
