@@ -1,6 +1,7 @@
 package com.webdev.tourapp.Tours.TourInstance.Application.Update;
 
 import com.webdev.tourapp.Tours.TourInstance.Domain.Entities.StartingLocation;
+import com.webdev.tourapp.Tours.TourInstance.Domain.Entities.TourGuide;
 import com.webdev.tourapp.Tours.TourInstance.Domain.Entities.TourUserID;
 import com.webdev.tourapp.Tours.TourInstance.Domain.Entities.TransportCompanyHired;
 import com.webdev.tourapp.Tours.TourInstance.Domain.Exceptions.TourInstanceIDNotFound;
@@ -24,7 +25,7 @@ public class TourInstanceUpdater {
                         Integer numberOfPersons,
                         Double totalPrice,
                         String status,
-                        Optional<TourGuideID> guideID,
+                        Optional<TourGuide> guideID,
                         Optional<StartingLocation> startingLocation,
                         Optional<List<TourUserID>> usersInTour,
                         Optional<TransportCompanyHired> companyHired,

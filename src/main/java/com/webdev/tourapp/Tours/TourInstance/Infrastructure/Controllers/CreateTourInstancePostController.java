@@ -1,5 +1,6 @@
 package com.webdev.tourapp.Tours.TourInstance.Infrastructure.Controllers;
 
+import com.webdev.tourapp.Tours.TourInstance.Domain.Entities.TourGuide;
 import com.webdev.tourapp.Tours.TourInstance.Domain.Entities.TourUserID;
 import com.webdev.tourapp.Tours.TourInstance.Domain.Exceptions.NotValidTourTotalPrice;
 import com.webdev.tourapp.Tours.TourInstance.Domain.Exceptions.TourInstanceAlreadyExists;
@@ -65,7 +66,7 @@ public class CreateTourInstancePostController {
         private Integer tourNumberOfPersons;
         private Double tourTotalPrice;
         private String tourInstanceStatus;
-        private Optional<TourGuideID> tourGuideID;
+        private Optional<TourGuide> tourGuideID;
         private Optional<StartingLocation> startingLocation;
         private Optional<List<TourUserID>> tourUsers;
         private Optional<TransportCompanyHired> transportCompanyHired;
@@ -113,11 +114,11 @@ public class CreateTourInstancePostController {
             this.tourInstanceStatus = tourInstanceStatus;
         }
 
-        public Optional<TourGuideID> getTourGuideID() {
+        public Optional<TourGuide> getTourGuideID() {
             return tourGuideID;
         }
 
-        public void setTourGuideID(Optional<TourGuideID> tourGuide) {
+        public void setTourGuideID(Optional<TourGuide> tourGuide) {
             this.tourGuideID = tourGuide;
         }
 
