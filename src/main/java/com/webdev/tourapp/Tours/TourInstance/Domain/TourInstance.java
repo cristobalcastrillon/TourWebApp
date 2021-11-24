@@ -1,10 +1,8 @@
 package com.webdev.tourapp.Tours.TourInstance.Domain;
 
 import com.webdev.tourapp.Shared.Domain.Aggregate.AggregateRoot;
-import com.webdev.tourapp.Shared.Domain.Aggregate.CustomUUID;
 import com.webdev.tourapp.Tours.TourInstance.Domain.Entities.StartingLocation;
-import com.webdev.tourapp.Tours.TourInstance.Domain.Entities.TourGuide;
-import com.webdev.tourapp.Tours.TourInstance.Domain.Entities.TourUser;
+import com.webdev.tourapp.Tours.TourInstance.Domain.Entities.TourUserID;
 import com.webdev.tourapp.Tours.TourInstance.Domain.Entities.TransportCompanyHired;
 import com.webdev.tourapp.Tours.TourInstance.Domain.ValueObjects.*;
 
@@ -21,7 +19,7 @@ public class TourInstance extends AggregateRoot {
     TourInstanceStatus tourInstanceStatus;
     Optional<TourGuideID> tourGuideID;
     Optional<StartingLocation> startingLocation;
-    Optional<List<TourUser>> tourUsers;
+    Optional<List<TourUserID>> tourUsers;
     Optional<TransportCompanyHired> transportCompanyHired;
     AssociatedTourID associatedTourID;
 
@@ -34,7 +32,7 @@ public class TourInstance extends AggregateRoot {
                         TourInstanceStatus status,
                         Optional<TourGuideID> guideID,
                         Optional<StartingLocation> sLocation,
-                        Optional<List<TourUser>> users,
+                        Optional<List<TourUserID>> users,
                         Optional<TransportCompanyHired> companyHired,
                         AssociatedTourID associatedTourID){
         this.tourDate = date;
@@ -56,7 +54,7 @@ public class TourInstance extends AggregateRoot {
                                       TourInstanceStatus status,
                                       Optional<TourGuideID> guideID,
                                       Optional<StartingLocation> sLocation,
-                                      Optional<List<TourUser>> users,
+                                      Optional<List<TourUserID>> users,
                                       Optional<TransportCompanyHired> companyHired,
                                       AssociatedTourID associatedTourID){
 
@@ -84,7 +82,7 @@ public class TourInstance extends AggregateRoot {
     public List<HashMap<String, Object>> dataUsers(){
         List<HashMap<String, Object>> data = new ArrayList<>();
         if(tourUsers.isPresent()){
-            for (TourUser user : tourUsers.get()) {
+            for (TourUserID user : tourUsers.get()) {
                 HashMap<String, Object> userJSON = new HashMap<>();
                 userJSON.put("location", user.dataDB());
                 data.add(userJSON);
