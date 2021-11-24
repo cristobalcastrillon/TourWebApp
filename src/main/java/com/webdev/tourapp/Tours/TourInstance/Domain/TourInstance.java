@@ -68,7 +68,10 @@ public class TourInstance extends AggregateRoot {
         HashMap<String, Object> data = new HashMap<>(){{
             put("tourDate", tourDate.value());
             put("tourInstanceID", tourInstanceID.value());
-            put("tourGuideID", tourGuideID.get().getGuideID());
+            if(tourGuideID.isEmpty())
+                put("tourGuideID", "null");
+            else
+                put("tourGuideID", tourGuideID.get().getGuideID());
             put("tourNumberOfPersons", tourNumberOfPersons.value());
             put("tourTotalPrice", tourTotalPrice.value());
             put("tourInstanceStatus", tourInstanceStatus.value());
@@ -128,4 +131,44 @@ public class TourInstance extends AggregateRoot {
         return data;
     }
 
+    //DEBUG
+    public TourInstanceID getTourInstanceID() {
+        return tourInstanceID;
+    }
+
+    public TourDate getTourDate() {
+        return tourDate;
+    }
+
+    public TourNumberOfPersons getTourNumberOfPersons() {
+        return tourNumberOfPersons;
+    }
+
+    public TourTotalPrice getTourTotalPrice() {
+        return tourTotalPrice;
+    }
+
+    public TourInstanceStatus getTourInstanceStatus() {
+        return tourInstanceStatus;
+    }
+
+    public Optional<TourGuide> getTourGuideID() {
+        return tourGuideID;
+    }
+
+    public Optional<StartingLocation> getStartingLocation() {
+        return startingLocation;
+    }
+
+    public Optional<List<TourUserID>> getTourUsers() {
+        return tourUsers;
+    }
+
+    public Optional<TransportCompanyHired> getTransportCompanyHired() {
+        return transportCompanyHired;
+    }
+
+    public AssociatedTourID getAssociatedTourID() {
+        return associatedTourID;
+    }
 }

@@ -1,6 +1,5 @@
 package com.webdev.tourapp.Tours.TourInstance.Infrastructure.Controllers;
 
-import com.webdev.tourapp.Tours.TourInstance.Application.All.TourInstanceAllResponse;
 import com.webdev.tourapp.Tours.TourInstance.Application.FindByNullGuideID.TourInstanceNullGuideIDFinder;
 import com.webdev.tourapp.Tours.TourInstance.Application.FindByNullGuideID.TourInstanceNullGuideIDFinderResponse;
 import org.springframework.beans.factory.annotation.Autowired;
