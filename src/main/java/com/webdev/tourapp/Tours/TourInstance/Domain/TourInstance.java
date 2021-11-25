@@ -131,44 +131,11 @@ public class TourInstance extends AggregateRoot {
         return data;
     }
 
-    //DEBUG
-    public TourInstanceID getTourInstanceID() {
-        return tourInstanceID;
-    }
-
-    public TourDate getTourDate() {
-        return tourDate;
-    }
-
-    public TourNumberOfPersons getTourNumberOfPersons() {
-        return tourNumberOfPersons;
-    }
-
-    public TourTotalPrice getTourTotalPrice() {
-        return tourTotalPrice;
-    }
-
-    public TourInstanceStatus getTourInstanceStatus() {
-        return tourInstanceStatus;
-    }
-
-    public Optional<TourGuide> getTourGuideID() {
-        return tourGuideID;
-    }
-
-    public Optional<StartingLocation> getStartingLocation() {
-        return startingLocation;
+    public void setTourUsers(Optional<List<TourUserID>> tourUsers) {
+        this.tourUsers = tourUsers;
     }
 
     public Optional<List<TourUserID>> getTourUsers() {
         return tourUsers;
-    }
-
-    public Optional<TransportCompanyHired> getTransportCompanyHired() {
-        return transportCompanyHired;
-    }
-
-    public AssociatedTourID getAssociatedTourID() {
-        return associatedTourID;
     }
 }

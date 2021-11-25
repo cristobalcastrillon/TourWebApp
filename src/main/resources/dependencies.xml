@@ -15,6 +15,8 @@
 
     <bean id="LocationRepository" class="com.webdev.tourapp.Location.Infrastructure.Hibernate.HibernateLocationRepository"/>
 
+    <bean id="SpringApplicationEventBus" class="com.webdev.tourapp.Shared.Domain.Bus.Event.Spring.SpringApplicationEventBus"/>
+
     <bean id="TourCreator" class="com.webdev.tourapp.Tours.Tour.Application.Create.TourCreator">
         <constructor-arg ref="TourRepository"/>
     </bean>
@@ -87,6 +89,14 @@
         <constructor-arg ref="TourInstanceRepository"/>
     </bean>
 
+    <bean id="TourInstanceUserIDListUpdater" class="com.webdev.tourapp.Tours.TourInstance.Application.Update.TourInstanceUserIDListUpdater">
+        <constructor-arg ref="TourInstanceRepository"/>
+    </bean>
+
+    <bean id="UpdateTourInstanceUserIDListOnTourInstanceBooked" class="com.webdev.tourapp.Tours.TourInstance.Infrastructure.Listeners.UpdateTourInstanceUserIDListOnTourInstanceBooked">
+        <constructor-arg ref="TourInstanceUserIDListUpdater"/>
+    </bean>
+
     <bean id="UserCreator" class="com.webdev.tourapp.Users.User.Application.Create.UserCreator">
         <constructor-arg ref="UserRepository"/>
     </bean>
@@ -126,6 +136,7 @@
     <!--Adds a Tour Instance ID to the current User's TourInstanceIDs List (List of IDs of TourInstances the User has booked)-->
     <bean id="AddTourInstanceIDToList" class="com.webdev.tourapp.Users.User.Application.AddTourInstanceIDToList.AddTourInstanceIDToList">
         <constructor-arg ref="UserRepository"/>
+        <constructor-arg ref="SpringApplicationEventBus"/>
     </bean>
 
     <bean id="GuideAll" class="com.webdev.tourapp.Users.Guide.Application.All.GuideAll">
