@@ -20,7 +20,7 @@ public class CreateUserPostController
     @Autowired
     private UserCreator creator;
 
-    @PostMapping(value = "/")
+    @PostMapping(value = "/Create")
     public ResponseEntity execute(@RequestBody UserRequest request)
     {
             this.creator.execute(request.getUserID(), request.getUserFirstName()

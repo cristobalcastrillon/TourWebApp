@@ -75,6 +75,17 @@ public class User extends AggregateRoot
     {
         this.userPassword = password;
     }
+    public boolean VerifyPassword (UserPassword password)
+    {
+        if (password == this.userPassword)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 
     public Optional<List<CustomUUID>> getUserBookedTourIDs(){
         return this.userBookedTourIDs;

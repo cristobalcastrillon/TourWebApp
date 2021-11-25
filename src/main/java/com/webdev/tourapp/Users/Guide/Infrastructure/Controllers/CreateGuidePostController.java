@@ -21,7 +21,7 @@ public class CreateGuidePostController
     @Autowired
     private GuideCreator creator;
 
-    @PostMapping(value = "/")
+    @PostMapping(value = "/Create")
     public ResponseEntity execute(@RequestBody GuideRequest request) {
         this.creator.execute(request.getGuideID(), request.getGuideStatus(), request.getGuideFirstName(),
                 request.getGuideLastName(), request.getGuidePhoneNumber()
