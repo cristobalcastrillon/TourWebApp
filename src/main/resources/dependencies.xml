@@ -97,6 +97,14 @@
         <constructor-arg ref="TourInstanceUserIDListUpdater"/>
     </bean>
 
+    <bean id="TourInstanceGuideIDUpdater" class="com.webdev.tourapp.Tours.TourInstance.Application.Update.TourInstanceGuideIDUpdater">
+        <constructor-arg ref="TourInstanceRepository"/>
+    </bean>
+
+    <bean id="UpdateTourInstanceGuideIDOnTourInstanceTaken" class="com.webdev.tourapp.Tours.TourInstance.Infrastructure.Listeners.UpdateTourInstanceGuideIDOnTourInstanceTaken">
+        <constructor-arg ref="TourInstanceGuideIDUpdater"/>
+    </bean>
+
     <bean id="UserCreator" class="com.webdev.tourapp.Users.User.Application.Create.UserCreator">
         <constructor-arg ref="UserRepository"/>
     </bean>
@@ -155,8 +163,9 @@
         <constructor-arg ref="GuideRepository"/>
     </bean>
 
-    <bean id="GuideTaken" class="com.webdev.tourapp.Users.Guide.Application.UpdateGuideStatus.GuideTaken">
+    <bean id="TakeTourInstance" class="com.webdev.tourapp.Users.Guide.Application.TakeTourInstance.TakeTourInstance">
         <constructor-arg ref="GuideRepository"/>
+        <constructor-arg ref="SpringApplicationEventBus"/>
     </bean>
 
     <bean id="CompanyCreator" class="com.webdev.tourapp.TransportCompany.Company.Application.Create.CompanyCreator">
