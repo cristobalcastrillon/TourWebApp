@@ -15,7 +15,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"tourID\":\"d79d401a-d61a-42bc-81ec-0b5e0edb2e52\",\n    \"tourName\":\"Tour Gaudí en Barcelona\",\n    \"tourPrice\":200.0,\n    \"locationsIncludedInTour\": [\n        {\n            \"locationID\":\"7cce613b-2b79-4a90-90bd-daf02c94f376\",\n            \"locationName\":\"Sagrada Familia\",\n            \"locationCoordinates\":\"41°24′13″N 2°10′27″E\",\n            \"locationDescription\":\"El Templo Expiatorio de la Sagrada Familia (en catalán, Temple Expiatori de la Sagrada Família), conocido simplemente como la Sagrada Familia, es una basílica católica de Barcelona (España), diseñada por el arquitecto Antoni Gaudí.\",\n            \"locationCategory\":\"Templo\",\n            \"locationWebsiteURL\":\"https://sagradafamilia.org/historia-del-temple\",\n            \"locationPrice\": 35.0\n        },\n        {\n            \"locationID\":\"714af06b-f455-43f9-9a1d-9bef6e20ef02\",\n            \"locationName\":\"Casa Batlló\",\n            \"locationCoordinates\":\"41°23'17.99″ N 2°09'32.40″ E\",\n            \"locationDescription\":\"La Casa Batlló es un edificio obra del arquitecto Antoni Gaudí, máximo representante del modernismo catalán.\",\n            \"locationCategory\":\"Bien de Interés Cultural\",\n            \"locationWebsiteURL\":\"https://www.casabatllo.es/\",\n            \"locationPrice\":35.0\n        }\n    ]\n}",
+							"raw": "{\n    \"tourID\":\"d79d401a-d61a-42bc-81ec-0b5e0edb2e52\",\n    \"tourName\":\"Tour Gaudí en Barcelona\",\n    \"tourPrice\":200.0,\n    \"locationsIncludedInTour\": [\n        {\n            \"locationID\":\"7cce613b-2b79-4a90-90bd-daf02c94f376\"\n        },\n        {\n            \"locationID\":\"714af06b-f455-43f9-9a1d-9bef6e20ef02\"\n        }\n    ]\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -44,7 +44,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"tourID\":\"5d12307c-ee4b-4cc5-ad38-38684d3577b4\",\n    \"tourName\":\"Tour1\",\n    \"tourPrice\":200.0,\n    \"locationsIncludedInTour\": [\n        {\n            \"locationID\":\"7cce613b-2b79-4a90-90bd-daf02c94f376\",\n            \"locationName\":\"Sagrada Familia\",\n            \"locationCoordinates\":\"41°24′13″N 2°10′27″E\",\n            \"locationDescription\":\"El Templo Expiatorio de la Sagrada Familia (en catalán, Temple Expiatori de la Sagrada Família), conocido simplemente como la Sagrada Familia, es una basílica católica de Barcelona (España), diseñada por el arquitecto Antoni Gaudí.\",\n            \"locationCategory\":\"Templo\",\n            \"locationWebsiteURL\":\"https://sagradafamilia.org/historia-del-temple\",\n            \"locationPrice\": 35.0\n        },\n        {\n            \"locationID\":\"714af06b-f455-43f9-9a1d-9bef6e20ef02\",\n            \"locationName\":\"Casa Batlló\",\n            \"locationCoordinates\":\"41°23'17.99″ N 2°09'32.40″ E\",\n            \"locationDescription\":\"La Casa Batlló es un edificio obra del arquitecto Antoni Gaudí, máximo representante del modernismo catalán.\",\n            \"locationCategory\":\"Bien de Interés Cultural\",\n            \"locationWebsiteURL\":\"https://www.casabatllo.es/\",\n            \"locationPrice\":35.0\n        }\n    ]\n}",
+							"raw": "{\n    \"tourID\":\"5d12307c-ee4b-4cc5-ad38-38684d3577b4\",\n    \"tourName\":\"Tour1\",\n    \"tourPrice\":200.0,\n    \"locationsIncludedInTour\": [\n        {\n            \"locationID\":\"7cce613b-2b79-4a90-90bd-daf02c94f376\"\n        },\n        {\n            \"locationID\":\"714af06b-f455-43f9-9a1d-9bef6e20ef02\"\n        }\n    ]\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -73,7 +73,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"tourName\":\"Tour Gaudí en Barcelona\",\n    \"tourPrice\":200.0,\n    \"locationsIncludedInTour\": [\n        {\n            \"locationID\":\"7cce613b-2b79-4a90-90bd-daf02c94f376\",\n            \"locationName\":\"Sagrada Familia\",\n            \"locationCoordinates\":\"41°24′13″N 2°10′27″E\",\n            \"locationDescription\":\"El Templo Expiatorio de la Sagrada Familia (en catalán, Temple Expiatori de la Sagrada Família), conocido simplemente como la Sagrada Familia, es una basílica católica de Barcelona (España), diseñada por el arquitecto Antoni Gaudí.\",\n            \"locationCategory\":\"Templo\",\n            \"locationWebsiteURL\":\"https://sagradafamilia.org/historia-del-temple\",\n            \"locationPrice\": 35.0\n        },\n        {\n            \"locationID\":\"714af06b-f455-43f9-9a1d-9bef6e20ef02\",\n            \"locationName\":\"Casa Batlló\",\n            \"locationCoordinates\":\"41°23'17.99″ N 2°09'32.40″ E\",\n            \"locationDescription\":\"La Casa Batlló es un edificio obra del arquitecto Antoni Gaudí, máximo representante del modernismo catalán.\",\n            \"locationCategory\":\"Bien de Interés Cultural\",\n            \"locationWebsiteURL\":\"https://www.casabatllo.es/\",\n            \"locationPrice\":35.0\n        },\n        {\n            \"locationID\":\"cc3ba7da-4ee1-47f9-b83f-77fe97792951\",\n            \"locationName\":\"Casa Milà\",\n            \"locationCoordinates\":\"41°23'25.79″ N 2°09'25.20″ E\",\n            \"locationDescription\":\"La Casa Milà, llamada popularmente «La Pedrera» («cantera» en catalán), es un edificio modernista obra del arquitecto Antoni Gaudí, construido entre los años 1906 y 1910 en el distrito del Ensanche de Barcelona, en el número 92 del paseo de Gracia.\",\n            \"locationCategory\":\"Bien de Interés Cultural\",\n            \"locationWebsiteURL\":\"https://www.lapedrera.com/es\",\n            \"locationPrice\":24.0\n        }\n    ]\n}",
+							"raw": "{\n    \"tourName\":\"Tour Gaudí en Barcelona\",\n    \"tourPrice\": 200.0,\n    \"locationsIncludedInTour\": [\n        {\n            \"locationID\":\"7cce613b-2b79-4a90-90bd-daf02c94f376\"\n        },\n        {\n            \"locationID\":\"714af06b-f455-43f9-9a1d-9bef6e20ef02\"\n        },\n        {\n            \"locationID\":\"cc3ba7da-4ee1-47f9-b83f-77fe97792951\"\n        }\n    ]\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -163,10 +163,66 @@
 				},
 				{
 					"name": "Get Tour By Tour Name",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": null
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"tourName\":\"Barcelona\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/Tour/tourName",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Tour",
+								"tourName"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Tour By Tour Base Price Maximum",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/Tour/tourName",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Tour",
+								"tourName"
+							]
+						},
+						"description": "FindTourByBasePriceMaximumGetController not implemented yet."
 					},
 					"response": []
 				},
@@ -215,7 +271,36 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"tourDate\": \"2021-10-25\",\n    \"tourInstanceID\": \"d4f7417d-1336-4c71-a225-73435f2238e1\",\n    \"tourInstanceStatus\": \"incompleto\",\n    \"tourNumberOfPersons\": 3,\n    \"tourTotalPrice\": 5.0,\n    \"tourGuide\": {\n        \"guideID\": \"6864d7b2-5c2a-4189-9aee-488aedfcde7c\",\n        \"guideFirstName\": \"Leonardo\",\n        \"guideLastName\": \"Salazar\",\n        \"guideBaseFare\": 13000000.0,\n        \"guidePhoneNumber\": \"+573338881111\"\n    },\n    \"startingLocation\": {\n        \"locationID\": \"9398d92a-f6c1-4e26-b58a-047a87db3ee3\",\n        \"locationName\": \"Pontificia Universidad Javeriana\",\n        \"locationCoordinates\": \"4°37′44″N 74°03′53″O\",\n        \"locationDescription\": \"La jave mijo.\",\n        \"locationCategory\": \"Institución Educativa\",\n        \"locationWebsiteURL\": \"http://www.javeriana.edu.co\",\n        \"locationPrice\": 14000000.0\n    },\n    \"tourUsers\": null,\n    \"transportCompanyHired\": null,\n    \"associatedTourID\":\"d79d401a-d61a-42bc-81ec-0b5e0edb2e52\"\n}",
+							"raw": "{\n    \"tourDate\": \"2021-10-25\",\n    \"tourInstanceID\": \"d4f7417d-1336-4c71-a225-73435f2238e1\",\n    \"tourInstanceStatus\": \"incompleto\",\n    \"tourNumberOfPersons\": 3,\n    \"tourTotalPrice\": 5.0,\n    \"tourGuideID\":  \"6864d7b2-5c2a-4189-9aee-488aedfcde7c\",\n    \"startingLocation\": \"9398d92a-f6c1-4e26-b58a-047a87db3ee3\",\n    \"tourUsers\": null,\n    \"transportCompanyHired\": null,\n    \"associatedTourID\":\"d79d401a-d61a-42bc-81ec-0b5e0edb2e52\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/TourInstance/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"TourInstance",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Tour Instance (Null Guide)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"tourDate\": \"2021-10-25\",\n    \"tourInstanceID\": \"27e6cc7d-8489-4cc1-83a7-4c6506be52f0\",\n    \"tourInstanceStatus\": \"incompleto\",\n    \"tourNumberOfPersons\": 3,\n    \"tourTotalPrice\": 5.0,\n    \"tourGuideID\":  null,\n    \"startingLocation\": \"9398d92a-f6c1-4e26-b58a-047a87db3ee3\",\n    \"tourUsers\": null,\n    \"transportCompanyHired\": null,\n    \"associatedTourID\":\"d79d401a-d61a-42bc-81ec-0b5e0edb2e52\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -244,7 +329,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"tourDate\": \"2021-10-25\",\n    \"tourInstanceStatus\": \"finalizado\",\n    \"tourNumberOfPersons\": 3,\n    \"tourTotalPrice\": 5.0,\n    \"tourGuide\": {\n        \"guideID\": \"6864d7b2-5c2a-4189-9aee-488aedfcde7c\",\n        \"guideFirstName\": \"Leonardo\",\n        \"guideLastName\": \"Salazar\",\n        \"guideBaseFare\": 13000000.0,\n        \"guidePhoneNumber\": \"+573338881111\"\n    },\n    \"startingLocation\": {\n        \"locationID\": \"9398d92a-f6c1-4e26-b58a-047a87db3ee3\",\n        \"locationName\": \"Pontificia Universidad Javeriana\",\n        \"locationCoordinates\": \"4°37′44″N 74°03′53″O\",\n        \"locationDescription\": \"La jave mijo.\",\n        \"locationCategory\": \"Institución Educativa\",\n        \"locationWebsiteURL\": \"http://www.javeriana.edu.co\",\n        \"locationPrice\": 14000000.0\n    },\n    \"tourUsers\": null,\n    \"transportCompanyHired\": null,\n    \"associatedTourID\":\"d79d401a-d61a-42bc-81ec-0b5e0edb2e52\"\n}",
+							"raw": "{\n    \"tourDate\": \"2021-10-25\",\n    \"tourInstanceStatus\": \"finalizado\",\n    \"tourNumberOfPersons\": 3,\n    \"tourTotalPrice\": 5.0,\n    \"tourGuideID\": \"6864d7b2-5c2a-4189-9aee-488aedfcde7c\",\n    \"startingLocation\":\"9398d92a-f6c1-4e26-b58a-047a87db3ee3\",\n    \"tourUsers\": null,\n    \"transportCompanyHired\": null,\n    \"associatedTourID\":\"d79d401a-d61a-42bc-81ec-0b5e0edb2e52\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -284,7 +369,18 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": null
+						"url": {
+							"raw": "http://localhost:8080/TourInstance/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"TourInstance",
+								""
+							]
+						}
 					},
 					"response": []
 				},
@@ -309,6 +405,26 @@
 									"key": "id",
 									"value": "d4f7417d-1336-4c71-a225-73435f2238e1"
 								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Tour Instance By Null Guide ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/TourInstance/toursNoGuide",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"TourInstance",
+								"toursNoGuide"
 							]
 						}
 					},
@@ -350,11 +466,372 @@
 			]
 		},
 		{
+			"name": "TransportCompany",
+			"item": [
+				{
+					"name": "Create Transport Company",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\":\"a21c072a-3a45-42b3-b537-549de35c1d0c\",\n    \"name\":\"TransportesHermes\",\n    \"url\":\"www.transporteshermes.com\",\n    \"cellphone\":\"+573005553322\",\n    \"price\":15.0\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/Company/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Company",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Transport Companies",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/Company/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Company",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Transport Company by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/Company/companyID?companyID=a21c072a-3a45-42b3-b537-549de35c1d0c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Company",
+								"companyID"
+							],
+							"query": [
+								{
+									"key": "companyID",
+									"value": "a21c072a-3a45-42b3-b537-549de35c1d0c"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Transport Company by Name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/Company/companyName?name=TransportesHermes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Company",
+								"companyName"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "TransportesHermes"
+								}
+							]
+						},
+						"description": "findByCompanyName en CompanyHibernateRepository AÚN NO ESTÁ DESARROLLADA."
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Transport Company",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/Company/delete?companyID=a21c072a-3a45-42b3-b537-549de35c1d0c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Company",
+								"delete"
+							],
+							"query": [
+								{
+									"key": "companyID",
+									"value": "a21c072a-3a45-42b3-b537-549de35c1d0c"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Location",
+			"item": [
+				{
+					"name": "Create a Location",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"locationID\" : \"7cce613b-2b79-4a90-90bd-daf02c94f376\",\n    \"name\": \"Sagrada Familia\",\n    \"coordinates\":\"41°24′13″N 2°10′27″E\",\n    \"description\": \"El Templo Expiatorio de la Sagrada Familia (en catalán, Temple Expiatori de la Sagrada Família), conocido simplemente como la Sagrada Familia, es una basílica católica de Barcelona (España), diseñada por el arquitecto Antoni Gaudí.\",\n    \"category\": \"Templo\",\n    \"websiteUrl\": \"https://sagradafamilia.org/historia-del-temple\",\n    \"price\": 35.0\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/Location/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Location",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update a Location",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"locationID\" : \"7cce613b-2b79-4a90-90bd-daf02c94f376\",\n    \"name\": \"Sagrada Familia\",\n    \"coordinates\":\"41°24′13″N 2°10′27″E\",\n    \"description\": \"Nueva descripción.\",\n    \"category\": \"Templo\",\n    \"websiteUrl\": \"https://sagradafamilia.org/historia-del-temple\",\n    \"price\": 35.0\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/Location/update?locationID=7cce613b-2b79-4a90-90bd-daf02c94f376",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Location",
+								"update"
+							],
+							"query": [
+								{
+									"key": "locationID",
+									"value": "7cce613b-2b79-4a90-90bd-daf02c94f376"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Locations",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/Location/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Location",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a Location",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/Location/delete?locationID=7cce613b-2b79-4a90-90bd-daf02c94f376",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Location",
+								"delete"
+							],
+							"query": [
+								{
+									"key": "locationID",
+									"value": "7cce613b-2b79-4a90-90bd-daf02c94f376"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Location by Name",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"locationName\": \"Sagrada Familia\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/Location/locationName",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Location",
+								"locationName"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Location by Price",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"locationPrice\": 35.0\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/Location/locationPrice",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Location",
+								"locationPrice"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Location by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/Location/locationID?locationId=7cce613b-2b79-4a90-90bd-daf02c94f376",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Location",
+								"locationID"
+							],
+							"query": [
+								{
+									"key": "locationId",
+									"value": "7cce613b-2b79-4a90-90bd-daf02c94f376"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
 			"name": "User",
 			"item": [
 				{
 					"name": "Create User",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
+						"auth": {
+							"type": "noauth"
+						},
 						"method": "POST",
 						"header": [
 							{
@@ -374,15 +851,21 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/Users/",
-							"protocol": "http",
+							"raw": "https://localhost:8443/Users/Create?token=eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJUb3VyQXBwIiwic3ViIjoicG9vdGlzNjkiLCJhdXRob3JpdGllcyI6WyJST0xFX1VTRVIiLCJST0xFX0dVSURFIl0sImlhdCI6MTYzNzg3MDc2OSwiZXhwIjoxNjM3ODcwODY5fQ.QFJ_rAjy06TMqdBnHY-qpV5YAfG1nx7GZev9viy3-_-AVuvCE2rIhorR9zoYGY_6-aHfFut2sTZ12vE9yPaTrg",
+							"protocol": "https",
 							"host": [
 								"localhost"
 							],
-							"port": "8080",
+							"port": "8443",
 							"path": [
 								"Users",
-								""
+								"Create"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJUb3VyQXBwIiwic3ViIjoicG9vdGlzNjkiLCJhdXRob3JpdGllcyI6WyJST0xFX1VTRVIiLCJST0xFX0dVSURFIl0sImlhdCI6MTYzNzg3MDc2OSwiZXhwIjoxNjM3ODcwODY5fQ.QFJ_rAjy06TMqdBnHY-qpV5YAfG1nx7GZev9viy3-_-AVuvCE2rIhorR9zoYGY_6-aHfFut2sTZ12vE9yPaTrg"
+								}
 							]
 						}
 					},
@@ -392,7 +875,13 @@
 					"name": "Update User Firstname",
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "token",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJUb3VyQXBwIiwic3ViIjoicG9vdGlzNjkiLCJhdXRob3JpdGllcyI6WyJST0xFX1VTRVIiLCJST0xFX0dVSURFIl0sImlhdCI6MTYzNzg3NDE2OSwiZXhwIjoxNjM4ODc0MTY5fQ.f9nkU45gnBy75tY_xgTJKRZL58QsZrzQVdhW1C09SfULcu2oMoGToO52s-a67jE6B6G2cAfGilyeWVpFGq6zxQ",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
 							"raw": "{\r\n    \"userFirstName\":\"Jim\"\r\n}",
@@ -403,12 +892,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/Users/updatefName?userID=a77d461a-d61a-42bc-81ec-0b5b0bdb2b52",
-							"protocol": "http",
+							"raw": "https://localhost:8443/Users/updatefName?userID=a77d461a-d61a-42bc-81ec-0b5b0bdb2b52",
+							"protocol": "https",
 							"host": [
 								"localhost"
 							],
-							"port": "8080",
+							"port": "8443",
 							"path": [
 								"Users",
 								"updatefName"
@@ -428,9 +917,15 @@
 					"name": "Get All Users",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "token",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJUb3VyQXBwIiwic3ViIjoicG9vdGlzNjkiLCJhdXRob3JpdGllcyI6WyJST0xFX1VTRVIiLCJST0xFX0dVSURFIl0sImlhdCI6MTYzNzg3MjA1NCwiZXhwIjoxNjM4ODcyMDU0fQ.Qj41UpEmlLl8WMn8TsqFs3G_sT_KAIShkq2cMGrEZ60jmPQM_zP00w7OMQtTSM-LEscBmel_vfYFRRBU5DtPLA",
+								"type": "text"
+							}
+						],
 						"url": {
-							"raw": "http://localhost:8080/Users/",
+							"raw": "http://localhost:8080/Users/?token=",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -439,6 +934,12 @@
 							"path": [
 								"Users",
 								""
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": ""
+								}
 							]
 						}
 					},
@@ -448,7 +949,13 @@
 					"name": "Get User by ID",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "token",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJUb3VyQXBwIiwic3ViIjoicG9vdGlzNjkiLCJhdXRob3JpdGllcyI6WyJST0xFX1VTRVIiLCJST0xFX0dVSURFIl0sImlhdCI6MTYzNzg3MjM2NCwiZXhwIjoxNjM4ODcyMzY0fQ.SsQdiimMS4Pv-ocTQip7ohu93fQ03_qZxf4Au5lQ_p2tn-O7wp-6tOs0o0Qfs9Kc6uSJt4-6GGIdqlwAbeuefg",
+								"type": "text"
+							}
+						],
 						"url": {
 							"raw": "http://localhost:8080/Users/id?id=a77d461a-d61a-42bc-81ec-0b5b0bdb2b52",
 							"protocol": "http",
@@ -462,14 +969,15 @@
 							],
 							"query": [
 								{
-									"key": "tourID",
+									"key": "id",
 									"value": "a77d461a-d61a-42bc-81ec-0b5b0bdb2b50",
-									"description": "BAD_REQUEST",
+									"description": "NOT FOUND",
 									"disabled": true
 								},
 								{
 									"key": "id",
-									"value": "a77d461a-d61a-42bc-81ec-0b5b0bdb2b52"
+									"value": "a77d461a-d61a-42bc-81ec-0b5b0bdb2b52",
+									"description": "OK"
 								}
 							]
 						}
@@ -477,7 +985,7 @@
 					"response": []
 				},
 				{
-					"name": "New Request",
+					"name": "Delete User",
 					"request": {
 						"method": "DELETE",
 						"header": [],
@@ -501,6 +1009,70 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "LoginUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"pootis69\",\r\n    \"password\":\"7UU0909\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:8443/Users/Login",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8443",
+							"path": [
+								"Users",
+								"Login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Book Tour Instance",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJUb3VyQXBwIiwic3ViIjoicG9vdGlzNjkiLCJhdXRob3JpdGllcyI6WyJST0xFX1VTRVIiLCJST0xFX0dVSURFIl0sImlhdCI6MTYzNzg3NDE2OSwiZXhwIjoxNjM4ODc0MTY5fQ.f9nkU45gnBy75tY_xgTJKRZL58QsZrzQVdhW1C09SfULcu2oMoGToO52s-a67jE6B6G2cAfGilyeWVpFGq6zxQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"tourInstanceID\": \"27e6cc7d-8489-4cc1-83a7-4c6506be52f0\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:8443/Users/a77d461a-d61a-42bc-81ec-0b5b0bdb2b52",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8443",
+							"path": [
+								"Users",
+								"a77d461a-d61a-42bc-81ec-0b5b0bdb2b52"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -514,7 +1086,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"guideID\" : \"b87d461g-d61t-42bt-81ec-0b5b0bdb2b42\",\r\n    \"guideFirstName\" :\"Juanita\",\r\n    \"guideLastName\":\"deArco\",\r\n    \"guidePhoneNumber\": 6782837,\r\n    \"guideBaseFare\": 50000.0,\r\n    \"guidePassword\": \"tontina123\"\r\n}",
+							"raw": "{\r\n    \"guideID\" : \"b87d461g-d61t-42bt-81ec-0b5b0bdb2b42\",\r\n    \"guideStatus\":\"free\",\r\n    \"guideFirstName\" :\"Juanita\",\r\n    \"guideLastName\":\"deArco\",\r\n    \"guidePhoneNumber\": 6782837,\r\n    \"guideBaseFare\": 50000.0,\r\n    \"guidePassword\": \"tontina123\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -522,22 +1094,22 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/Guide/",
-							"protocol": "http",
+							"raw": "https://localhost:8443/Guide/Create",
+							"protocol": "https",
 							"host": [
 								"localhost"
 							],
-							"port": "8080",
+							"port": "8443",
 							"path": [
 								"Guide",
-								""
+								"Create"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "Get All Guide",
+					"name": "Get All Guides",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -574,14 +1146,15 @@
 							],
 							"query": [
 								{
-									"key": "guideID",
+									"key": "id",
 									"value": "a77d461a-d61a-42bc-81ec-0b5b0bdb2b50",
-									"description": "BAD_REQUEST",
+									"description": "NOT FOUND",
 									"disabled": true
 								},
 								{
 									"key": "id",
-									"value": "b87d461g-d61t-42bt-81ec-0b5b0bdb2b42"
+									"value": "b87d461g-d61t-42bt-81ec-0b5b0bdb2b42",
+									"description": "OK"
 								}
 							]
 						}
@@ -592,14 +1165,20 @@
 					"name": "Delete Guide",
 					"request": {
 						"method": "DELETE",
-						"header": [],
+						"header": [
+							{
+								"key": "token",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJUb3VyQXBwIiwic3ViIjoicG9vdGlzNjkiLCJhdXRob3JpdGllcyI6WyJST0xFX1VTRVIiLCJST0xFX0dVSURFIl0sImlhdCI6MTYzNzg3NDE2OSwiZXhwIjoxNjM4ODc0MTY5fQ.f9nkU45gnBy75tY_xgTJKRZL58QsZrzQVdhW1C09SfULcu2oMoGToO52s-a67jE6B6G2cAfGilyeWVpFGq6zxQ",
+								"type": "text"
+							}
+						],
 						"url": {
-							"raw": "http://localhost:8080/Guide/delete?id=b87d461g-d61t-42bt-81ec-0b5b0bdb2b42",
-							"protocol": "http",
+							"raw": "https://localhost:8443/Guide/delete?id=b87d461g-d61t-42bt-81ec-0b5b0bdb2b42",
+							"protocol": "https",
 							"host": [
 								"localhost"
 							],
-							"port": "8080",
+							"port": "8443",
 							"path": [
 								"Guide",
 								"delete"
@@ -608,6 +1187,48 @@
 								{
 									"key": "id",
 									"value": "b87d461g-d61t-42bt-81ec-0b5b0bdb2b42"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Take Tour Instance",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJUb3VyQXBwIiwic3ViIjoicG9vdGlzNjkiLCJhdXRob3JpdGllcyI6WyJST0xFX1VTRVIiLCJST0xFX0dVSURFIl0sImlhdCI6MTYzNzg3NDE2OSwiZXhwIjoxNjM4ODc0MTY5fQ.f9nkU45gnBy75tY_xgTJKRZL58QsZrzQVdhW1C09SfULcu2oMoGToO52s-a67jE6B6G2cAfGilyeWVpFGq6zxQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"tourInstanceID\": \"27e6cc7d-8489-4cc1-83a7-4c6506be52f0\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:8443/Guide/b87d461g-d61t-42bt-81ec-0b5b0bdb2b42",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8443",
+							"path": [
+								"Guide",
+								"b87d461g-d61t-42bt-81ec-0b5b0bdb2b42"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "",
+									"disabled": true
 								}
 							]
 						}
