@@ -112,6 +112,7 @@
     </bean>
        
     <bean id="UserLogin" class="com.webdev.tourapp.Users.User.Application.Login.UserLogin">
+        <constructor-arg ref="UserRepository"/>
         <constructor-arg ref="TokenGeneration"/>
     </bean>
 

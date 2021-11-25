@@ -10,6 +10,12 @@ public class StringValueObject {
         return value;
     }
 
+    public StringValueObject(){}
+
+    public StringValueObject(String value) {
+        this.value = value;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

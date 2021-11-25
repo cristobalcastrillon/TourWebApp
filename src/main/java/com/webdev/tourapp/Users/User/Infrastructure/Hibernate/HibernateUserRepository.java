@@ -56,7 +56,7 @@ public class HibernateUserRepository extends HibernateRepository<User> implement
         CriteriaQuery<User> cq = cb.createQuery(User.class);
         Root<User> root = cq.from(User.class);
         cq.select(root).where(cb.equal(root.get("username"), u_nameQuery.value()));
-        User userInstance = sessionFactory.getCurrentSession().createQuery(cq).getSingleResult();
+        User userInstance = sessionFactory.getCurrentSession().createQuery(cq).getResultList().get(0);
         return Optional.ofNullable(userInstance);
     }
 

@@ -23,6 +23,7 @@ public class UserLogin
 
     public UserLoginResponse execute(String username, String password)
     {
+        /*
         Optional<User> userOpt = this.myRep.findByUsername(new Username(username));
         if (userOpt.isEmpty())
         {
@@ -40,6 +41,10 @@ public class UserLogin
             throw new PasswordNotFound("Error en validación de contraseña del usuario " + username );
 
         }
+        */
+        TokenGenerationResponse responseToken = this.tokenGeneration.execute(username);
+        UserLoginResponse response = new UserLoginResponse(username, responseToken.token());
+        return response;
 
     }
 }
