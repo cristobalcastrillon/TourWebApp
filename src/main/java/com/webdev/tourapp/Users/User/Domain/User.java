@@ -4,11 +4,13 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Optional;
 
+import com.webdev.tourapp.Shared.Domain.Aggregate.AggregateRoot;
 import com.webdev.tourapp.Shared.Domain.Aggregate.CustomUUID;
+import com.webdev.tourapp.Shared.Domain.DomainEvents.TourInstanceBookedDomainEvent;
 import com.webdev.tourapp.Users.User.Domain.ValueObjects.UserID;
 import com.webdev.tourapp.Users.User.Domain.ValueObjects.*;
 
-public class User
+public class User extends AggregateRoot
 {
     private UserID userID;
     private Username username;
@@ -42,6 +44,11 @@ public class User
         //TODO Intermediate events.
         return myUser;
     }
+
+    public void bookTourInstance(){
+        this.record(new TourInstanceBookedDomainEvent(this.userID.value(), this.userBookedTourIDs.get().get(this.userBookedTourIDs.get().size() - 1).value()));
+    }
+
     public HashMap<String, Object> data()
     {
         return new HashMap<String, Object>() {{
