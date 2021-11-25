@@ -130,4 +130,12 @@ public class TourInstance extends AggregateRoot {
         }
         return data;
     }
+
+    public void setTourUsers(Optional<List<TourUserID>> tourUsers) {
+        this.tourUsers = tourUsers;
+    }
+
+    public Optional<List<TourUserID>> getTourUsers() {
+        return tourUsers;
+    }
 }
