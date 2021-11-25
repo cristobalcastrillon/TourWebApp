@@ -1,6 +1,7 @@
 package com.webdev.tourapp.Users.User.Application.AddTourInstanceIDToList;
 
 import com.webdev.tourapp.Shared.Domain.Aggregate.CustomUUID;
+import com.webdev.tourapp.Shared.Domain.Bus.Event.EventBus;
 import com.webdev.tourapp.Users.User.Domain.Exceptions.NoUsersFound;
 import com.webdev.tourapp.Users.User.Domain.Ports.UserRepository;
 import com.webdev.tourapp.Users.User.Domain.User;
@@ -11,10 +12,12 @@ import java.util.List;
 import java.util.Optional;
 
 public class AddTourInstanceIDToList {
-    UserRepository repository;
+    private UserRepository repository;
+    private EventBus eventBus;
 
-    public AddTourInstanceIDToList(UserRepository repository) {
+    public AddTourInstanceIDToList(UserRepository repository, EventBus eventBus) {
         this.repository = repository;
+        this.eventBus = eventBus;
     }
 
     public void execute(String userID, String tourInstanceID){
@@ -34,6 +37,8 @@ public class AddTourInstanceIDToList {
         tourInstanceList.add(tourInstanceIDForList);
         Optional<List<CustomUUID>> optionalList = Optional.of(tourInstanceList);
         user.setUserBookedTourIDs(optionalList);
-        repository.update(user);
+        user.bookTourInstance();
+        this.repository.update(user);
+        this.eventBus.publish(user.pullDomainEvents());
     }
 }
