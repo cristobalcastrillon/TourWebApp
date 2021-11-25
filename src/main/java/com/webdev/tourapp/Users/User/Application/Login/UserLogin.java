@@ -16,12 +16,15 @@ public class UserLogin
     UserRepository myRep;
     private final TokenGeneration tokenGeneration;
 
-    public UserLogin(TokenGeneration tokenGeneration) {
+    public UserLogin(UserRepository repository, TokenGeneration tokenGeneration) {
+        this.myRep = repository;
         this.tokenGeneration = tokenGeneration;
     }
 
     public UserLoginResponse execute(String username, String password)
     {
+        //TODO: Fix the following lines of code
+        /*
         Optional<User> userOpt = this.myRep.findByUsername(new Username(username));
         if (userOpt.isEmpty())
         {
@@ -39,6 +42,11 @@ public class UserLogin
             throw new PasswordNotFound("Error en validación de contraseña del usuario " + username );
 
         }
+         */
+
+        TokenGenerationResponse responseToken = this.tokenGeneration.execute(username);
+        UserLoginResponse response = new UserLoginResponse(username, responseToken.token());
+        return response;
 
     }
 }
