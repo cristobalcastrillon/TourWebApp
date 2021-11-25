@@ -16,7 +16,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter
             "/v3/api-docs/**",
             "/v3/api-docs.yaml",
             "/swagger-ui/**"
-
     };
     @Override
     protected void configure(HttpSecurity http) throws Exception
