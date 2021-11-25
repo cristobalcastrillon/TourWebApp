@@ -13,7 +13,7 @@ public class AddTourInstanceIDToListPutController {
     @Autowired
     private AddTourInstanceIDToList tourInstanceIDToList;
 
-    @PutMapping(value = "{id}")
+    @PutMapping(value = "/{id}")
     public ResponseEntity execute(@PathVariable("id") String id, @RequestBody UserRequest request){
         this.tourInstanceIDToList.execute(id, request.getTourInstanceID());
         return ResponseEntity.status(HttpStatus.OK).body(null);

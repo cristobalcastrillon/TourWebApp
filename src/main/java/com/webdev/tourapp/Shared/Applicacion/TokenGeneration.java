@@ -15,7 +15,7 @@ public class TokenGeneration {
     private final String SECRET = "vewysecwet_key";
     private final String CLAIM = "authorities";
     private final String ID = "TourApp";
-    private final int validity = 100000;
+    private final int validity = 1000000000;
     public TokenGeneration() {
     }
 

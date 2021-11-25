@@ -1,6 +1,7 @@
 package com.webdev.tourapp.Users.Guide.Domain;
 
 import com.webdev.tourapp.Shared.Domain.Aggregate.AggregateRoot;
+import com.webdev.tourapp.Shared.Domain.DomainEvents.TourInstanceTakenByGuideDomainEvent;
 import com.webdev.tourapp.Users.Guide.Domain.ValueObjects.GuideID;
 import com.webdev.tourapp.Users.Guide.Domain.ValueObjects.*;
 
@@ -48,7 +49,8 @@ public class Guide extends AggregateRoot
         }};
     }
 
-    public void setGuideStatusToTaken() {
+    public void setGuideStatusToTaken(String tourInstanceID) {
         this.guideStatus = new GuideStatus("taken");
+        this.record(new TourInstanceTakenByGuideDomainEvent(this.guideID.value(), tourInstanceID));
     }
 }
